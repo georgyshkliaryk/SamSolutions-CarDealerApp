@@ -1,0 +1,54 @@
+{
+  "ads": [
+    {
+      "id": 1,
+      "carName": "BMW m5 F90",
+      "shortDescription": "lorem ipsum",
+      "carPrice": 500,
+      "carImage": "",
+      "carBrand": "BMW",
+      "carType": "sedan",
+      "carMileage": 50000,
+      "carYear": 2008,
+      "carCondition": "Used"      
+    },
+    {
+      "id": 2,
+      "carName": "Ford Fiesta",
+      "shortDescription": "lorem ipsum",
+      "carPrice": 250,
+      "carImage": "",
+      "carBrand": "Ford",
+      "carType": "suv",
+      "carMileage": 125000,
+      "carYear": 2010,
+      "carCondition": "Used"  
+    },
+    {
+      "id": 3,
+      "carName": "Audi A4",
+      "shortDescription": "lorem ipsum",
+      "carPrice": 700,
+      "carImage": "",
+      "carBrand": "Audi",
+      "carType": "sedan",
+      "carMileage": 0,
+      "carYear": 2020,
+      "carCondition": "New"  
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "role": "administrator"
+    },
+    {
+      "id": 2,
+      "role": "registered"
+    },
+    {
+      "id": 3,
+      "role": "guest"
+    }
+  ]
+}
