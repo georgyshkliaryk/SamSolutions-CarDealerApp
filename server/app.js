@@ -1,42 +1,43 @@
 const express = require('express');
 const routes = require('./routes/ads');
 const mongoose = require('mongoose');
+const config = require('config');
+const bodyParser = require('body-parser');
 
 const app = express();
+const PORT = config.get('port') || 5000;
+const MongoUri = config.get('MongoUri');
 
 //connect to mongoDB
-//mongoose.connect('mongodb://localhost/car-dealer');
-//mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
+mongoose.connect(MongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(function() {
+     console.log('MongoDB is working...');
+    })
+  .catch(function(e){
+     console.log(e);
+   });
+
+
+//middlewares
+app.use(bodyParser.json());
 
 app.use('/api', routes);
 
+//error hadling middleware
+app.use(function(err, req, res, next) {
+  //console.log(err);
+  res.status(400).send({error: err.message});
+});
+
 app.get('/', function(req, res) {
-   res.send('hello');
+   res.send('hello!');
    
 });
-app.listen(3001, function() {
-  console.log('now listening for requests'); 
+app.listen(PORT, function() {
+  console.log('Now listening for requests on port: ' + `${PORT}`); 
 });
 
-
-/*
-const productRouter = express.Router();
- 
-
-productRouter.use("/create", function(request, response){
-  response.send("Добавление обьявления");
-});
-productRouter.use("/delete", function(request, response){
-   response.send("Удаление обьявления");
- });
-productRouter.use("/:id", function(request, response){
-  response.send(`Авто ${request.params.id}`);
-});
-productRouter.use("/", function(request, response){
-  response.send("Список авто");
-});
-
-app.use("/products", productRouter);    */
 
 
 

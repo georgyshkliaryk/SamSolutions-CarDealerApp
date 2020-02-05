@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //Ad model & Schema
-const AdSchema = newSchema({
+const AdSchema = new Schema({
    carName: {
        type: String,
        required: [true, 'Name of the car is required']
    },
    carImage: {
-       type: String
+       type: String 
    }, 
    carModel: {
        type: String,
