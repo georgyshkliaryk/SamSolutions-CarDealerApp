@@ -36,6 +36,6 @@ const AdSchema = newSchema({
    }
 });
 
-const Ad = mongoose.model('ad', AdSchema);
+const Ad = mongoose.model('Ad', AdSchema);
 
 module.exports = Ad;

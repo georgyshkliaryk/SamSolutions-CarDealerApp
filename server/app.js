@@ -1,12 +1,12 @@
 const express = require('express');
-const routes = require('./routes/api');
+const routes = require('./routes/ads');
 const mongoose = require('mongoose');
 
 const app = express();
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost/car-dealer');
-mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://localhost/car-dealer');
+//mongoose.Promise = global.Promise;
 
 app.use('/api', routes);
 
