@@ -8,12 +8,24 @@
     "concurrently": "^5.1.0",
     "config": "^3.2.5",
     "express": "^4.17.1",
-    "mongoose": "^5.8.11"
+    "mongoose": "^5.8.11",
+    "node-sass": "^4.13.1",
+    "react-router-dom": "^5.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  },
   "scripts": {
     "start": "node server/app.js",
-    "server": "nodemon server/app.js"
+    "server": "nodemon server/app.js",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "repository": {
     "type": "git",
