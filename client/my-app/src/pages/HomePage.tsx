@@ -20,6 +20,9 @@ const HomePage = () => {
           <Link to="/myads">MyAds</Link> 
         </li>
       </ul>
+      <br/>
+      <br/>
+      <Link to="/login">Login/Register</Link> 
 
     </div>
   );
