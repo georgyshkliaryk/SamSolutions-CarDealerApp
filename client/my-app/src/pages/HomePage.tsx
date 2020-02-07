@@ -1,28 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Header from '../components/Header/Header';
+
 
 const HomePage = () => {
   return (
     <div> 
+      <Header />
 
-      <h3>Main Page of the App</h3>
-      <small>Main Page</small>
 
-      <ul>
-        <li>
-          <Link to="/ads">Ads</Link> 
-        </li>
-        <li>
-          <Link to="/about">About</Link> 
-        </li>
-        <li>
-          <Link to="/myads">MyAds</Link> 
-        </li>
-      </ul>
-      <br/>
-      <br/>
-      <Link to="/login">Login/Register</Link> 
+      
 
     </div>
   );
