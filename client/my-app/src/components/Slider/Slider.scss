@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+.slider {
+    margin-top: $header_margin;
+}
+.slider__slide1 {
+    z-index: -1;
+    width: 100%;
+    
+    img {
+        width: 100%;
+    }
+}
+.slider__slide2 {
+    
+    
+    top: $header_margin;
+    z-index: -1;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+    
+}
+.slider__button {
+    width: 10em;
+    height: 3em;
+}
+
