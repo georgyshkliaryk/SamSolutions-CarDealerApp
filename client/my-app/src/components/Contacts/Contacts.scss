@@ -1,0 +1,93 @@
+.contacts {
+    margin: 5em 0 5em 0;
+    text-align: center;
+}
+.contacts__title {
+    font-size: 40px;
+    margin-bottom: 1em;
+}
+.contacts__image {
+    width: 30em;
+}
+.contacts__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.contacts__uls {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+.contacts__ul2 {
+    li {
+        list-style-type: none;
+    }
+    text-align: left;
+}
+.contacts__ul1 {
+    text-align: left;
+
+    ul {
+        list-style-type: none; 
+      } 
+      ul li:nth-child(1):before { 
+        content: ''; 
+        display: inline-block;  
+        height: 20px;  
+        width: 20px;  
+        background-size: 20px;  
+        background-image: url("../../public/assets/imgs/call.png"); 
+        background-repeat: no-repeat;  
+        margin-right: 10px;
+      }
+      ul li:nth-child(2):before { 
+        content: ''; 
+        display: inline-block; 
+        height: 20px;  
+        width: 20px;  
+        background-size: 20px;  
+        background-image: url("../../public/assets/imgs/pin.png"); 
+        background-repeat: no-repeat;  
+        margin-right: 10px;
+      }
+      ul li:nth-child(3):before { 
+        content: ''; 
+        display: inline-block;  
+        height: 20px;  
+        width: 20px;  
+        background-size: 20px;  
+        background-image: url("../../public/assets/imgs/mail2.png"); 
+        background-repeat: no-repeat;  
+        margin-right: 10px;
+      }
+
+}
+li {
+    margin-bottom: 1em;
+    font-size: 20px;
+}
+.contacts__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+
+    img {
+        width: auto;
+        height: 4em;
+    }
+}
+.contacts__container2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
