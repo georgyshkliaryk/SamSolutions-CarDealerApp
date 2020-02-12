@@ -12,5 +12,4 @@ function SearchButton(props: any) {
   );
 }
 
-
 export default SearchButton;

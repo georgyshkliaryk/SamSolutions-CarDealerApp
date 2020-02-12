@@ -16,7 +16,7 @@
 }
 .contacts__uls {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 2em;
 }
 .contacts__ul2 {
@@ -69,7 +69,7 @@ li {
 }
 .contacts__links {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     justify-content: space-around;
    
 

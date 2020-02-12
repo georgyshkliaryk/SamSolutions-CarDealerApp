@@ -2,29 +2,61 @@
 
 .slider {
     margin-top: $header_margin;
+    position: relative;
 }
-.slider__slide1 {
-    z-index: -1;
-    width: 100%;
-    
+.slider__slide {
+    position: relative;
     img {
-        width: 100%;
-    }
+       width: 100%;
+   }
 }
-.slider__slide2 {
-    
-    
-    top: $header_margin;
-    z-index: -1;
-    width: 100%;
 
-    img {
-        width: 100%;
-    }
+.slider__button {
+    background-color: red;
+    color: lightgrey;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 48px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
     
 }
-.slider__button {
-    width: 10em;
-    height: 3em;
+.prev {
+    position: absolute;
+    top: 40%;
+    left: 1em;
 }
+.next {
+    position: absolute;
+    top: 40%;
+    right: 1em;
+}
+.slider__button:hover {
+    background-color: rgb(134, 0, 0);
+}
+.slide__title {
+    font-family: 'Sriracha', cursive;
+    color: white;
+    font-size: 60px;
+    position: absolute;
+    bottom: 3em;
+    left: 2em;
+}
+.slide__description {
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    bottom: 2.5em;
+    right: 1em;
+    text-align: right;
+    color: lightgrey;
+    font-style: italic;
+    margin-left: 7em;
+
+}
+
 

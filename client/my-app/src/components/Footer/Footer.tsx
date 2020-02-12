@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Header.scss";
+import "../Header/Header.scss";
+import "./Footer.scss";
 
-function Header() {
-  return (
-      <div className="header fixed">
-        <div className="header__links">
+function Footer() {
+  return (   
+      <div className="header footer">
+        <div className="header__links footer__links">
           <div>
             <Link to="/" className="link">
               Home
@@ -17,6 +18,14 @@ function Header() {
               Cars
             </Link>
           </div>
+          
+        </div>
+
+        <div className="header__title footer__title">
+          <span>Car</span>Dealer, 2020
+        </div>
+
+        <div className="header__links footer__links">
           <div>
             <Link to="/about">About</Link>
           </div>
@@ -24,16 +33,8 @@ function Header() {
             <Link to="/myads">My cars</Link>
           </div>
         </div>
-
-        <div className="header__title">
-          <span>Car</span>Dealer
-        </div>
-
-        <div className="header__links">
-          <Link to="/login">Login/Register</Link>
-        </div>
       </div>
   );
 }
 
-export default Header;
+export default Footer;

@@ -7,6 +7,7 @@ import FilterForm from '../components/FilterForm/FilterForm';
 import Welcome from '../components/Welcome/Welcome';
 import MapComponent from '../components/MapComponent/MapComponent';
 import Contacts from '../components/Contacts/Contacts';
+import Footer from '../components/Footer/Footer';
 
 
 const HomePage = () => {
@@ -23,6 +24,8 @@ const HomePage = () => {
       <Contacts />
 
       <MapComponent />
+
+      <Footer />
 
       
 

@@ -1,5 +1,6 @@
+@import './styles/variables';
 body {
-    font-size: 17px;
-    font-family: 'Arvo', serif;
+    font-size: $font_size_default;
+    font-family: $font_default;
     background-color: white;
 }

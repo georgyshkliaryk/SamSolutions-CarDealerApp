@@ -1,18 +1,17 @@
 @import '../../styles/variables';
-.header {
+.header, .fixed {
     color: white;
     background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 1.5em 2em;
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
-    
 }
 .header__links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 20em;
     padding: 0.5em 0;
@@ -29,4 +28,7 @@
     span {
         color: white;
     }
+}
+.fixed {
+    position: fixed;
 }

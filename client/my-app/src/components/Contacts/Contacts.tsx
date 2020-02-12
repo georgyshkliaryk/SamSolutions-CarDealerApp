@@ -16,7 +16,7 @@ import "./Contacts.scss";
 function Contacts() {
   return (
         <div className="contacts">
-            <div className="contacts__title">Contact us</div>
+            <div className="contacts__title">Contacts</div>
             <div className="contacts__container">
                 <img className="contacts__image" src={car_transparent} alt="car_transparent.png"/>
 
