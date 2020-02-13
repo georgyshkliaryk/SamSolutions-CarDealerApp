@@ -38,7 +38,6 @@ app.use(function(err, req, res, next) {
 
 app.get('/', function(req, res) {
    res.send('server is working...');
-   
 });
 app.listen(PORT, function() {
   console.log('Now listening for requests on port: ' + `${PORT}`); 

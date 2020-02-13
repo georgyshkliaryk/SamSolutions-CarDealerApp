@@ -1,0 +1,12 @@
+.ads {
+    text-align: center;
+}
+.ads__title {
+    font-size: 40px;
+    margin: 2em auto;
+}
+.ads__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

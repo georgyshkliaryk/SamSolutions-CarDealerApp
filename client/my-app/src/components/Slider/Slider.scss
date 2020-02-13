@@ -45,6 +45,8 @@
     position: absolute;
     bottom: 3em;
     left: 2em;
+    border-bottom: red 5px solid;
+    padding-right: 13em;
 }
 .slide__description {
     color: white;
@@ -53,7 +55,7 @@
     bottom: 2.5em;
     right: 1em;
     text-align: right;
-    color: lightgrey;
+    color: lightgray;
     font-style: italic;
     margin-left: 7em;
 

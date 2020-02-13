@@ -15,10 +15,15 @@
     justify-content: space-between;
     width: 20em;
     padding: 0.5em 0;
+    color: white;
     a {
         text-decoration: none;
         color: white;
+        
     }
+}
+.header__links a:hover {
+    color: grey;
 }
 .header__title {
     font-size: 30px;

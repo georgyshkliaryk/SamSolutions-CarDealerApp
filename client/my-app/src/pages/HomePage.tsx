@@ -8,29 +8,55 @@ import Welcome from '../components/Welcome/Welcome';
 import MapComponent from '../components/MapComponent/MapComponent';
 import Contacts from '../components/Contacts/Contacts';
 import Footer from '../components/Footer/Footer';
+import Ads from '../components/CarAds/Ads';
+import {IAd} from '../models/IAd';
+
+import RestService from '../services/RestService';
+import AdService from '../services/AdsService';
 
 
-const HomePage = () => {
-  return (
-    <> 
-      <Header />
 
-      <Slider /> 
+interface IState {
+  ads: IAd[];
+}
+class HomePage extends React.Component {
+  state = {
+    ads: [],
+    isLoaded: false
+  }
 
-      <FilterForm />
+  componentDidMount() {
+    const restService = new RestService;
+    const adService = new AdService(restService);
+    adService.getAllAds().then((data) => {this.setState({ ads: data, isLoaded: true}) }).catch( (data) => {alert(data)});
+}
 
-      <Welcome />
+  render() {
+    return (
+      <> 
 
-      <Contacts />
+        <Header />
 
-      <MapComponent />
+        <Slider /> 
 
-      <Footer />
+        <FilterForm />
 
-      
+        {
+          this.state.isLoaded?<Ads ads={this.state.ads}/>:'loading...'
+        }
 
-    </>
-  );
+        <Welcome />
+
+        <Contacts />
+
+        <MapComponent />
+
+        <Footer />
+
+      </>
+    );
+  }
 }
 
 export default HomePage;
+

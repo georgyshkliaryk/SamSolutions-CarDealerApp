@@ -1,0 +1,36 @@
+.ad {
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: 25em;
+    padding-bottom: 5em;
+    margin-bottom: 2em;
+    position: relative;
+
+    img {
+        width: 25em;
+        border-radius: 10px 10px 0 0;
+    }
+}
+.ad:hover {
+    box-shadow: 0 0 5px red;
+    transform: scale(1.02);
+
+    .ad__title {
+        border-bottom: red solid 1px;
+    }
+}
+.ad__title {
+    border-bottom: grey solid 1px;
+    margin: auto 2em;
+    font-size: 18px;
+}
+.ad__description {
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1em;
+}
+.ad__button {
+    position: absolute;
+    bottom: 1em;
+    left: 8em;
+}
