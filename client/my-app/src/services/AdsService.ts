@@ -1,4 +1,4 @@
-import RestService from "./RestService"; 
+import RestService from "./RestService";
 import { IAd } from "../models/IAd";
 
 export default class AdsService {
@@ -6,7 +6,7 @@ export default class AdsService {
 
   getAllAds(): Promise<IAd[]> {
     return this.restService.get<IAd[]>("/api/ads");
-   /* return Promise.resolve([
+    /* return Promise.resolve([
       {
         title: "Mercedes-Benz CLS AMG (2015)",
         description: "",

@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 import "./Statistics.scss";
 
-function Statistics() {
+function Statistics(props: any) {
   return (
         <div className="statistics">
             <div className="statistics__card">
-                <span>250</span><br/>
+                <span> {props.newCars} </span><br/>
                 NEW CARS IN STOCK
             </div>
             <div className="statistics__card">
-                <span>348</span><br/>
+                <span> {props.usedCars} </span><br/>
                 USED CARS IN STOCK
             </div>
             <div className="statistics__card">
-                <span>1250</span><br/>
+                <span> 0 </span><br/>
                 HAPPY CLIENTS
             </div>
         </div>

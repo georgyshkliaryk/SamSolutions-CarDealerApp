@@ -1,5 +1,8 @@
 export interface IAd {
-    title: string;
-    description: string;
-    img: string;
+  carName: string;
+  carModel?: string;
+  carDescription: string;
+  carImage: string;
+  carPrice?: string;
+  carUsed?: boolean;
 }

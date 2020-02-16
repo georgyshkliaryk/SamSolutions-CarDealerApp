@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const NotFoundPage = () => {
   return (
-    <div> 
+    <div>
       <h2>404</h2>
       <small>Page Not Found</small>
     </div>
   );
-}
+};
 
 export default NotFoundPage;

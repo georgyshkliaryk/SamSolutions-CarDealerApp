@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import car_transparent from '../../public/assets/imgs/car_transparent.png';
-import facebook from '../../public/assets/imgs/facebook.png';
-import twitter from '../../public/assets/imgs/twitter.png';
-import youtube from '../../public/assets/imgs/youtube.png';
-import instagram from '../../public/assets/imgs/instagram.png';
+import car_transparent from '/public/assets/imgs/car_transparent.png';
+import facebook from '/public/assets/imgs/facebook.png';
+import twitter from '/public/assets/imgs/twitter.png';
+import youtube from '/public/assets/imgs/youtube.png';
+import instagram from '/public/assets/imgs/instagram.png';
 
 
 

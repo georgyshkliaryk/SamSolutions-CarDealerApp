@@ -1,0 +1,31 @@
+.loading__img {
+    width: 5em;
+}
+.loading {
+    text-align: center;
+    margin: 2em auto;
+
+    div {
+        margin-left: 1em;
+    }
+}
+.loading__img {
+    animation: 1s linear 0s normal none infinite running rot;
+    width: 100px;
+  }
+  @keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
