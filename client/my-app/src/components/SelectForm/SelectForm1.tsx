@@ -8,8 +8,12 @@ function SelectForm1() {
   return (
     <div className="select"> 
       <div className="select__container">
-        <input type="select"/><br/>
-        <span className="filter__label">MISSING MANUFACRURER?</span>
+        <select>
+          <option value="audi">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="mercedes">Mercedes</option>
+        </select><br/>
+        <span className="filter__label">SELECT MANUFACTURER</span>
       </div>
     </div>
   );
