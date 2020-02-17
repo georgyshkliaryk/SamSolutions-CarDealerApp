@@ -7,6 +7,7 @@ import AdCard from "./AdCard";
 
 import { IAd } from "../../models/IAd";
 import { IProps } from "../../models/IProps";
+import mercedes1 from "../../public/assets/imgs/mercedes1.jpg"
 
 let mappedImage: string;
 
@@ -21,7 +22,7 @@ function Ads(props: IProps) {
             <AdCard
               title={ad.carName}
               description={ad.carDescription}
-              img={ad.carImage}
+              img={`${ad.carImage}`}
             />
               
           );

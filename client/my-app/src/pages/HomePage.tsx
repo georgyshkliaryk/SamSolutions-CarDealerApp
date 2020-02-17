@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../components/Header/Header";
-import Slider from "../components/Slider/Slider";
+import Slider, { IProps } from "../components/Slider/Slider";
 import FilterForm from "../components/FilterForm/FilterForm";
 import Welcome from "../components/Welcome/Welcome";
 import MapComponent from "../components/MapComponent/MapComponent";
@@ -20,41 +20,51 @@ interface IState {
   ads: IAd[];
 }
 class HomePage extends React.Component {
+  adService: AdService;
   state = {
     ads: [],
     isLoaded: false
   };
 
+constructor(props: IProps) {
+  super(props);
+  const restService = new RestService();
+  this.adService = new AdService(restService);
+}
   componentDidMount() {
-    const restService = new RestService();
-    const adService = new AdService(restService);
-    adService
-      .getAllAds()
-      .then(data => {
-        this.setState({ ads: data, isLoaded: true });
-      })
-      .catch(data => {
-        alert(data);
-      });
+    this.fetchAds();
   }
 
+  fetchAds(queryParams = {}) {
+    this.adService
+    .getAllAds(queryParams)
+    .then(data => {
+      this.setState({ ads: data, isLoaded: true });
+    })
+    .catch(data => {
+      alert(data);
+    });
+  }
+  
   render() {
     return (
       <>
         <Header />
 
-        <Slider />
+        
+
+        {this.state.isLoaded ? <Slider ads={this.state.ads} /> : <Loading loading_title="Available cars"/>}
 
         <FilterForm />
 
-        {this.state.isLoaded ? <Ads ads={this.state.ads} /> : <Loading />}
+        {this.state.isLoaded ? <Ads ads={this.state.ads} /> : <Loading loading_title="Available cars"/>}
 
-        <Welcome ads={this.state.ads} />
+        <Welcome ads={this.state.ads}/>
 
         <Contacts />
 
         <MapComponent />
-
+ 
         <Footer />
       </>
     );
@@ -62,3 +72,4 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
+

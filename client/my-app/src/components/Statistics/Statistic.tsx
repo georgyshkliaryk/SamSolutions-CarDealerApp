@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import "./Statistics.scss";
+import { render } from '@testing-library/react';
 
 function Statistics(props: any) {
   return (
@@ -21,5 +22,6 @@ function Statistics(props: any) {
         </div>
         );
 }
+
 
 export default Statistics;

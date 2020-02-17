@@ -8,6 +8,7 @@ import Statistics from "../Statistics/Statistic";
 import { IProps } from "../../models/IProps";
 import { IAd } from "../../models/IAd";
 
+
 //import {ads} from '../CarAds/Ads';
 
 function getStatus(array: IAd[], search: any) {

@@ -4,7 +4,7 @@ import { IAd } from "../models/IAd";
 export default class AdsService {
   constructor(private restService: RestService) {}
 
-  getAllAds(): Promise<IAd[]> {
+  getAllAds(queryParams = {}): Promise<IAd[]> {
     return this.restService.get<IAd[]>("/api/ads");
     /* return Promise.resolve([
       {
