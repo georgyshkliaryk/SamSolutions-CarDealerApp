@@ -4,7 +4,17 @@ const Ad = require("../models/Ad");
 
 //get a list of ads to sale from db
 router.get("/ads", async function(req, res, next) {
-  Ad.find({})
+ let criteria = {};
+  if (req.query.carModel) {
+      criteria.carModel = req.query.carModel;
+  }
+  if (req.query.carPrice) {
+    criteria.carPrice = req.query.carPrice;
+  }
+  if (req.query.carUsed) {
+    criteria.carUsed = req.query.carPrice;
+  }
+  Ad.find(criteria)
     .then(function(Ad) {
       res.send(Ad);
     })

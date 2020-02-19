@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./FilterForm.scss";
-import SearchForm from "../SearchForm/SearchForm";
-import SelectForm1 from "../SelectForm/SelectForm1";
-import SelectForm2 from "../SelectForm/SelectForm2";
-import RangeForm from "../RangeForm/RangeForm";
+import SearchInput from "../SearchInput/SearchInput";
+import SelectInput from "../SelectInput/SelectInput";
+import RangeInput from "../RangeInput/RangeInput";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 
 interface IFilterParams {
@@ -29,10 +28,10 @@ function FilterForm() {
         Unsure which vehicle you are looking for? Find it here!
       </div>
       <div className="filter__components">
-        <SearchForm />
-        <SelectForm1 />
-        <SelectForm2 />
-        <RangeForm />
+        <SearchInput placeholder="Search" label="KEYWORD SEARCH?"/>
+        <SelectInput label="SELECT MANUFACTURER" options={["Audi", "BMW", "Mercedes"]}/>
+        <SelectInput label="SELECT CAR TYPE" options={["Sedan", "SUV", "4x4", "Hatchback", "Pickup"]} />
+        <RangeInput min={500} max={30000} label="Price range ($):"/>
         <SearchButton content="Search" />
       </div>
     </form>

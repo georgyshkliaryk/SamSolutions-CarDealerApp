@@ -16,6 +16,8 @@ import { IAd } from "../models/IAd";
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 
+import queryString from 'query-string';
+
 interface IState {
   ads: IAd[];
 }
@@ -53,7 +55,7 @@ constructor(props: IProps) {
 
         
 
-        {this.state.isLoaded ? <Slider ads={this.state.ads} /> : <Loading loading_title="Available cars"/>}
+        {this.state.isLoaded ? <Slider ads={this.state.ads} /> : <Loading loading_title="Popular cars"/>}
 
         <FilterForm />
 

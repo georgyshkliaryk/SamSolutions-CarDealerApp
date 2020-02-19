@@ -1,19 +1,22 @@
 import React from 'react';
 
 
-import './RangeForm.scss';
+import './RangeInput.scss';
 //import Range from './Range';
 
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
  
-export default class RangeForm extends React.Component {
+export default class RangeForm extends React.Component<any> {
+  constructor(props: any) {
+    super(props);
+  }
   state = {
-    value: [500, 100000],
-    range: { min: 500, max: 30000 },
+    value: [this.props.min, this.props.max],
+    range: { min: this.props.min, max: this.props.max },
     pips: {
       mode: 'values',
-      values: [15000],
+      values: [(this.props.min+this.props.max)/2],
       density: 10
     },
     step: 100, 
@@ -25,7 +28,7 @@ export default class RangeForm extends React.Component {
 
     return (
       <div className="range__container">
-         <div className="range__title"> Price range ($): </div>
+         <div className="range__title"> {this.props.label} </div>
         <Nouislider className="range" start={value} range={range} tooltips={true} connect pips={pips} step={step}/>
       </div>
     );
