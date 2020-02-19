@@ -12,7 +12,10 @@ router.get("/ads", async function(req, res, next) {
     criteria.carPrice = req.query.carPrice;
   }
   if (req.query.carUsed) {
-    criteria.carUsed = req.query.carPrice;
+    criteria.carUsed = req.query.carUsed;
+  }
+  if (req.query.carType) {
+    criteria.carType = req.query.carType;
   }
   Ad.find(criteria)
     .then(function(Ad) {

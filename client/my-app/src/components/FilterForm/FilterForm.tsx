@@ -30,7 +30,7 @@ function FilterForm() {
       <div className="filter__components">
         <SearchInput placeholder="Search" label="KEYWORD SEARCH?"/>
         <SelectInput label="SELECT MANUFACTURER" options={["Audi", "BMW", "Mercedes"]}/>
-        <SelectInput label="SELECT CAR TYPE" options={["Sedan", "SUV", "4x4", "Hatchback", "Pickup"]} />
+        <SelectInput label="SELECT CAR TYPE" options={["Sedan", "Coupe", "SUV", "4x4", "Hatchback", "Pickup"]} />
         <RangeInput min={500} max={30000} label="Price range ($):"/>
         <SearchButton content="Search" />
       </div>
