@@ -2,29 +2,61 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Img from 'react-image'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+  useRouteMatch
+
+} from "react-router-dom";
+
 import "./Ads.scss";
 import AdCard from "./AdCard";
 
 import { IAd } from "../../models/IAd";
 import { IProps } from "../../models/IProps";
 import mercedes1 from "../../public/assets/imgs/mercedes1.jpg"
+import {getStatus} from '../Welcome/Welcome';
 
 let mappedImage: string;
 
 function Ads(props: IProps) {
+  let { path, url } = useRouteMatch();
+  
+  
   return (
+    
     <div className="ads">
-      <div className="ads__title">Available cars</div>
+      <div className="ads__title">{props.title}</div>
       <div className="ads__container">
+
         {props.ads.map(ad => {
+          let carUsagePath: string;
+          let carUsage: string;
+          let newCarAds: object[] = [];
+          let usedCarAds: object[] = [];
+          if (ad.carUsed) {
+           carUsagePath = "usedcars";
+           carUsage = "used";
+           usedCarAds.push(ad); 
+          }
+          else {
+           carUsagePath = "newcars";
+           carUsage = "new";
+           newCarAds.push(ad); 
+          }
+
           return (
-            
             <AdCard
               title={ad.carName}
+              price={ad.carPrice}
+              usage={carUsage}
               description={ad.carDescription}
               img={`${ad.carImage}`}
+              path={'/ads/'+ carUsagePath + '/' + ad.carName.replace(/ /g, '-')}
             />
-              
+             
           );
         })}
 
@@ -37,3 +69,5 @@ function Ads(props: IProps) {
   );
 }
 export default Ads;
+
+

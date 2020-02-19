@@ -11,8 +11,8 @@ import { IAd } from "../../models/IAd";
 
 //import {ads} from '../CarAds/Ads';
 
-function getStatus(array: IAd[], search: any) {
-  return array.filter(function(item: any) {
+export function getStatus(ads: IAd[], search: any) {
+  return ads.filter(function(item: any) {
     return Object.keys(item).some(function(key) {
       return item[key] === search;
     });
@@ -28,7 +28,7 @@ function Welcome(props: IProps) {
           newCars={getStatus(props.ads, true).length}
           usedCars={getStatus(props.ads, false).length}
         />
-        <SearchButton content="Learn More &rsaquo;" />
+        <Link to="/about"><SearchButton content="Learn More &rsaquo;"/></Link>
       </div>
     </div>
   );

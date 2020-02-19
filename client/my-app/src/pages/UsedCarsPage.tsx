@@ -18,7 +18,7 @@ import { IProps } from "../models/IProps";
 
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
-import Header from '../components/Header/Header';
+import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { getStatus } from "../components/Welcome/Welcome";
 
@@ -26,7 +26,7 @@ interface IState {
   ads: IAd[];
 }
 
-class NewCarsPage extends React.Component {
+class UsedCarsPage extends React.Component {
   adService: AdService;
   state = {
     ads: [],
@@ -40,7 +40,7 @@ class NewCarsPage extends React.Component {
   }
   componentDidMount() {
     this.fetchAds();
-  }
+  } 
 
   fetchAds(queryParams = {}) {
     this.adService
@@ -72,9 +72,12 @@ class NewCarsPage extends React.Component {
         </ul>    */}
 
         {this.state.isLoaded ? (
-          <Ads title="Available new cars" ads={getStatus(this.state.ads, false)} usage="new"/>
+          <Ads
+            title="Available used cars"
+            ads={getStatus(this.state.ads, true)}
+          />
         ) : (
-          <Loading loading_title="Available new cars" />
+          <Loading loading_title="Available used cars" />
         )}
 
         {/*<Route path={`$/:AdId`}>
@@ -87,4 +90,4 @@ class NewCarsPage extends React.Component {
   }
 }
 
-export default NewCarsPage;
+export default UsedCarsPage;

@@ -51,7 +51,13 @@ class Slider extends React.Component<
 
   //const Slider = (props: IProps) => {
   render() {
-    
+    let usage: string;
+    if (this.props.ads[this.state.currentImageIndex].carUsed) {
+      usage = "usedcars";
+    }
+    else {
+      usage = "newcars";
+    }
     return (
       <div className="slider">
         <div className="slider__slide">
@@ -60,8 +66,8 @@ class Slider extends React.Component<
             alt="lol"
           />
           <div className="slide__title">
-            {this.props.ads[this.state.currentImageIndex].carName}
-          </div>
+            <Link to={`/ads/${usage}/${this.props.ads[this.state.currentImageIndex].carName.replace(/ /g, '-')}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
+          </div>  
           <div className="slide__description">
             {this.props.ads[this.state.currentImageIndex].carDescription}
           </div>

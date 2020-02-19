@@ -1,10 +1,14 @@
 import React from "react";
+import Header from '../components/Header/Header';
+import Footer from "../components/Footer/Footer";
+import Contacts from "../components/Contacts/Contacts";
 
 const AboutPage = () => {
   return (
     <div>
-      <h3>Additional Info about company</h3>
-      <small>...</small>
+      <Header />
+      <Contacts />
+      <Footer />
     </div>
   );
 };

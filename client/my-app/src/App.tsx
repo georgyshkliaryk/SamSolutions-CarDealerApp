@@ -17,7 +17,9 @@ import NotFoundPage from "./pages/NotFoundPage";
 import AdsPage from "./pages/AdsPage";
 import AboutPage from "./pages/AboutPage";
 import NewCarsPage from "./pages/NewCarsPage";
-import OldCarsPage from "./pages/OldCarsPage";
+import UsedCarsPage from "./pages/UsedCarsPage";
+import NewCarPage from "./pages/NewCarPage";
+import UsedCarPage from "./pages/UsedCarPage";
 
 class App extends Component {
   render() {
@@ -32,25 +34,30 @@ class App extends Component {
             <HomePage />
           </Route>
 
-          <Route exact path="/ads">
-            <AdsPage />
-          </Route>
-
           <Route path="/ads/newcars">
             <NewCarsPage />
           </Route>
-          <Route path="/ads/oldcars">
-            <OldCarsPage />
+          <Route path="/ads/usedcars">
+            <UsedCarsPage />
+          </Route>
+
+          <Route path="/ads/newcars/:id">
+            <NewCarPage />
+          </Route>
+
+          <Route path="/ads/usedcars/:id">
+            <UsedCarPage />
           </Route>
 
           <Route exact path="/about">
             <AboutPage />
           </Route>
+          
 
-          <Route exact path="/404">
+          {/* <Route exact path="/404">
             <NotFoundPage />
           </Route>
-          <Redirect to="/404" />
+          <Redirect to="/404" />  */}
         </Switch>
       </Router>
     );

@@ -14,8 +14,13 @@ function Footer() {
             </Link>
           </div>
           <div>
-            <Link to="/ads" className="link">
-              Cars
+            <Link to="/ads/newcars" className="link">
+              New cars
+            </Link>
+          </div>
+          <div>
+            <Link to="/ads/usedcars" className="link">
+              Used cars
             </Link>
           </div>
           
