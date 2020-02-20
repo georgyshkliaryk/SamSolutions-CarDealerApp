@@ -7,33 +7,21 @@ import { render } from "@testing-library/react";
 interface ISelect {
   label: string;
   options: string[];
+  onChange(value: string): void;
 }
 
 class SelectInput extends React.Component<
   any,
   {
-    value: string;
+   // value: string;
   }
 > {
   constructor(props: ISelect) {
     super(props);
     this.state = { value: this.props.options[0] };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange(event: any) {
-    this.setState({ value: event.target.value });
-    alert("You chose car: " + event.target.value);
-    // criteria.carModel = event.target.value;
-    event.preventDefault();
-  }
-
-  handleSubmit(event: any) {
-    event.preventDefault();
-  }
-
+  
   Options(options: string[]) {
     let i = 0;
     function Option(props: any) {
@@ -47,9 +35,13 @@ class SelectInput extends React.Component<
 
   render() {
     return (
-      <form className="select" onSubmit={this.handleSubmit}>
+      <form className="select">
         <div className="select__container">
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select
+            
+            
+            onChange={event => this.props.onChange(event.target.value)}>
+              
             {this.props.options.map((option: any) => (
               <option value={option}> {option} </option>
             ))}

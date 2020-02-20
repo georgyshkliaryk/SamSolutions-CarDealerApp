@@ -21,44 +21,44 @@ import UsedCarsPage from "./pages/UsedCarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import UsedCarPage from "./pages/UsedCarPage";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <Router>
+        <Route exact path="/login">
+          <LoginPage />
+        </Route>
+
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+
         <Switch>
-          <Route exact path="/login">
-            <LoginPage />
-          </Route>
-
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-
-          <Route path="/ads/newcars">
+          <Route exact path="/ads/newcars">
             <NewCarsPage />
           </Route>
-          <Route path="/ads/usedcars">
-            <UsedCarsPage />
-          </Route>
-
           <Route path="/ads/newcars/:id">
             <NewCarPage />
           </Route>
+        </Switch>
 
+        <Switch>
+          <Route exact path="/ads/usedcars">
+            <UsedCarsPage />
+          </Route>
           <Route path="/ads/usedcars/:id">
             <UsedCarPage />
           </Route>
+        </Switch>
 
-          <Route exact path="/about">
-            <AboutPage />
-          </Route>
-          
+        <Route exact path="/about">
+          <AboutPage />
+        </Route>
 
-          {/* <Route exact path="/404">
+        {/* <Route exact path="/404">
             <NotFoundPage />
           </Route>
           <Redirect to="/404" />  */}
-        </Switch>
       </Router>
     );
   }

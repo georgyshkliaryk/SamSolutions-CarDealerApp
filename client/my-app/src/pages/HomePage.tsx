@@ -59,7 +59,7 @@ class HomePage extends React.Component {
           <Loading loading_title="Popular cars" />
         )}
 
-        <FilterForm />
+        <FilterForm onSubmit={ this.fetchAds } />    
 
         {this.state.isLoaded ? (
           <Ads ads={this.state.ads} title="Available cars" />
@@ -76,6 +76,9 @@ class HomePage extends React.Component {
         <Footer />
       </>
     );
+    function alerttt() {
+      alert("lul");
+    }
   }
 }
 

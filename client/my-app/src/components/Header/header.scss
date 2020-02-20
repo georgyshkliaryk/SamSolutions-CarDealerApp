@@ -1,12 +1,12 @@
 @import '../../styles/variables';
-.header, .fixed {
+.header {
     color: white;
     background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 1.5em 2em;
     top: 0;
-    width: 100%;
+    
     z-index: 5;
 }
 .header__links {
@@ -29,7 +29,7 @@
     font-size: 30px;
     font-family: 'Lobster', cursive;
     color: red;
-
+    
     span {
         color: white;
     }
@@ -55,7 +55,7 @@
     z-index: 4;
     background-color: black;
     border: solid grey 1px;
-    padding: 1em 2em;
+    padding: 0.5em 2em;
     display: none !important;
 
     div {

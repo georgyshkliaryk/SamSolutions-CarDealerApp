@@ -5,7 +5,7 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <div className="header fixed">
+    <div className="header">
       <div className="header__links">
         <div>
           <Link to="/" className="link">
@@ -35,7 +35,7 @@ function Header() {
         <span>Car</span>Dealer
       </div>
 
-      <div className="header__links">
+      <div className="header__links register">
         <Link to="/login">Login/Register</Link>
       </div>
     </div>

@@ -4,8 +4,9 @@ import { IAd } from "../models/IAd";
 export default class AdsService {
   constructor(private restService: RestService) {}
 
-  getAllAds(queryParams = {}): Promise<IAd[]> {
-    return this.restService.get<IAd[]>("/api/ads");
+  getAllAds(queryParams: {}): Promise<IAd[]> {
+    const queryString = "?name=value&name2=value2"; //TODO: implement
+    return this.restService.get<IAd[]>(`/api/ads`);
     /* return Promise.resolve([
       {
         title: "Mercedes-Benz CLS AMG (2015)",
@@ -17,5 +18,8 @@ export default class AdsService {
 <AdCard title="BMW M5 F90 (2017)" description={description[2]} img={bmw2}/>
 <AdCard title="Audi A5 (2019)" description={description[3]} img={audi1}/>) */
     //return Promise.reject("Not implemented");
+  }
+  getAddById(id: string) {
+    return this.restService.get(`/api/ads/${id}`);
   }
 }

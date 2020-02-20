@@ -5,4 +5,5 @@ export interface IAd {
   carImage: string;
   carPrice?: string;
   carUsed?: boolean;
+  _id: string;
 }

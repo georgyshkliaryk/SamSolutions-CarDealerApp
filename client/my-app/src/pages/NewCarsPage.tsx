@@ -18,8 +18,9 @@ import { IProps } from "../models/IProps";
 
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
-import Header from '../components/Header/Header';
+import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import NewCarPage from '../pages/NewCarPage';
 import { getStatus } from "../components/Welcome/Welcome";
 
 interface IState {
@@ -72,7 +73,11 @@ class NewCarsPage extends React.Component {
         </ul>    */}
 
         {this.state.isLoaded ? (
-          <Ads title="Available new cars" ads={getStatus(this.state.ads, false)} usage="new"/>
+          <Ads
+            title="Available new cars"
+            ads={getStatus(this.state.ads, false)}
+            usage="new"
+          />
         ) : (
           <Loading loading_title="Available new cars" />
         )}
@@ -82,6 +87,10 @@ class NewCarsPage extends React.Component {
         </Route>*/}
 
         <Footer />
+
+
+        
+     
       </>
     );
   }

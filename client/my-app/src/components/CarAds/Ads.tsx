@@ -19,11 +19,8 @@ import { IProps } from "../../models/IProps";
 import mercedes1 from "../../public/assets/imgs/mercedes1.jpg"
 import {getStatus} from '../Welcome/Welcome';
 
-let mappedImage: string;
-
 function Ads(props: IProps) {
   let { path, url } = useRouteMatch();
-  
   
   return (
     
@@ -54,7 +51,7 @@ function Ads(props: IProps) {
               usage={carUsage}
               description={ad.carDescription}
               img={`${ad.carImage}`}
-              path={'/ads/'+ carUsagePath + '/' + ad.carName.replace(/ /g, '-')}
+              path={'/ads/'+ carUsagePath + '/' + ad._id.replace(/ /g, '-')}
             />
              
           );
