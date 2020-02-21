@@ -34,10 +34,10 @@ class HomePage extends React.Component {
     this.adService = new AdService(restService);
   }
   componentDidMount() {
-    this.fetchAds();
+    this.fetchAds({});
   }
 
-  fetchAds(queryParams = {}) {
+  fetchAds(queryParams: IAd) {
     this.adService
       .getAllAds(queryParams)
       .then(data => {
@@ -59,7 +59,7 @@ class HomePage extends React.Component {
           <Loading loading_title="Popular cars" />
         )}
 
-        <FilterForm onSubmit={ this.fetchAds } />    
+        <FilterForm onSubmit={() => this.fetchAds({carModel: "Audi"}) } />    
 
         {this.state.isLoaded ? (
           <Ads ads={this.state.ads} title="Available cars" />

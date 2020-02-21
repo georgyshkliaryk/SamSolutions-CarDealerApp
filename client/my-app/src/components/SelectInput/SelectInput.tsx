@@ -13,15 +13,14 @@ interface ISelect {
 class SelectInput extends React.Component<
   any,
   {
-   // value: string;
+    // value: string;
   }
 > {
   constructor(props: ISelect) {
     super(props);
     this.state = { value: this.props.options[0] };
-
   }
-  
+
   Options(options: string[]) {
     let i = 0;
     function Option(props: any) {
@@ -37,11 +36,9 @@ class SelectInput extends React.Component<
     return (
       <form className="select">
         <div className="select__container">
-          <select
-            
-            
-            onChange={event => this.props.onChange(event.target.value)}>
-              
+          <select 
+            onChange={event => this.props.onChange(event.target.value)}
+          >
             {this.props.options.map((option: any) => (
               <option value={option}> {option} </option>
             ))}

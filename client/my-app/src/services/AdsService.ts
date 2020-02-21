@@ -4,9 +4,9 @@ import { IAd } from "../models/IAd";
 export default class AdsService {
   constructor(private restService: RestService) {}
 
-  getAllAds(queryParams: {}): Promise<IAd[]> {
-    const queryString = "?name=value&name2=value2"; //TODO: implement
-    return this.restService.get<IAd[]>(`/api/ads`);
+  getAllAds(queryParams: IAd): Promise<IAd[]> {
+    const queryString = `?carModel=${queryParams.carModel}&carType=${queryParams.carType}&carPrice=${queryParams.carPrice}`; //TODO: implement
+    return this.restService.get<IAd[]>(`/api/ads`); 
     /* return Promise.resolve([
       {
         title: "Mercedes-Benz CLS AMG (2015)",

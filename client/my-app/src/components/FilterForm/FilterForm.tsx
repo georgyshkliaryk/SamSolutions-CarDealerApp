@@ -8,17 +8,26 @@ import RangeInput from "../RangeInput/RangeInput";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 
 interface IState {
-  search: string;
-  manufacturer: string;
-  type: string;
-  minPrice: number;
-  maxPrice: number;
+  search?: string;
+  manufacturer?: string;
+  type?: string;
+  minPrice?: number;
+  maxPrice?: number;
 }
 
 interface IProps {
   onSubmit(params: IState): void;
 }
-class FilterForm extends Component<IProps, IState> {
+class FilterForm extends Component<IProps, any> {
+  state: IState = {
+    search: "",
+    manufacturer: "Audi",
+    type: "Sedan",
+    minPrice: 500,
+    maxPrice: 30000
+     
+  }
+  
   render() {
     return (
       <form
@@ -26,8 +35,11 @@ class FilterForm extends Component<IProps, IState> {
         onSubmit={event => {
           event.preventDefault(); // Prevents page reloading
           /* TODO */
-          alert(this.state.search + ' ' + this.state.manufacturer + ' ' + this.state.type);
+          alert(this.state.search + ' ' + this.state.manufacturer + ' ' + this.state.type + ' ' + this.state.minPrice + ' ' + this.state.maxPrice);
+          let query = this.state.search + ' ' + this.state.manufacturer + ' ' + this.state.type + ' ' + this.state.minPrice + ' ' + this.state.maxPrice; 
           this.props.onSubmit(this.state);
+          console.log(this.state);
+          
         }}
       >
         <div className="filter__title">
@@ -39,7 +51,7 @@ class FilterForm extends Component<IProps, IState> {
             placeholder="Search"
             label="KEYWORD SEARCH?"
           />
-          <SelectInput
+          <SelectInput 
             onChange={this.onChangeSelect1}
             label="SELECT MANUFACTURER"
             options={["Audi", "BMW", "Mercedes"]}
@@ -74,11 +86,14 @@ class FilterForm extends Component<IProps, IState> {
       type: value
     });
   };
-  onChangeRange = (value: string) => {
+  onChangeRange = (value: number[]) => {
     this.setState({
-      
+      minPrice: value[0],
+      maxPrice: value[1]
     });
   };
+
 }
+
 
 export default FilterForm;

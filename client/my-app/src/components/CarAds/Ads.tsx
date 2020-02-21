@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Img from 'react-image'
+import Img from "react-image";
 
 import {
   BrowserRouter as Router,
@@ -8,7 +8,6 @@ import {
   Route,
   useParams,
   useRouteMatch
-
 } from "react-router-dom";
 
 import "./Ads.scss";
@@ -16,32 +15,29 @@ import AdCard from "./AdCard";
 
 import { IAd } from "../../models/IAd";
 import { IProps } from "../../models/IProps";
-import mercedes1 from "../../public/assets/imgs/mercedes1.jpg"
-import {getStatus} from '../Welcome/Welcome';
+import mercedes1 from "../../public/assets/imgs/mercedes1.jpg";
+import { getStatus } from "../Welcome/Welcome";
 
 function Ads(props: IProps) {
   let { path, url } = useRouteMatch();
-  
+
   return (
-    
     <div className="ads">
       <div className="ads__title">{props.title}</div>
       <div className="ads__container">
-
         {props.ads.map(ad => {
           let carUsagePath: string;
           let carUsage: string;
           let newCarAds: object[] = [];
           let usedCarAds: object[] = [];
           if (ad.carUsed) {
-           carUsagePath = "usedcars";
-           carUsage = "used";
-           usedCarAds.push(ad); 
-          }
-          else {
-           carUsagePath = "newcars";
-           carUsage = "new";
-           newCarAds.push(ad); 
+            carUsagePath = "usedcars";
+            carUsage = "used";
+            usedCarAds.push(ad);
+          } else {
+            carUsagePath = "newcars";
+            carUsage = "new";
+            newCarAds.push(ad);
           }
 
           return (
@@ -51,9 +47,8 @@ function Ads(props: IProps) {
               usage={carUsage}
               description={ad.carDescription}
               img={`${ad.carImage}`}
-              path={'/ads/'+ carUsagePath + '/' + ad._id.replace(/ /g, '-')}
+              path={"/ads/" + carUsagePath + "/" + ad._id}
             />
-             
           );
         })}
 
@@ -66,5 +61,3 @@ function Ads(props: IProps) {
   );
 }
 export default Ads;
-
-

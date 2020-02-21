@@ -66,7 +66,7 @@ class Slider extends React.Component<
             alt="lol"
           />
           <div className="slide__title">
-            <Link to={`/ads/${usage}/${this.props.ads[this.state.currentImageIndex].carName.replace(/ /g, '-')}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
+            <Link to={`/ads/${usage}/${this.props.ads[this.state.currentImageIndex].carName}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
           </div>  
           <div className="slide__description">
             {this.props.ads[this.state.currentImageIndex].carDescription}
