@@ -9,8 +9,7 @@ import "./MapComponent.scss";
 function MapComponent() {
   return (
         <div className="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16796.972066358718!2d-78.64209176068172!3d35.74935903530347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scar%20dealer%20usa!5e0!3m2!1sru!2sby!4v1581464038910!5m2!1sru!2sby"
-             width="100%" height="450"></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae1058cef0a6e1d962b765dbdec6d18d96ba54f7afd5da9515706d2fa8da9f12e&amp;source=constructor" width="100%" height="450"></iframe>
         </div>
         );
 }

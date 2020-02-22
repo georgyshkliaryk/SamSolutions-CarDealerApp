@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./Welcome.scss";
 import Statistics from "../Statistics/Statistic";
@@ -22,7 +23,8 @@ export function getStatus(ads: IAd[], search: any) {
 function Welcome(props: IProps) {
   return (
     <div className="welcome">
-      <div className="welcome__title">Welcome to CarDealer!</div>
+      <div className="welcome__title wow flipInX"
+      data-wow-delay="0.5s">Welcome to CarDealer!</div>
       <div className="welcome__components">
         <Statistics
           newCars={getStatus(props.ads, true).length}

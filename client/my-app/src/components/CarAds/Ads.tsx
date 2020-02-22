@@ -23,7 +23,8 @@ function Ads(props: IProps) {
 
   return (
     <div className="ads">
-      <div className="ads__title">{props.title}</div>
+      <div className="ads__title wow flipInY"
+      data-wow-delay="0.3s">{props.title}</div>
       <div className="ads__container">
         {props.ads.map(ad => {
           let carUsagePath: string;
@@ -41,14 +42,15 @@ function Ads(props: IProps) {
           }
 
           return (
-            <AdCard
-              title={ad.carName}
-              price={ad.carPrice}
-              usage={carUsage}
-              description={ad.carDescription}
-              img={`${ad.carImage}`}
-              path={"/ads/" + carUsagePath + "/" + ad._id}
-            />
+            
+              <AdCard
+                title={ad.carName}
+                price={ad.carPrice}
+                usage={carUsage}
+                description={ad.carDescription}
+                img={`${ad.carImage}`}
+                path={"/ads/" + carUsagePath + "/" + ad._id}
+              />
           );
         })}
 

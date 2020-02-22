@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import WOW from 'wowjs';
 
 import './SearchButton.scss';
 
@@ -11,13 +12,9 @@ class SearchButton extends React.Component<any,{}> {
     super(props); 
   }
 
-  handleClick1 = (e: any) => {
-    alert('why');
+  componentDidMount() {
+    new WOW.WOW().init();
   }
-  handleClick2 = (e: any) => {
-    alert('cuz');
-  }
-  
   
   render() {
     return (

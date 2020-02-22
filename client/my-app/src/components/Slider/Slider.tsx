@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Switch } from "react-router-dom";
 import "./Slider.scss";
+import WOW from 'wowjs';
 
 import mercedes1 from "../../public/assets/imgs/mercedes1.jpg";
 import mercedes2 from "../../public/assets/imgs/mercedes2.jpg";
@@ -31,6 +32,10 @@ class Slider extends React.Component<
     };
 
     this.nextSlideHandler = this.nextSlideHandler.bind(this);
+  }
+
+  componentDidMount() {
+    new WOW.WOW().init();
   }
 
   nextSlideHandler(e: any) {
@@ -65,22 +70,24 @@ class Slider extends React.Component<
             src={this.props.ads[this.state.currentImageIndex].carImage}
             alt="lol"
           />
-          <div className="slide__title">
+          <div className="slide__title wow fadeInLeft">
             <Link to={`/ads/${usage}/${this.props.ads[this.state.currentImageIndex].carName}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
           </div>  
-          <div className="slide__description">
+          <div className="slide__description wow fadeInRight">
             {this.props.ads[this.state.currentImageIndex].carDescription}
           </div>
         </div>
         <button
-          className="slider__button prev"
+          className="slider__button prev wow bounceInLeft" 
+          data-wow-delay="1s"
           data-direction="prev"
           onClick={this.nextSlideHandler.bind(this)}
         >
           &lsaquo;
         </button>
         <button
-          className="slider__button next"
+          className="slider__button next wow bounceInRight"
+          data-wow-delay="1s"
           data-direction="next"
           onClick={this.nextSlideHandler.bind(this)}
         >

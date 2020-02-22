@@ -25,6 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
+        <Switch>
         <Route exact path="/login">
           <LoginPage />
         </Route>
@@ -55,10 +56,11 @@ class App extends React.Component {
           <AboutPage />
         </Route>
 
-        {/* <Route exact path="/404">
-            <NotFoundPage />
-          </Route>
-          <Redirect to="/404" />  */}
+        <Route exact path="/404">
+          <NotFoundPage />
+        </Route>
+        <Redirect to="/404" />
+        </Switch>
       </Router>
     );
   }
