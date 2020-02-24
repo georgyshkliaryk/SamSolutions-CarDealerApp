@@ -5,19 +5,13 @@ export default class AdsService {
   constructor(private restService: RestService) {}
 
   getAllAds(queryParams: IAd): Promise<IAd[]> {
-    const queryString = `?carModel=${queryParams.carModel}&carType=${queryParams.carType}&carPrice=${queryParams.carPrice}`; //TODO: implement
-    return this.restService.get<IAd[]>(`/api/ads`); 
-    /* return Promise.resolve([
-      {
-        title: "Mercedes-Benz CLS AMG (2015)",
-        description: "",
-        img: ""
-      }
-    ]); */
-    /* <AdCard title="Mercedes-Benz GT (2018)" description={description[1]} img={mercedes2}/>
-<AdCard title="BMW M5 F90 (2017)" description={description[2]} img={bmw2}/>
-<AdCard title="Audi A5 (2019)" description={description[3]} img={audi1}/>) */
-    //return Promise.reject("Not implemented");
+    var url = new URL("http://localhost:5000/api/ads"),
+    params = queryParams;
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    console.log("searchParams: " + url.toString());
+   // const queryString = `/?${url.searchParams}`; //TODO: implement
+    return  this.restService.get<IAd[]>(url.toString()); 
+
   }
   getAddById(id: string) {
     return this.restService.get(`/api/ads/${id}`);

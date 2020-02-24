@@ -3,6 +3,7 @@ const routes = require('./routes/ads');
 const mongoose = require('mongoose');
 const config = require('config');
 const bodyParser = require('body-parser');
+var cors = require('cors');
 
 const app = express();
 const PORT = config.get('port') || 5000;
@@ -24,7 +25,7 @@ mongoose.connect(MongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
      console.log(e);
    });
 
-
+   app.use(cors());
 //middlewares
 app.use(bodyParser.json());
 
@@ -42,6 +43,7 @@ app.get('/', function(req, res) {
 app.listen(PORT, function() {
   console.log('Now listening for requests on port: ' + `${PORT}`); 
 });
+
 
 
 

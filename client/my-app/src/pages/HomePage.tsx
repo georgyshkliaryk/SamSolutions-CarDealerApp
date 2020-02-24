@@ -76,9 +76,6 @@ class HomePage extends React.Component {
         <Footer />
       </>
     );
-    function alerttt() {
-      alert("lul");
-    }
   }
 }
 

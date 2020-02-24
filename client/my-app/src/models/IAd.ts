@@ -3,7 +3,7 @@ export interface IAd {
   carModel?: string;
   carDescription?: string;
   carImage?: string;
-  carPrice?: string;
+  carPrice?: number;
   carUsed?: boolean;
   carType?: string;
   _id?: string;
