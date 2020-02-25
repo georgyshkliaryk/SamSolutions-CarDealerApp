@@ -19,7 +19,7 @@ function SearchForm(props: ISearch) {
         placeholder={props.placeholder}
       />
       <br />
-      <span className="filter__label">{props.label}}</span>
+      <span className="filter__label">{props.label}</span>
     </div>
   );
 }

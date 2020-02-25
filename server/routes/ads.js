@@ -4,12 +4,16 @@ const Ad = require("../models/Ad");
 
 //get a list of ads to sale from db
 router.get("/ads", async function(req, res, next) {
- let criteria = {};
+  let criteria = {};
   if (req.query.carModel) {
-      criteria.carModel = req.query.carModel;
+    criteria.carModel = req.query.carModel;
   }
-  if (req.query.carPrice) {
-    criteria.carPrice = req.query.carPrice;
+
+  if (req.query.min_price && req.query.max_price) {
+    criteria.carPrice = {
+      $gte: req.query.min_price,
+      $lte: req.query.max_price
+    };
   }
   if (req.query.carUsed) {
     criteria.carUsed = req.query.carUsed;
@@ -17,6 +21,10 @@ router.get("/ads", async function(req, res, next) {
   if (req.query.carType) {
     criteria.carType = req.query.carType;
   }
+  if (req.query.carYear) {
+    criteria.carYear = req.query.carYear;
+  }
+
   Ad.find(criteria)
     .then(function(Ad) {
       res.send(Ad);

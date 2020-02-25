@@ -8,9 +8,10 @@ export default class AdsService {
     var url = new URL("http://localhost:5000/api/ads"),
     params = queryParams;
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-    console.log("searchParams: " + url.toString());
+    let queryUrl = url.toString();
+    console.log("searchParams: " + queryUrl);
    // const queryString = `/?${url.searchParams}`; //TODO: implement
-    return  this.restService.get<IAd[]>(url.toString()); 
+    return  this.restService.get<IAd[]>(queryUrl); 
 
   }
   getAddById(id: string) {

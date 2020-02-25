@@ -22,7 +22,7 @@ class Header extends React.Component {
           </div>
           <div className="link wow bounceInDown"
             data-wow-delay="0.3s">
-            <Link to="" className="link cars__link">
+            <Link to="/" className="link cars__link">
               Cars <div>&or;</div>
               <div className="header__chose-menu">
                 <div>

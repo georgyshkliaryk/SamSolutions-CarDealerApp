@@ -6,6 +6,7 @@ import SearchInput from "../SearchInput/SearchInput";
 import SelectInput from "../SelectInput/SelectInput";
 import RangeInput from "../RangeInput/RangeInput";
 import SearchButton from "../buttons/SearchButton/SearchButton";
+import { IAd } from "../../models/IAd";
 
 interface IState {
   search?: string;
@@ -38,64 +39,52 @@ class FilterForm extends Component<IProps, any> {
         onSubmit={event => {
           event.preventDefault(); // Prevents page reloading
           /* TODO */
-          alert(
-            this.state.search +
-              " " +
-              this.state.manufacturer +
-              " " +
-              this.state.type +
-              " " +
-              this.state.minPrice +
-              " " +
-              this.state.maxPrice
-          );
+
           let query =
-            this.state.search +
+            //   this.state.search +
             " " +
             this.state.manufacturer +
             " " +
             this.state.type +
             " " +
-            this.state.minPrice +
+              this.state.minPrice +
             " " +
             this.state.maxPrice;
+          alert(query);
+
           this.props.onSubmit(this.state);
-          console.log(this.state);
+          // console.log(this.state);
         }}
       >
         <div className="filter__title">
           Unsure which vehicle you are looking for? Find it here!
         </div>
         <div className="filter__components">
-        
-            <SearchInput
-              onChange={this.onChangeSearch}
-              placeholder="Search"
-              label="KEYWORD SEARCH?"
-            />
-      
-     
-            <SelectInput
-              onChange={this.onChangeSelect1}
-              label="SELECT MANUFACTURER"
-              options={["Audi", "BMW", "Mercedes"]}
-            />
-         
-      
-            <SelectInput
-              onChange={this.onChangeSelect2}
-              label="SELECT CAR TYPE"
-              options={["Sedan", "Coupe", "SUV", "4x4", "Hatchback", "Pickup"]}
-            />
-         
-  
-            <RangeInput
-              onChange={this.onChangeRange}
-              min={500}
-              max={30000}
-              label="Price range ($):"
-            />
-          
+          <SearchInput
+            onChange={this.onChangeSearch}
+            placeholder="Search"
+            label="KEYWORD SEARCH?"
+          />
+
+          <SelectInput
+            onChange={this.onChangeSelect1}
+            label="SELECT MANUFACTURER"
+            options={["Audi", "BMW", "Mercedes"]}
+          />
+
+          <SelectInput
+            onChange={this.onChangeSelect2}
+            label="SELECT CAR TYPE"
+            options={["Sedan", "Coupe", "SUV", "4x4", "Hatchback", "Pickup"]}
+          />
+
+          <RangeInput
+            onChange={() => this.onChangeRange}
+            min={500}
+            max={30000}
+            label="Price range ($):"
+          />
+
           <div className="wow pulse">
             <SearchButton content="Search" />
           </div>
@@ -118,7 +107,7 @@ class FilterForm extends Component<IProps, any> {
       type: value
     });
   };
-  onChangeRange = (value: number[]) => {
+  onChangeRange = (value: string[]) => {
     this.setState({
       minPrice: value[0],
       maxPrice: value[1]

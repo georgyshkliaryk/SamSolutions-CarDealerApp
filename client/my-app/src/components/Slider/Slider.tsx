@@ -56,13 +56,13 @@ class Slider extends React.Component<
 
   //const Slider = (props: IProps) => {
   render() {
-    let usage: string;
+    let usage;
     if (this.props.ads[this.state.currentImageIndex].carUsed) {
       usage = "usedcars";
     }
-    else {
+    if (!this.props.ads[this.state.currentImageIndex].carUsed) {
       usage = "newcars";
-    }
+    } 
     return (
       <div className="slider">
         <div className="slider__slide">

@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
+import { Link } from "react-router-dom";
 
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./Welcome.scss";
@@ -9,6 +10,7 @@ import Statistics from "../Statistics/Statistic";
 import { IProps } from "../../models/IProps";
 import { IAd } from "../../models/IAd";
 
+import WOW from "wowjs";
 
 //import {ads} from '../CarAds/Ads';
 
@@ -18,19 +20,26 @@ export function getStatus(ads: IAd[], search: any) {
       return item[key] === search;
     });
   });
-} 
+}
 
 function Welcome(props: IProps) {
+  useEffect(() => {
+    new WOW.WOW().init();
+  });
+
   return (
     <div className="welcome">
-      <div className="welcome__title wow flipInX"
-      data-wow-delay="0.5s">Welcome to CarDealer!</div>
+      <div className="welcome__title wow flipInX" data-wow-delay="0.5s">
+        Welcome to CarDealer!
+      </div>
       <div className="welcome__components">
         <Statistics
           newCars={getStatus(props.ads, true).length}
           usedCars={getStatus(props.ads, false).length}
         />
-        <Link to="/about"><SearchButton content="Learn More &rsaquo;"/></Link>
+        <Link to="/about">
+          <SearchButton content="Learn More &rsaquo;" />
+        </Link>
       </div>
     </div>
   );

@@ -1,52 +1,71 @@
 .ad {
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    border-radius: 10px;
-    width: 25em;
-    padding: 0 0em 6em 0em;
-    margin-bottom: 2em;
-    position: relative;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 25em;
+  padding: 0 0em 6em 0em;
+  margin-bottom: 2em;
+  position: relative;
 
-    img {
-        width: 25em;
-        border-radius: 10px 10px 0 0;
-    }
+  img {
+    width: 25em;
+    border-radius: 10px 10px 0 0;
+  }
 }
 .ad:hover {
-    box-shadow: 0 0 5px red;
-    transform: scale(1.02);
+  box-shadow: 0 0 5px red;
+  transform: scale(1.02);
 
-    .ad__title {
-        border-bottom: red solid 1px;
-    }
+  .ad__title {
+    border-bottom: red solid 1px;
+  }
 }
 .ad__title {
-    border-bottom: grey solid 1px;
-    margin: auto 2em;
-    font-size: 18px;
+  border-bottom: grey solid 1px;
+  margin: auto 2em;
+  font-size: 18px;
 }
 .ad__description {
-    color: grey;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 1em;
-    padding: 0 1.5em;
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  margin: 1em auto;
+  padding: 0 1.5em;
 }
 .ad__button {
-    position: absolute;
-    bottom: 1.5em;
-    left: 8em;
+  position: absolute;
+  bottom: 1.5em;
+  left: 8em;
 }
 .ad__price {
-    color: rgb(255, 230, 0);
-    position: absolute;
-    left: 1em;
-    bottom: 14em;
-    font-weight: bold;
-    padding: 0.2em;
+  color: rgb(255, 230, 0);
+  position: absolute;
+  left: 1em;
+  top: 12em;
+  font-weight: bold;
+  padding: 0.2em;
 }
 .ad__usage {
-    color: white;
-    position: absolute;
-    right: 1em;
-    bottom: 14em;
-    padding: 0.2em;
+  color: white;
+  position: absolute;
+  right: 1em;
+  top: 12em;
+  padding: 0.2em;
+}
+
+.ad__carTypeImg {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  img {
+    width: 40px;
+    height: auto;
+    border-right: solid grey 1px;
+    border-radius: unset;
+    padding-right: 1em;
+
+    
+  }
+}
+.ad__year {
+    margin-top: 0.5em;
+    padding-left: 1em;
 }

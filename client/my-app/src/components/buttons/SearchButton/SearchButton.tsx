@@ -1,25 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import WOW from 'wowjs';
+import React from "react";
+import { Link } from "react-router-dom";
+import WOW from "wowjs";
 
-import './SearchButton.scss';
+import "./SearchButton.scss";
 
-
-
-
-class SearchButton extends React.Component<any,{}> {
+class SearchButton extends React.Component<any, {}> {
   constructor(props: any) {
-    super(props); 
+    super(props);
   }
 
-  componentDidMount() {
-    new WOW.WOW().init();
-  }
-  
+  componentDidMount() {}
+
   render() {
     return (
-      <div className="button-search__container"> 
-        <button className="button-search" onClick={ this.props.handleClick }>{this.props.content}</button>
+      <div className="button-search__container">
+        <button className="button-search" onClick={this.props.handleClick}>
+          {this.props.content}
+        </button>
       </div>
     );
   }

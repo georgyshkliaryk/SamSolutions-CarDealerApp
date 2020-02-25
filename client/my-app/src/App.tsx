@@ -25,7 +25,6 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-     
         <Route exact path="/login">
           <LoginPage />
         </Route>
@@ -60,7 +59,6 @@ class App extends React.Component {
           <NotFoundPage />
         </Route>
         <Redirect to="/404" /> */}
-      
       </Router>
     );
   }

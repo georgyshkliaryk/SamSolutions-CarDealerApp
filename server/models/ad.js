@@ -18,6 +18,9 @@ const AdSchema = new Schema({
     type: Number,
     required: [true, "Price of the car field is required"]
   },
+  carTypeImage: {
+    type: String
+  },
   carDescription: {
     type: String
   },

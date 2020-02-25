@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "react-count-animation/dist/count.min.css";
 import AnimationCount from "react-count-animation";
 
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 import WOW from "wowjs";
 
 import "./Statistics.scss";
@@ -11,10 +11,9 @@ import { render } from "@testing-library/react";
 import { useEffect } from "react";
 
 function Statistics(props: any) {
-
-useEffect(() => {        
-    new WOW.WOW().init();    
-});
+  useEffect(() => {
+    new WOW.WOW().init();
+  });
 
   const settings1 = {
     start: 0,

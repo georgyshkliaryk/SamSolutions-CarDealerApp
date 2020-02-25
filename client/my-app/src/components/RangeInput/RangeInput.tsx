@@ -25,12 +25,12 @@ export default class RangeForm extends React.Component<any> {
 
   render() {
     const { value, range, pips, step } = this.state;
-
+    
     return (
       <div className="range__container">
          <div className="range__title"> {this.props.label} </div>
-        <Nouislider className="range" start={value} range={range} tooltips={true} connect pips={pips} step={step}/>
+        <Nouislider className="range" start={value} range={range} tooltips={true} connect pips={pips} step={step} onSlide={(data)=> console.log("data= " + data)}/>
       </div>
     );
   }
-}
+} 

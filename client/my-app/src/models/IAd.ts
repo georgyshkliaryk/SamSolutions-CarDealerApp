@@ -6,5 +6,7 @@ export interface IAd {
   carPrice?: number;
   carUsed?: boolean;
   carType?: string;
+  carTypeImage?: string;
+  carYear?: number;
   _id?: string;
 }

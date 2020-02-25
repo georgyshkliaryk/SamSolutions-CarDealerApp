@@ -17,9 +17,17 @@ import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 
 import queryString from "query-string";
+import WOW from "wowjs";
 
 interface IState {
   ads: IAd[];
+}
+interface IAdQueryParams {
+  carModel: string;
+  carType: string;
+  carName: string;
+  min_price: string;
+  max_price: string;
 }
 class HomePage extends React.Component {
   adService: AdService;
@@ -34,10 +42,11 @@ class HomePage extends React.Component {
     this.adService = new AdService(restService);
   }
   componentDidMount() {
-    this.fetchAds({});
+    new WOW.WOW().init();
+    this.fetchAds({} as any);
   }
 
-  fetchAds(queryParams: IAd) {
+  fetchAds(queryParams: IAdQueryParams) {
     this.adService
       .getAllAds(queryParams)
       .then(data => {
@@ -45,6 +54,7 @@ class HomePage extends React.Component {
       })
       .catch(data => {
         alert(data);
+        this.setState({ isLoaded: false });
       });
   }
 
@@ -59,7 +69,17 @@ class HomePage extends React.Component {
           <Loading loading_title="Popular cars" />
         )}
 
-        <FilterForm onSubmit={() => this.fetchAds({carModel: "Audi"}) } />    
+        <FilterForm
+          onSubmit={qparams =>
+            this.fetchAds({
+              carModel: qparams.manufacturer || "",
+              carName: qparams.search || "",
+              carType: qparams.type || "",
+              min_price: qparams.minPrice?.toString() || "",
+              max_price: qparams.maxPrice?.toString() || ""
+            })
+          }
+        />
 
         {this.state.isLoaded ? (
           <Ads ads={this.state.ads} title="Available cars" />
