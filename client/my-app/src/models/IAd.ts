@@ -8,5 +8,6 @@ export interface IAd {
   carType?: string;
   carTypeImage?: string;
   carYear?: number;
+  carUsage?: string;
   _id?: string;
 }

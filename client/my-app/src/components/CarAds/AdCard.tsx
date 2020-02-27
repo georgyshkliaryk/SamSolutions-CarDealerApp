@@ -11,7 +11,7 @@ import handleCard from '../CarAds/Ads';
 
 const AdCard = (props: any) => {
   return (
-    <div className="ad wow jackInTheBox"
+    <div className="ad"
     data-wow-delay={`0.5s`}>
       
     {/* <Img src={props.img} unloader={ <Loading/> }/> */}
@@ -24,7 +24,7 @@ const AdCard = (props: any) => {
       
       <div className="ad__button">
         <Link to={props.path}><SearchButton className="button__card" content="More info &rsaquo;" /></Link>
-      </div>
+      </div>  
     </div>
   );
 }

@@ -34,19 +34,17 @@ class SelectInput extends React.Component<
 
   render() {
     return (
-      <form className="select">
-        <div className="select__container">
+      <div className="select__container">
           <select 
             onChange={event => this.props.onChange(event.target.value)}
           >
-            {this.props.options.map((option: any) => (
-              <option value={option}> {option} </option>
+            {this.props.options.map((option: string, i: number = 0) => ( 
+              <option value={option} key={i++}> {option} </option> 
             ))}
           </select>
           <br />
           <span className="filter__label">{this.props.label}</span>
-        </div>
-      </form>
+      </div>
     );
   }
 }

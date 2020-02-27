@@ -8,6 +8,10 @@ import RangeInput from "../RangeInput/RangeInput";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import { IAd } from "../../models/IAd";
 
+import "../../components/RangeInput/RangeInput";
+import Nouislider from "nouislider-react";
+import "nouislider/distribute/nouislider.css";
+
 interface IState {
   search?: string;
   manufacturer?: string;
@@ -20,12 +24,24 @@ interface IProps {
   onSubmit(params: IState): void;
 }
 class FilterForm extends Component<IProps, any> {
-  state: IState = {
+  constructor(props: any) {
+    super(props);
+  }
+  state = {
     search: "",
-    manufacturer: "Audi",
-    type: "Sedan",
+    manufacturer: "",
+    type: "",
     minPrice: 500,
-    maxPrice: 30000
+    maxPrice: 30000,
+
+    value: [500, 15000],
+    range: { min: 500, max: 15000 },
+    pips: {
+      mode: "values",
+      values: [(500 + 15000) / 2], 
+      density: 10
+    },
+    step: 100
   };
 
   componentDidMount() {
@@ -40,20 +56,19 @@ class FilterForm extends Component<IProps, any> {
           event.preventDefault(); // Prevents page reloading
           /* TODO */
 
-          let query =
-            //   this.state.search +
-            " " +
-            this.state.manufacturer +
-            " " +
-            this.state.type +
-            " " +
-              this.state.minPrice +
-            " " +
-            this.state.maxPrice;
-          alert(query);
+          // let query =
+          //   //   this.state.search +
+          //   " " +
+          //   this.state.manufacturer +
+          //   " " +
+          //   this.state.type +
+          //   " " +
+          //   this.state.minPrice +
+          //   " " +
+          //   this.state.maxPrice;
+          // alert(query);
 
           this.props.onSubmit(this.state);
-          // console.log(this.state);
         }}
       >
         <div className="filter__title">
@@ -69,21 +84,45 @@ class FilterForm extends Component<IProps, any> {
           <SelectInput
             onChange={this.onChangeSelect1}
             label="SELECT MANUFACTURER"
-            options={["Audi", "BMW", "Mercedes"]}
+            options={["", "Audi", "BMW", "Mercedes"]}
+            values={["", "Audi", "BMW", "Mercedes"]}
           />
 
           <SelectInput
             onChange={this.onChangeSelect2}
             label="SELECT CAR TYPE"
-            options={["Sedan", "Coupe", "SUV", "4x4", "Hatchback", "Pickup"]}
+            options={[
+              "",
+              "Sedan",
+              "Coupe",
+              "SUV",
+              "4x4",
+              "Hatchback",
+              "Pickup"
+            ]}
+
           />
 
-          <RangeInput
-            onChange={() => this.onChangeRange}
+          {/* <RangeInput
+            onSlide={this.onChangeRange}
             min={500}
             max={30000}
             label="Price range ($):"
-          />
+          /> */}
+
+          <div className="range__container">
+            <div className="range__title"> Price range ($): </div>
+            <Nouislider
+              className="range"
+              start={this.state.value}
+              range={this.state.range}
+              tooltips={true}
+              connect
+              pips={this.state.pips}
+              step={this.state.step}
+              onSlide={this.onChangeRange}
+            />
+          </div>
 
           <div className="wow pulse">
             <SearchButton content="Search" />

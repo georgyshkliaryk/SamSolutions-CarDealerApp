@@ -17,4 +17,10 @@ export default class AdsService {
   getAddById(id: string) {
     return this.restService.get(`/api/ads/${id}`);
   }
+
+  postAd() {
+
+
+    // return this.restService.post()
+  }
 }

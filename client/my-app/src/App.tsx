@@ -16,12 +16,17 @@ import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AdsPage from "./pages/AdsPage";
 import AboutPage from "./pages/AboutPage";
-import NewCarsPage from "./pages/NewCarsPage";
+import CarsPage from "./pages/CarsPage";
 import UsedCarsPage from "./pages/UsedCarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import UsedCarPage from "./pages/UsedCarPage";
 
-class App extends React.Component {
+
+
+class App extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props);
+  }
   render() {
     return (
       <Router>
@@ -34,22 +39,28 @@ class App extends React.Component {
         </Route>
 
         <Switch>
-          <Route exact path="/ads/newcars">
-            <NewCarsPage />
+          <Route exact path="/ads">
+            <CarsPage />
           </Route>
-          <Route path="/ads/newcars/:id">
-            <NewCarPage />
-          </Route>
+          <Route path="/ads/view/:id" 
+            component={(props) => <NewCarPage {...props} inputDisabled={true} pageMode="view"/>}
+          />
+          <Route path="/ads/create"
+           component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="create"/>}
+          />
+          <Route path="/ads/edit/:id" 
+            component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="edit"/>}
+          />
         </Switch>
 
-        <Switch>
+        {/* <Switch>
           <Route exact path="/ads/usedcars">
             <UsedCarsPage />
           </Route>
           <Route path="/ads/usedcars/:id">
             <UsedCarPage />
           </Route>
-        </Switch>
+        </Switch> */}
 
         <Route exact path="/about">
           <AboutPage />

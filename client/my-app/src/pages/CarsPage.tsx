@@ -20,8 +20,9 @@ import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import NewCarPage from '../pages/NewCarPage';
+import NewCarPage from "./NewCarPage";
 import { getStatus } from "../components/Welcome/Welcome";
+import CreateAdBtn from "../components/buttons/CreateAdBtn/CreateAdBtn";
 
 interface IState {
   ads: IAd[];
@@ -60,26 +61,19 @@ class NewCarsPage extends React.Component {
     return (
       <>
         <Header />
-        {/*    <ul>
-          <li>
-            <Link to={`$/audi-a4`}>Audi A4</Link>
-          </li>
-          <li>
-            <Link to={`$/mercedes-s-class`}>Mercedes S-class</Link>
-          </li>
-          <li>
-            <Link to={`$/bmw-m3`}>BMW m3</Link>
-          </li>
-        </ul>    */}
+        <Link to="ads/create">
+          <CreateAdBtn content="Create new ad &rsaquo;" />
+        </Link>
 
         {this.state.isLoaded ? (
           <Ads
-            title="Available new cars"
-            ads={getStatus(this.state.ads, false)}
+            title="Available cars"
+            // ads={getStatus(this.state.ads, false)}
+            ads={this.state.ads}
             usage="new"
           />
         ) : (
-          <Loading loading_title="Available new cars" />
+          <Loading loading_title="Available cars" />
         )}
 
         {/*<Route path={`$/:AdId`}>
@@ -87,10 +81,6 @@ class NewCarsPage extends React.Component {
         </Route>*/}
 
         <Footer />
-
-
-        
-     
       </>
     );
   }

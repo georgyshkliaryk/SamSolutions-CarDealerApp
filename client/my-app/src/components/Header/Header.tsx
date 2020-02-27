@@ -5,7 +5,6 @@ import WOW from "wowjs";
 import "./Header.scss";
 
 class Header extends React.Component {
-
   componentDidMount() {
     new WOW.WOW().init();
   }
@@ -14,36 +13,30 @@ class Header extends React.Component {
     return (
       <div className="header">
         <div className="header__links">
-          <div className="link wow bounceInDown"
-            data-wow-delay="0.4s">
-            <Link to="/">
-              Home
-            </Link>
+          <div className="link wow bounceInDown" data-wow-delay="0.4s">
+            <Link to="/">Home</Link>
           </div>
-          <div className="link wow bounceInDown"
-            data-wow-delay="0.3s">
-            <Link to="/" className="link cars__link">
+          <div className="link link-1 wow bounceInDown" data-wow-delay="0.3s">
+            <Link to="/ads" className="link cars__link">
               Cars <div>&or;</div>
-              <div className="header__chose-menu">
-                <div>
-                  <Link to="/ads/newcars" className="link">
-                    New cars
-                  </Link>
-                </div>
-                <div>
-                  <Link to="/ads/usedcars" className="link">
-                    Used cars
-                  </Link>
-                </div>
-              </div>
             </Link>
+            <div className="header__chose-menu">
+              <div>
+                <Link to="/ads/newcars" className="link">
+                  New cars
+                </Link>
+              </div>
+              <div>
+                <Link to="/ads/usedcars" className="link">
+                  Used cars
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="wow bounceInDown"
-            data-wow-delay="0.2s">
+          <div className="wow bounceInDown" data-wow-delay="0.2s">
             <Link to="/about">About</Link>
           </div>
-          <div className="wow bounceInDown"
-            data-wow-delay="0.1s">
+          <div className="wow bounceInDown" data-wow-delay="0.1s">
             <Link to="/myads">My cars</Link>
           </div>
         </div>
@@ -52,8 +45,10 @@ class Header extends React.Component {
           <span>Car</span>Dealer
         </div>
 
-        <div className="header__links register wow bounceInDown"
-        data-wow-delay="0.3s">
+        <div
+          className="header__links register wow bounceInDown"
+          data-wow-delay="0.3s"
+        >
           <Link to="/login">Login/Register</Link>
         </div>
       </div>

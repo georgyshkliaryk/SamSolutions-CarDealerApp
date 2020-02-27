@@ -42,7 +42,7 @@
         font-family: 'Abel', sans-serif;
     }
 }
-.cars__link:hover {
+.link-1:hover {
 
     .header__chose-menu {
         display: block !important;
@@ -51,11 +51,11 @@
 .header__chose-menu {
     position: absolute;
     left: 7%;
-    top: 5.5em;
+    top: 3.3em;
     z-index: 4;
     background-color: black;
     border: solid grey 1px;
-    padding: 0.5em 2em;
+    padding: 0.2em 1em;
     display: none !important;
 
     div {

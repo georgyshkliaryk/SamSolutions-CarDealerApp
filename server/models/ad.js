@@ -36,6 +36,9 @@ const AdSchema = new Schema({
   carUsed: {
     type: Boolean,
     default: false
+  },
+  carUsage: {
+    type: String
   }
 });
 

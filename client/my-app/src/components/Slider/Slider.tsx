@@ -8,6 +8,7 @@ import mercedes2 from "../../public/assets/imgs/mercedes2.jpg";
 import audi1 from "../../public/assets/imgs/audi1.jpg";
 
 import { IAd } from "../../models/IAd";
+import Loading from "../Loading/Loading";
 //---------------------------------------------------
 /*interface IProps {
   images: string[];
@@ -56,13 +57,8 @@ class Slider extends React.Component<
 
   //const Slider = (props: IProps) => {
   render() {
-    let usage;
-    if (this.props.ads[this.state.currentImageIndex].carUsed) {
-      usage = "usedcars";
-    }
-    if (!this.props.ads[this.state.currentImageIndex].carUsed) {
-      usage = "newcars";
-    } 
+    
+    try { 
     return (
       <div className="slider">
         <div className="slider__slide">
@@ -71,7 +67,7 @@ class Slider extends React.Component<
             alt="lol"
           />
           <div className="slide__title wow fadeInLeft">
-            <Link to={`/ads/${usage}/${this.props.ads[this.state.currentImageIndex].carName}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
+            <Link to={`/ads/${this.props.ads[this.state.currentImageIndex].carUsage}/${this.props.ads[this.state.currentImageIndex].carName}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
           </div>  
           <div className="slide__description wow fadeInRight">
             {this.props.ads[this.state.currentImageIndex].carDescription}
@@ -94,7 +90,14 @@ class Slider extends React.Component<
           &rsaquo;
         </button>
       </div>
-    );
+    ); }
+    catch(e) {
+      return (
+        <>
+          No images available...
+        </>
+      )
+    }
     }
   }
  
