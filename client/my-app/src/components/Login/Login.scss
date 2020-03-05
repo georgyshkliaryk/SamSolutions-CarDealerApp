@@ -1,0 +1,56 @@
+.login__title {
+  text-align: center;
+  font-family: "Cabin";
+  font-size: 45px;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+.main__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.login {
+  color: white;
+  background-image: url("../../public/assets/imgs/login_back11.png");
+  background-size: cover;
+  min-height: 85.7vh;
+  padding: 3em;
+}
+.login__container,
+.register__container {
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  padding: 2em 3em;
+
+  input {
+    width: 15em;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0.3em 0.5em;
+    margin-bottom: 0.3em;
+  }
+}
+.login__container {
+  border-right: 1px solid lightgrey;
+}
+.small-title {
+  margin-bottom: 1em;
+}
+.login__container:hover,
+.register__container:hover {
+  background-color: lightgrey;
+}
+.login__btn {
+  margin-top: 1.6em;
+}
+.additional {
+  a {
+    color: grey;
+  }
+  a:hover {
+    color: black !important;
+  }
+}
