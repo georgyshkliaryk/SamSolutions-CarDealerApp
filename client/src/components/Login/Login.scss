@@ -9,12 +9,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 15.7em;
 }
 .login {
   color: white;
   background-image: url("../../public/assets/imgs/login_back11.png");
   background-size: cover;
-  min-height: 85.7vh;
   padding: 3em;
 }
 .login__container,
@@ -24,6 +24,7 @@
   color: black;
   text-align: center;
   padding: 2em 3em;
+  width: 17em;
 
   input {
     width: 15em;
@@ -31,6 +32,12 @@
     border: 1px solid black;
     padding: 0.3em 0.5em;
     margin-bottom: 0.3em;
+    margin-top: 0.3em;
+    outline: none;
+  }
+
+  input:focus {
+    border: 1px solid red;
   }
 }
 .login__container {
@@ -44,7 +51,7 @@
   background-color: lightgrey;
 }
 .login__btn {
-  margin-top: 1.6em;
+  margin-top: 2.8em;
 }
 .additional {
   a {
@@ -57,4 +64,6 @@
 
 .login__error {
   color: red;
+  font-size: 12px;
+  font-family: 'Roboto Mono', monospace;
 }
