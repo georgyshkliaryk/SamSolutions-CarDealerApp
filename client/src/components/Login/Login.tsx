@@ -4,11 +4,19 @@ import "./Login.scss";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 
 interface ILogin {
-  loginError: string;
-  passwordError: string;
-  confirmPasswordError: string;
-  loginValue: string;
-  passwordValue: string;
+  login: {
+    loginError: string;
+    passwordError: string;
+    loginValue: string;
+    passwordValue: string;
+  },
+  register: {
+    loginError: string;
+    passwordError: string;
+    confirmPasswordError: string;
+    loginValue: string;
+    passwordValue: string;
+  }
 }
 
 class Login extends React.Component<any, any> {
@@ -16,22 +24,30 @@ class Login extends React.Component<any, any> {
     super(props);
   }
   state: ILogin = {
-    loginError: "",
-    passwordError: "",
-    confirmPasswordError: "",
-    loginValue: "",
-    passwordValue: ""
+    login:  {
+      loginError: "",
+      passwordError: "",
+      loginValue: "",
+      passwordValue: ""
+    },
+    register: {
+      loginError: "",
+      passwordError: "",
+      confirmPasswordError: "",
+      loginValue: "",
+      passwordValue: ""
+    }
   };
 
   handleChangeValue(event) {
     this.setState({
-      loginValue: event.target.value
+      login: { loginValue: event.target.value }
     });
   }
 
   handleChangePassword(event) {
     this.setState({
-      passwordValue: event.target.value
+      login: { passwordValue: event.target.value }
     });
   }
 
@@ -50,38 +66,35 @@ class Login extends React.Component<any, any> {
                 const loginRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
                 const passwordRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
 
-                if (this.state.loginValue == "") {      //login value check
+                if (this.state.login.loginValue == "") {      //login value check
                   this.setState({
-                    loginError: "enter your login!" 
+                    login: { loginError: "enter your login!" }
                   });
                 } else {
-                  if (loginRegExp.test(this.state.loginValue) == false) { 
+                  if (loginRegExp.test(this.state.login.loginValue) == false) { 
                     this.setState({
-                      loginError: "only A..z, 0..9, _ and . avaliable!"
+                      login: { loginError: "only A..z, 0..9, _ and . avaliable!" }
                     });
                   } 
                   else {
                     this.setState({
-                      loginError: ""
+                      login: { loginError: "" }
                     });
                   }
                 }
-
-
-
-                if (this.state.passwordValue == "") {       //password value check
+                if (this.state.login.passwordValue == "") {       //password value check
                   this.setState({
-                    passwordError: "enter your password!"
+                    login: { passwordError: "enter your password!" }
                   });
                 } else {
-                  if (passwordRegExp.test(this.state.passwordValue) == false) { 
+                  if (passwordRegExp.test(this.state.login.passwordValue) == false) { 
                     this.setState({
-                      passwordError: "only eng letters and digits!" 
+                      login: { passwordError: "only eng letters and digits!" }
                     });
                   } 
                   else {
                     this.setState({
-                      passwordError: "",
+                      login: { passwordError: "" }
                   });
                 }
                 
@@ -91,26 +104,26 @@ class Login extends React.Component<any, any> {
                 // loginError: this.state.loginError,
                 //passwordValue: ""
                 // });
-                console.log(this.state.loginValue);
+                console.log(this.state.login.loginValue);
               }}
             >
               <input //LOGIN
                 type="text"
                 placeholder="login"
-                value={this.state.loginValue}
+                value={this.state.login.loginValue}
                 onChange={this.handleChangeValue.bind(this)}
               />
               <br />
-              <span className="login__error">{this.state.loginError}</span>
+              <span className="login__error">{this.state.login.loginError}</span>
               <br />
               <input //PASSWORD
                 type="text"
                 placeholder="password"
-                value={this.state.passwordValue}
+                value={this.state.login.passwordValue}
                 onChange={this.handleChangePassword.bind(this)}
               />
               <br />
-              <span className="login__error">{this.state.passwordError}</span>
+              <span className="login__error">{this.state.login.passwordError}</span>
               <br />
               <span className="additional">
                 <Link to="">forgot password?</Link>
@@ -124,7 +137,10 @@ class Login extends React.Component<any, any> {
           </div>
           <div className="register__container">
             <div className="login__container-title small-title">REGISTER</div>
-            <form className="login__container-form">
+            <form 
+              className="login__container-form"
+              >
+            
               <input type="text" placeholder="login" />
               <br />
               <span className="login__error"></span>
@@ -141,9 +157,9 @@ class Login extends React.Component<any, any> {
                 <Link to="">sign in as a guest</Link>
               </span>
               <div className="register__btn">
-                <Link to="/">
+                {/* <Link to="/"> */}
                   <SearchButton content="Confirm" />
-                </Link>
+                {/* </Link> */}
               </div>
             </form>
           </div>
