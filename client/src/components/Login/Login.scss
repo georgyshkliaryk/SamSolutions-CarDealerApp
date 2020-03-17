@@ -1,3 +1,5 @@
+
+
 .login__title {
   text-align: center;
   font-family: "Cabin";
@@ -65,5 +67,14 @@
 .login__error {
   color: red;
   font-size: 12px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
+.password-visible {
+  width: 2.2em;
+  display: inline;
+  vertical-align: bottom;
+}
+.input1 {
+  margin-left: 2.4em;
+}
+

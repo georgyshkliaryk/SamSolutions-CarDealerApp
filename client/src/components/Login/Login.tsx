@@ -3,20 +3,22 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 
+import password1 from '../../public/assets/imgs/password.png';
+
 interface ILogin {
-  login: {
-    loginError: string;
-    passwordError: string;
-    loginValue: string;
-    passwordValue: string;
-  },
-  register: {
-    loginError: string;
-    passwordError: string;
-    confirmPasswordError: string;
-    loginValue: string;
-    passwordValue: string;
-  }
+    loginError1: string;
+    passwordError1: string;
+    loginValue1: string;
+    passwordValue1: string;
+
+    loginError2: string;
+    passwordError2: string;
+    confirmPasswordError: string,
+    confirmPasswordValue: string,
+    loginValue2: string;
+    passwordValue2: string;
+
+    passwordType: string;
 }
 
 class Login extends React.Component<any, any> {
@@ -24,30 +26,47 @@ class Login extends React.Component<any, any> {
     super(props);
   }
   state: ILogin = {
-    login:  {
-      loginError: "",
-      passwordError: "",
-      loginValue: "",
-      passwordValue: ""
-    },
-    register: {
-      loginError: "",
-      passwordError: "",
+      loginError1: "",
+      passwordError1: "",
+      loginValue1: "",
+      passwordValue1: "",
+
+      loginError2: "",
+      passwordError2: "",
       confirmPasswordError: "",
-      loginValue: "",
-      passwordValue: ""
-    }
+      confirmPasswordValue: "",
+      loginValue2: "",
+      passwordValue2: "",
+
+      passwordType: "password"
   };
 
-  handleChangeValue(event) {
+  handleChangeValue1(event) {
     this.setState({
-      login: { loginValue: event.target.value }
+      loginValue1: event.target.value
     });
   }
 
-  handleChangePassword(event) {
+  handleChangePassword1(event) {
     this.setState({
-      login: { passwordValue: event.target.value }
+      passwordValue1: event.target.value
+    });
+  }
+
+  handleChangeValue2(event) {
+    this.setState({
+      loginValue2: event.target.value
+    });
+  }
+
+  handleChangePassword2(event) {
+    this.setState({
+      passwordValue2: event.target.value
+    });
+  }
+  handleChangeConfirmPassword2(event) {
+    this.setState({
+      confirmPasswordValue: event.target.value
     });
   }
 
@@ -66,64 +85,59 @@ class Login extends React.Component<any, any> {
                 const loginRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
                 const passwordRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
 
-                if (this.state.login.loginValue == "") {      //login value check
+                if (this.state.loginValue1 == "") {      //login value check
                   this.setState({
-                    login: { loginError: "enter your login!" }
+                    loginError1: "enter your login!"
                   });
                 } else {
-                  if (loginRegExp.test(this.state.login.loginValue) == false) { 
+                  if (loginRegExp.test(this.state.loginValue1) == false) { 
                     this.setState({
-                      login: { loginError: "only A..z, 0..9, _ and . avaliable!" }
+                      loginError1: "only A..z, 0..9, _ and . avaliable!"
                     });
                   } 
                   else {
                     this.setState({
-                      login: { loginError: "" }
+                      loginError1: ""
                     });
                   }
                 }
-                if (this.state.login.passwordValue == "") {       //password value check
+                if (this.state.passwordValue1 == "") {       //password value check
                   this.setState({
-                    login: { passwordError: "enter your password!" }
+                    passwordError1: "enter your password!"
                   });
                 } else {
-                  if (passwordRegExp.test(this.state.login.passwordValue) == false) { 
+                  if (passwordRegExp.test(this.state.passwordValue1) == false) { 
                     this.setState({
-                      login: { passwordError: "only eng letters and digits!" }
+                      passwordError1: "only eng letters and digits!"
                     });
                   } 
                   else {
                     this.setState({
-                      login: { passwordError: "" }
+                      passwordError1: ""
                   });
                 }
                 
               }
-                //this.setState({
-                // loginValue: this.props.value,
-                // loginError: this.state.loginError,
-                //passwordValue: ""
-                // });
-                console.log(this.state.login.loginValue);
+                console.log(this.state.loginValue1);
               }}
             >
               <input //LOGIN
                 type="text"
                 placeholder="login"
-                value={this.state.login.loginValue}
-                onChange={this.handleChangeValue.bind(this)}
+                value={this.state.loginValue1}
+                onChange={this.handleChangeValue1.bind(this)}
               />
               <br />
-              <span className="login__error">{this.state.login.loginError}</span>
+              <span className="login__error">{this.state.loginError1}</span>
               <br />
               <input //PASSWORD
                 type="text"
                 placeholder="password"
-                value={this.state.login.passwordValue}
-                onChange={this.handleChangePassword.bind(this)}
+                value={this.state.passwordValue1}
+                onChange={this.handleChangePassword1.bind(this)}
               />
               <br />
-              <span className="login__error">{this.state.login.passwordError}</span>
+              <span className="login__error">{this.state.passwordError1}</span>
               <br />
               <span className="additional">
                 <Link to="">forgot password?</Link>
@@ -135,23 +149,113 @@ class Login extends React.Component<any, any> {
               </div>
             </form>
           </div>
+
+{/* -------------------------------------------------------------------------------------------- */}
+
+
           <div className="register__container">
             <div className="login__container-title small-title">REGISTER</div>
             <form 
               className="login__container-form"
+              onSubmit={event => {
+                event.preventDefault(); // Prevents page reloading
+
+                const loginRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
+                const passwordRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
+
+                if (this.state.loginValue2 == "") {      //login value check
+                  this.setState({
+                    loginError2: "enter your login!"
+                  });
+                } else {
+                  if (loginRegExp.test(this.state.loginValue2) == false) { 
+                    this.setState({
+                      loginError2: "only A..z, 0..9, _ and . avaliable!"
+                    });
+                  } 
+                  else {
+                    this.setState({
+                      loginError2: ""
+                    });
+                  }
+                }
+                if (this.state.passwordValue2 == "") {       //password value check
+                  this.setState({
+                    passwordError2: "enter your password!"
+                  });
+                } else {
+                  if (passwordRegExp.test(this.state.passwordValue2) == false) { 
+                    this.setState({
+                      passwordError2: "only eng letters and digits!"
+                    }); 
+                  }
+                  else {
+                    this.setState({
+                      passwordError2: ""
+                    });
+                  }
+                }
+                if (this.state.passwordValue2 != this.state.confirmPasswordValue) {   //confirm password check
+                  this.setState({
+                    confirmPasswordError: "passwords don't match!"
+                  });
+                }
+                else {
+                  this.setState({
+                    confirmPasswordError: ""
+                  });
+                }
+
+
+
+
+
+
+
+
+                console.log(this.state.loginValue2);
+              }}
               >
             
-              <input type="text" placeholder="login" />
+              <input type="text"
+              placeholder="login"
+              value={this.state.loginValue2}
+              onChange={this.handleChangeValue2.bind(this)}
+              />
               <br />
-              <span className="login__error"></span>
+              <span className="login__error">{this.state.loginError2}</span>
               <br />
-              <input type="password" placeholder="password" />
+              <input 
+              type={this.state.passwordType} 
+              placeholder="password"
+              className="input1"
+              value={this.state.passwordValue2} 
+              onChange={this.handleChangePassword2.bind(this)} 
+              /> <a onClick={
+                () => {
+                  if (this.state.passwordType == "text") {
+                  this.setState({
+                    passwordType: "password"
+                  })
+                }
+                else {
+                  this.setState({
+                    passwordType: "text"
+                  })
+                }
+                }
+              }><img className="password-visible" src={password1}/></a>
               <br />
-              <span className="login__error"></span>
+              <span className="login__error">{this.state.passwordError2}</span>
               <br />
-              <input type="password" placeholder="confirm password" />
+              <input 
+              type={this.state.passwordType}  
+              placeholder="confirm password" 
+              value={this.state.confirmPasswordValue}
+              onChange={this.handleChangeConfirmPassword2.bind(this)} 
+              />
               <br />
-              <span className="login__error"></span>
+            <span className="login__error">{this.state.confirmPasswordError}</span>
               <br />
               <span className="additional">
                 <Link to="">sign in as a guest</Link>
