@@ -18,7 +18,10 @@ interface ILogin {
     loginValue2: string;
     passwordValue2: string;
 
-    passwordType: string;
+    passwordType1: string;
+    passwordVisibilityImg1: any;
+    passwordType2: string;
+    passwordVisibilityImg2: any;
 }
 
 class Login extends React.Component<any, any> {
@@ -38,8 +41,41 @@ class Login extends React.Component<any, any> {
       loginValue2: "",
       passwordValue2: "",
 
-      passwordType: "password"
+      passwordType1: "password",
+      passwordVisibilityImg1: require('../../public/assets/imgs/password.png'),
+      passwordType2: "password",
+      passwordVisibilityImg2: require('../../public/assets/imgs/password.png')
   };
+
+  handlePasswordVisibility1() {
+    if (this.state.passwordType1 == "text") {
+      this.setState({
+        passwordType1: "password",
+        passwordVisibilityImg1: require('../../public/assets/imgs/password.png')
+      })
+    }
+    else {
+      this.setState({
+        passwordType1: "text",
+        passwordVisibilityImg1: require('../../public/assets/imgs/password2.png') 
+      }) 
+    }
+  }
+
+  handlePasswordVisibility2() {
+    if (this.state.passwordType2 == "text") {
+      this.setState({
+        passwordType2: "password",
+        passwordVisibilityImg2: require('../../public/assets/imgs/password.png')
+      })
+    }
+    else {
+      this.setState({
+        passwordType2: "text",
+        passwordVisibilityImg2: require('../../public/assets/imgs/password2.png') 
+      }) 
+    }
+  }
 
   handleChangeValue1(event) {
     this.setState({
@@ -66,7 +102,7 @@ class Login extends React.Component<any, any> {
   }
   handleChangeConfirmPassword2(event) {
     this.setState({
-      confirmPasswordValue: event.target.value
+      confirmPasswordValue: event.target.value 
     });
   }
 
@@ -131,11 +167,15 @@ class Login extends React.Component<any, any> {
               <span className="login__error">{this.state.loginError1}</span>
               <br />
               <input //PASSWORD
-                type="text"
+                type={this.state.passwordType1} 
                 placeholder="password"
                 value={this.state.passwordValue1}
                 onChange={this.handleChangePassword1.bind(this)}
+                className="input1"
               />
+              <a onClick={this.handlePasswordVisibility1.bind(this)}>
+                <img className="password-visible" src={this.state.passwordVisibilityImg1}/>
+              </a>
               <br />
               <span className="login__error">{this.state.passwordError1}</span>
               <br />
@@ -226,30 +266,20 @@ class Login extends React.Component<any, any> {
               <span className="login__error">{this.state.loginError2}</span>
               <br />
               <input 
-              type={this.state.passwordType} 
+              type={this.state.passwordType2} 
               placeholder="password"
               className="input1"
               value={this.state.passwordValue2} 
               onChange={this.handleChangePassword2.bind(this)} 
-              /> <a onClick={
-                () => {
-                  if (this.state.passwordType == "text") {
-                  this.setState({
-                    passwordType: "password"
-                  })
-                }
-                else {
-                  this.setState({
-                    passwordType: "text"
-                  })
-                }
-                }
-              }><img className="password-visible" src={password1}/></a>
+              /> 
+              <a onClick={this.handlePasswordVisibility2.bind(this)}>
+                <img className="password-visible" src={this.state.passwordVisibilityImg2}/>
+              </a>
               <br />
               <span className="login__error">{this.state.passwordError2}</span>
               <br />
               <input 
-              type={this.state.passwordType}  
+              type={this.state.passwordType2}  
               placeholder="confirm password" 
               value={this.state.confirmPasswordValue}
               onChange={this.handleChangeConfirmPassword2.bind(this)} 
