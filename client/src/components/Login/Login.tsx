@@ -3,37 +3,45 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 
-import password1 from '../../public/assets/imgs/password.png';
+import password1 from "../../public/assets/imgs/password.png";
 
 interface ILogin {
-    loginError1: string;
-    passwordError1: string;
-    loginValue1: string;
-    passwordValue1: string;
+  //  LOGIN
+  loginError1: string;
+  passwordError1: string;
 
-    loginError2: string;
-    passwordError2: string;
-    confirmPasswordError: string,
-    confirmPasswordValue: string,
-    loginValue2: string;
-    passwordValue2: string;
+  loginValue1: string;
+  passwordValue1: string;
 
-    passwordType1: string;
-    passwordVisibilityImg1: any;
-    passwordType2: string;
-    passwordVisibilityImg2: any;
+  //  REGISTER
+  loginError2: string;
+  passwordError2: string;
+  confirmPasswordError: string;
+  confirmPasswordValue: string;
+  loginValue2: string;
+  passwordValue2: string;
+
+  passwordType1: string;
+  passwordVisibilityImg1: any;
+  passwordType2: string;
+  passwordVisibilityImg2: any;
 }
 
 class Login extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-  }
-  state: ILogin = {
+    this.state = {
+      //  LOGIN
       loginError1: "",
       passwordError1: "",
+
       loginValue1: "",
       passwordValue1: "",
 
+      login: false,
+      store: null,
+
+      //  REGISTER
       loginError2: "",
       passwordError2: "",
       confirmPasswordError: "",
@@ -42,23 +50,41 @@ class Login extends React.Component<any, any> {
       passwordValue2: "",
 
       passwordType1: "password",
-      passwordVisibilityImg1: require('../../public/assets/imgs/password.png'),
+      passwordVisibilityImg1: require("../../public/assets/imgs/password.png"),
       passwordType2: "password",
-      passwordVisibilityImg2: require('../../public/assets/imgs/password.png')
-  };
+      passwordVisibilityImg2: require("../../public/assets/imgs/password.png")
+    };
+  }
+  // state: ILogin = {
+  //     loginError1: "",
+  //     passwordError1: "",
+  //     loginValue1: "",
+  //     passwordValue1: "",
+
+  //     loginError2: "",
+  //     passwordError2: "",
+  //     confirmPasswordError: "",
+  //     confirmPasswordValue: "",
+  //     loginValue2: "",
+  //     passwordValue2: "",
+
+  //     passwordType1: "password",
+  //     passwordVisibilityImg1: require('../../public/assets/imgs/password.png'),
+  //     passwordType2: "password",
+  //     passwordVisibilityImg2: require('../../public/assets/imgs/password.png')
+  //};
 
   handlePasswordVisibility1() {
     if (this.state.passwordType1 == "text") {
       this.setState({
         passwordType1: "password",
-        passwordVisibilityImg1: require('../../public/assets/imgs/password.png')
-      })
-    }
-    else {
+        passwordVisibilityImg1: require("../../public/assets/imgs/password.png")
+      });
+    } else {
       this.setState({
         passwordType1: "text",
-        passwordVisibilityImg1: require('../../public/assets/imgs/password2.png') 
-      }) 
+        passwordVisibilityImg1: require("../../public/assets/imgs/password2.png")
+      });
     }
   }
 
@@ -66,14 +92,13 @@ class Login extends React.Component<any, any> {
     if (this.state.passwordType2 == "text") {
       this.setState({
         passwordType2: "password",
-        passwordVisibilityImg2: require('../../public/assets/imgs/password.png')
-      })
-    }
-    else {
+        passwordVisibilityImg2: require("../../public/assets/imgs/password.png")
+      });
+    } else {
       this.setState({
         passwordType2: "text",
-        passwordVisibilityImg2: require('../../public/assets/imgs/password2.png') 
-      }) 
+        passwordVisibilityImg2: require("../../public/assets/imgs/password2.png")
+      });
     }
   }
 
@@ -102,7 +127,25 @@ class Login extends React.Component<any, any> {
   }
   handleChangeConfirmPassword2(event) {
     this.setState({
-      confirmPasswordValue: event.target.value 
+      confirmPasswordValue: event.target.value
+    });
+  }
+
+  login() {
+    fetch("http://localhost:5000/api/ads", {
+      method: "POST",
+      body: JSON.stringify(this.state.loginValue1)
+    }).then((response: any) => {
+      response.json().then((result: any) => {
+        console.warn("result: ", result);
+        localStorage.setItem(
+          "login",
+          JSON.stringify({
+            login: true,
+            token: result.token
+          })
+        ); 
+      });
     });
   }
 
@@ -118,42 +161,47 @@ class Login extends React.Component<any, any> {
               onSubmit={event => {
                 event.preventDefault(); // Prevents page reloading
 
-                const loginRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
-                const passwordRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
+                this.login();
 
-                if (this.state.loginValue1 == "") {      //login value check
+                const loginRegExp = new RegExp(
+                  "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
+                );
+                const passwordRegExp = new RegExp(
+                  "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
+                );
+
+                if (this.state.loginValue1 == "") {
+                  //login value check
                   this.setState({
                     loginError1: "enter your login!"
                   });
                 } else {
-                  if (loginRegExp.test(this.state.loginValue1) == false) { 
+                  if (loginRegExp.test(this.state.loginValue1) == false) {
                     this.setState({
                       loginError1: "only A..z, 0..9, _ and . avaliable!"
                     });
-                  } 
-                  else {
+                  } else {
                     this.setState({
                       loginError1: ""
                     });
                   }
                 }
-                if (this.state.passwordValue1 == "") {       //password value check
+                if (this.state.passwordValue1 == "") {
+                  //password value check
                   this.setState({
                     passwordError1: "enter your password!"
                   });
                 } else {
-                  if (passwordRegExp.test(this.state.passwordValue1) == false) { 
+                  if (passwordRegExp.test(this.state.passwordValue1) == false) {
                     this.setState({
                       passwordError1: "only eng letters and digits!"
                     });
-                  } 
-                  else {
+                  } else {
                     this.setState({
                       passwordError1: ""
-                  });
+                    });
+                  }
                 }
-                
-              }
                 console.log(this.state.loginValue1);
               }}
             >
@@ -167,14 +215,17 @@ class Login extends React.Component<any, any> {
               <span className="login__error">{this.state.loginError1}</span>
               <br />
               <input //PASSWORD
-                type={this.state.passwordType1} 
+                type={this.state.passwordType1}
                 placeholder="password"
                 value={this.state.passwordValue1}
                 onChange={this.handleChangePassword1.bind(this)}
                 className="input1"
               />
               <a onClick={this.handlePasswordVisibility1.bind(this)}>
-                <img className="password-visible" src={this.state.passwordVisibilityImg1}/>
+                <img
+                  className="password-visible"
+                  src={this.state.passwordVisibilityImg1}
+                />
               </a>
               <br />
               <span className="login__error">{this.state.passwordError1}</span>
@@ -190,109 +241,111 @@ class Login extends React.Component<any, any> {
             </form>
           </div>
 
-{/* -------------------------------------------------------------------------------------------- */}
-
+          {/* -------------------------------------------------------------------------------------------- */}
 
           <div className="register__container">
             <div className="login__container-title small-title">REGISTER</div>
-            <form 
+            <form
               className="login__container-form"
               onSubmit={event => {
                 event.preventDefault(); // Prevents page reloading
 
-                const loginRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
-                const passwordRegExp = new RegExp("^[a-zA-Z][a-zA-Z0-9-_\.]{0,20}$");
+                const loginRegExp = new RegExp(
+                  "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
+                );
+                const passwordRegExp = new RegExp(
+                  "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
+                );
 
-                if (this.state.loginValue2 == "") {      //login value check
+                if (this.state.loginValue2 == "") {
+                  //login value check
                   this.setState({
                     loginError2: "enter your login!"
                   });
                 } else {
-                  if (loginRegExp.test(this.state.loginValue2) == false) { 
+                  if (loginRegExp.test(this.state.loginValue2) == false) {
                     this.setState({
                       loginError2: "only A..z, 0..9, _ and . avaliable!"
                     });
-                  } 
-                  else {
+                  } else {
                     this.setState({
                       loginError2: ""
                     });
                   }
                 }
-                if (this.state.passwordValue2 == "") {       //password value check
+                if (this.state.passwordValue2 == "") {
+                  //password value check
                   this.setState({
                     passwordError2: "enter your password!"
                   });
                 } else {
-                  if (passwordRegExp.test(this.state.passwordValue2) == false) { 
+                  if (passwordRegExp.test(this.state.passwordValue2) == false) {
                     this.setState({
                       passwordError2: "only eng letters and digits!"
-                    }); 
-                  }
-                  else {
+                    });
+                  } else {
                     this.setState({
                       passwordError2: ""
                     });
                   }
                 }
-                if (this.state.passwordValue2 != this.state.confirmPasswordValue) {   //confirm password check
+                if (
+                  this.state.passwordValue2 != this.state.confirmPasswordValue
+                ) {
+                  //confirm password check
                   this.setState({
                     confirmPasswordError: "passwords don't match!"
                   });
-                }
-                else {
+                } else {
                   this.setState({
                     confirmPasswordError: ""
                   });
                 }
-
-
-
-
-
-
-
-
                 console.log(this.state.loginValue2);
               }}
-              >
-            
-              <input type="text"
-              placeholder="login"
-              value={this.state.loginValue2}
-              onChange={this.handleChangeValue2.bind(this)}
+            >
+              <input
+                type="text"
+                placeholder="login"
+                value={this.state.loginValue2}
+                onChange={this.handleChangeValue2.bind(this)}
               />
               <br />
               <span className="login__error">{this.state.loginError2}</span>
               <br />
-              <input 
-              type={this.state.passwordType2} 
-              placeholder="password"
-              className="input1"
-              value={this.state.passwordValue2} 
-              onChange={this.handleChangePassword2.bind(this)} 
-              /> 
+              <input
+                type={this.state.passwordType2}
+                placeholder="password"
+                className="input1"
+                value={this.state.passwordValue2}
+                onChange={this.handleChangePassword2.bind(this)}
+              />
               <a onClick={this.handlePasswordVisibility2.bind(this)}>
-                <img className="password-visible" src={this.state.passwordVisibilityImg2}/>
+                <img
+                  className="password-visible"
+                  src={this.state.passwordVisibilityImg2}
+                />
               </a>
               <br />
               <span className="login__error">{this.state.passwordError2}</span>
               <br />
-              <input 
-              type={this.state.passwordType2}  
-              placeholder="confirm password" 
-              value={this.state.confirmPasswordValue}
-              onChange={this.handleChangeConfirmPassword2.bind(this)} 
+              <input
+                type={this.state.passwordType2}
+                placeholder="confirm password"
+                value={this.state.confirmPasswordValue}
+                onChange={this.handleChangeConfirmPassword2.bind(this)}
               />
               <br />
-            <span className="login__error">{this.state.confirmPasswordError}</span>
+              <span className="login__error">
+                {this.state.confirmPasswordError}
+              </span>
               <br />
               <span className="additional">
                 <Link to="">sign in as a guest</Link>
               </span>
               <div className="register__btn">
                 {/* <Link to="/"> */}
-                  <SearchButton content="Confirm" />
+                <SearchButton content="Confirm" />
                 {/* </Link> */}
               </div>
             </form>
