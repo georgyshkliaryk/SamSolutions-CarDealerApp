@@ -50,6 +50,7 @@ class Header extends React.Component {
           data-wow-delay="0.3s"
         >
           <Link to="/login">Login/Register</Link>
+          <Link to="/logout">Logout</Link>
         </div>
       </div>
     );

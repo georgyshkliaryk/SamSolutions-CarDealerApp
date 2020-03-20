@@ -20,6 +20,7 @@ import CarsPage from "./pages/CarsPage";
 import UsedCarsPage from "./pages/UsedCarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import UsedCarPage from "./pages/UsedCarPage";
+import LogoutPage from './pages/LogoutPage'; 
 
 
 
@@ -32,6 +33,10 @@ class App extends React.Component<any, any> {
       <Router>
         <Route exact path="/login">
           <LoginPage />
+        </Route>
+
+        <Route exact path="/logout">
+          <LogoutPage />
         </Route>
 
         <Route exact path="/">

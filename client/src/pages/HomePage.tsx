@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Slider, { IProps } from "../components/Slider/Slider";
@@ -33,13 +33,28 @@ class HomePage extends React.Component {
   adService: AdService;
   state = {
     ads: [],
-    isLoaded: false
+    isLoaded: false,
+    loggedIn: true
   };
 
   constructor(props: IProps) {
     super(props);
     const restService = new RestService();
     this.adService = new AdService(restService);
+
+    const token: any = localStorage.getItem("token");
+
+    let loggedIn: boolean = true;
+    if (token == null) {
+      loggedIn = false;
+    }
+
+    this.state = { 
+      ads: [],
+      isLoaded: false,
+      loggedIn
+    }
+
   }
   componentDidMount() {
     new WOW.WOW().init();
@@ -59,6 +74,9 @@ class HomePage extends React.Component {
   }
 
   render() {
+    if (this.state.loggedIn == false) {
+      return <Redirect to="/login" />
+    }
     return (
       <>
         <Header />

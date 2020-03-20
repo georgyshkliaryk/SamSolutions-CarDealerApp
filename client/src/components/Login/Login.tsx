@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Login.scss";
 import SearchButton from "../buttons/SearchButton/SearchButton";
+import { Redirect } from 'react-router-dom';
 
 import password1 from "../../public/assets/imgs/password.png";
 
@@ -30,10 +31,19 @@ interface ILogin {
 class Login extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
+
+    const token: any = localStorage.getItem("token");
+
+    let loggedIn: boolean = true;
+    if (token == null) {
+      loggedIn = false;
+    }
+
     this.state = {
       //  LOGIN
       loginError1: "",
       passwordError1: "",
+      loggedIn,
 
       loginValue1: "",
       passwordValue1: "",
@@ -131,25 +141,28 @@ class Login extends React.Component<any, any> {
     });
   }
 
-  login() {
-    fetch("http://localhost:5000/api/ads", {
-      method: "POST",
-      body: JSON.stringify(this.state.loginValue1)
-    }).then((response: any) => {
-      response.json().then((result: any) => {
-        console.warn("result: ", result);
-        localStorage.setItem(
-          "login",
-          JSON.stringify({
-            login: true,
-            token: result.token
-          })
-        ); 
-      });
-    });
-  }
+  // login() {
+  //   fetch("http://localhost:5000/api/ads", {
+  //     method: "POST",
+  //     body: JSON.stringify(this.state.loginValue1)
+  //   }).then((response: any) => {
+  //     response.json().then((result: any) => {
+  //       console.warn("result: ", result);
+  //       localStorage.setItem(
+  //         "login",
+  //         JSON.stringify({
+  //           login: true,
+  //           token: result.token
+  //         })
+  //       ); 
+  //     });
+  //   });
+  // }
 
   render() {
+    if (this.state.loggedIn) {
+      return <Redirect to="/" />
+    }
     return (
       <div className="login">
         <div className="login__title">Login or register now!</div>
@@ -161,7 +174,23 @@ class Login extends React.Component<any, any> {
               onSubmit={event => {
                 event.preventDefault(); // Prevents page reloading
 
-                this.login();
+                if (this.state.loginValue1 === "test" && this.state.passwordValue1 === "test") {
+
+                  //TODO: jwt
+
+
+                  localStorage.setItem("token", "dsfskfmsgdfdhdgjsdglw");
+                  this.setState({
+                    loggedIn: true
+                  });
+                }
+
+
+
+
+
+
+                // this.login();
 
                 const loginRegExp = new RegExp(
                   "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
