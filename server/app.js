@@ -9,7 +9,9 @@ const app = express();
 const PORT = config.get('port') || 5000;
 const MongoUri = config.get('MongoUri');
 
+const authRoute = require('./routes/auth');
 
+ 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
@@ -40,9 +42,19 @@ app.use(function(err, req, res, next) {
 app.get('/', function(req, res) {
    res.send('server is working...');
 });
+
+//--------- Middlewares---------------------
+app.use(express.json());
+
+//------------------------------------------
+app.use('/api/user', authRoute);
+
+
 app.listen(PORT, function() {
   console.log('Now listening for requests on port: ' + `${PORT}`); 
 });
+
+
 
 
 
