@@ -75,11 +75,11 @@ class FilterForm extends Component<IProps, any> {
           Unsure which vehicle you are looking for? Find it here!
         </div>
         <div className="filter__components">
-          <SearchInput
+          {/* <SearchInput
             onChange={this.onChangeSearch}
             placeholder="Search"
             label="KEYWORD SEARCH?"
-          />
+          /> */}
 
           <SelectInput
             onChange={this.onChangeSelect1}
@@ -102,13 +102,6 @@ class FilterForm extends Component<IProps, any> {
             ]}
 
           />
-
-          {/* <RangeInput
-            onSlide={this.onChangeRange}
-            min={500}
-            max={30000}
-            label="Price range ($):"
-          /> */}
 
           <div className="range__container">
             <div className="range__title"> Price range ($): </div>
