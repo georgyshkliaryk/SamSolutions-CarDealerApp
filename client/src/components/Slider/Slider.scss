@@ -64,4 +64,10 @@ a:hover {
     color: rgb(219, 219, 219);
 }
 
+@media screen and (max-width: 1500px) {
+    .slider {
+        display: none;
+    }
+}
+
 

@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Ad = require("../models/Ad");
-const verify = require("./verifyToken");
+//const verify = require("./verifyToken");
 
 //get a list of ads to sale from db
-router.get("/ads", verify, async function(req, res, next) {
+router.get("/ads", async function(req, res, next) {
   let criteria = {};
   if (req.query.carModel) {
     criteria.carModel = req.query.carModel;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 export default class LogoutPage extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export default class LogoutPage extends React.Component {
     return (
       <div>
         <div>You have been logged out!</div>
-        <Link to="/login">Login</Link>
+        <Redirect to="/login">Login</Redirect>
       </div>
     );
   }

@@ -18,9 +18,9 @@ class Header extends React.Component {
           </div>
           <div className="link link-1 wow bounceInDown" data-wow-delay="0.3s">
             <Link to="/ads" className="link cars__link">
-              Cars <div>&or;</div>
+              Cars <div></div>
             </Link>
-            <div className="header__chose-menu">
+            {/* <div className="header__chose-menu">
               <div>
                 <Link to="/ads/newcars" className="link">
                   New cars
@@ -31,14 +31,14 @@ class Header extends React.Component {
                   Used cars
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="wow bounceInDown" data-wow-delay="0.2s">
             <Link to="/about">About</Link>
           </div>
-          <div className="wow bounceInDown" data-wow-delay="0.1s">
+          {/* <div className="wow bounceInDown" data-wow-delay="0.1s">
             <Link to="/myads">My cars</Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="header__title">
@@ -49,7 +49,7 @@ class Header extends React.Component {
           className="header__links register wow bounceInDown"
           data-wow-delay="0.3s"
         >
-          <Link to="/login">Login/Register</Link>
+          <Link to="/login">Login</Link>
           <Link to="/logout">Logout</Link>
         </div>
       </div>

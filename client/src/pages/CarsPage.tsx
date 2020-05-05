@@ -23,6 +23,7 @@ import Footer from "../components/Footer/Footer";
 import NewCarPage from "./NewCarPage";
 import { getStatus } from "../components/Welcome/Welcome";
 import CreateAdBtn from "../components/buttons/CreateAdBtn/CreateAdBtn";
+import FilterForm from '../components/FilterForm/FilterForm'; 
 
 interface IState {
   ads: IAd[];
@@ -64,6 +65,18 @@ class NewCarsPage extends React.Component {
         <Link to="ads/create">
           <CreateAdBtn content="Create new ad &rsaquo;" />
         </Link>
+
+        <FilterForm
+          onSubmit={qparams =>
+            this.fetchAds({
+              carModel: qparams.manufacturer || "",
+              carName: qparams.search || "",
+              carType: qparams.type || "",
+              min_price: qparams.minPrice?.toString() || "",
+              max_price: qparams.maxPrice?.toString() || ""
+            })
+          }
+        />
 
         {this.state.isLoaded ? (
           <Ads

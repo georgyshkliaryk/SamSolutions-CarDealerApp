@@ -174,7 +174,7 @@ class Login extends React.Component<any, any> {
               onSubmit={event => {
                 event.preventDefault(); // Prevents page reloading
 
-                if (this.state.loginValue1 === "test" && this.state.passwordValue1 === "test") {
+                if (this.state.loginValue1 != "" && this.state.passwordValue1 != "" && this.state.loginError1 == "" && this.state.passwordError1 == "") {
 
                   //TODO: jwt
 
@@ -272,113 +272,7 @@ class Login extends React.Component<any, any> {
 
           {/* -------------------------------------------------------------------------------------------- */}
 
-          <div className="register__container">
-            <div className="login__container-title small-title">REGISTER</div>
-            <form
-              className="login__container-form"
-              onSubmit={event => {
-                event.preventDefault(); // Prevents page reloading
-
-                const loginRegExp = new RegExp(
-                  "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
-                );
-                const passwordRegExp = new RegExp(
-                  "^[a-zA-Z][a-zA-Z0-9-_.]{0,20}$"
-                );
-
-                if (this.state.loginValue2 == "") {
-                  //login value check
-                  this.setState({
-                    loginError2: "enter your login!"
-                  });
-                } else {
-                  if (loginRegExp.test(this.state.loginValue2) == false) {
-                    this.setState({
-                      loginError2: "only A..z, 0..9, _ and . avaliable!"
-                    });
-                  } else {
-                    this.setState({
-                      loginError2: ""
-                    });
-                  }
-                }
-                if (this.state.passwordValue2 == "") {
-                  //password value check
-                  this.setState({
-                    passwordError2: "enter your password!"
-                  });
-                } else {
-                  if (passwordRegExp.test(this.state.passwordValue2) == false) {
-                    this.setState({
-                      passwordError2: "only eng letters and digits!"
-                    });
-                  } else {
-                    this.setState({
-                      passwordError2: ""
-                    });
-                  }
-                }
-                if (
-                  this.state.passwordValue2 != this.state.confirmPasswordValue
-                ) {
-                  //confirm password check
-                  this.setState({
-                    confirmPasswordError: "passwords don't match!"
-                  });
-                } else {
-                  this.setState({
-                    confirmPasswordError: ""
-                  });
-                }
-                console.log(this.state.loginValue2);
-              }}
-            >
-              <input
-                type="text"
-                placeholder="login"
-                value={this.state.loginValue2}
-                onChange={this.handleChangeValue2.bind(this)}
-              />
-              <br />
-              <span className="login__error">{this.state.loginError2}</span>
-              <br />
-              <input
-                type={this.state.passwordType2}
-                placeholder="password"
-                className="input1"
-                value={this.state.passwordValue2}
-                onChange={this.handleChangePassword2.bind(this)}
-              />
-              <a onClick={this.handlePasswordVisibility2.bind(this)}>
-                <img
-                  className="password-visible"
-                  src={this.state.passwordVisibilityImg2}
-                />
-              </a>
-              <br />
-              <span className="login__error">{this.state.passwordError2}</span>
-              <br />
-              <input
-                type={this.state.passwordType2}
-                placeholder="confirm password"
-                value={this.state.confirmPasswordValue}
-                onChange={this.handleChangeConfirmPassword2.bind(this)}
-              />
-              <br />
-              <span className="login__error">
-                {this.state.confirmPasswordError}
-              </span>
-              <br />
-              <span className="additional">
-                <Link to="">sign in as a guest</Link>
-              </span>
-              <div className="register__btn">
-                {/* <Link to="/"> */}
-                <SearchButton content="Confirm" />
-                {/* </Link> */}
-              </div>
-            </form>
-          </div>
+          
         </div>
       </div>
     );

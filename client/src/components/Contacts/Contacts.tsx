@@ -57,14 +57,14 @@ class Contacts extends React.Component<any, any> {
               </div>
             </div>
             <div className="contacts__links">
-              <img className="wow fadeInRight" src={facebook} alt="facebook" />
-              <img src={twitter} alt="twitter" className="wow fadeInRight" />
-              <img src={youtube} alt="youtube" className="wow fadeInRight" />
-              <img
+              <a href="https://www.facebook.com" target="_blank"><img className="wow fadeInRight" src={facebook} alt="facebook" /></a>
+              <a href="https://www.twitter.com" target="_blank"><img src={twitter} alt="twitter" className="wow fadeInRight" /></a>
+              <a href="https://www.youtube.com" target="_blank"><img src={youtube} alt="youtube" className="wow fadeInRight" /></a>
+              <a href="https://www.instagram.com" target="_blank"><img
                 src={instagram}
                 alt="instagram"
                 className="wow fadeInRight"
-              />
+              /></a>
             </div>
           </div>
         </div>

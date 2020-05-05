@@ -13,7 +13,7 @@ function Footer() {
               Home
             </Link>
           </div>
-          <div>
+          {/* <div>
             <Link to="/ads/newcars" className="link">
               New cars
             </Link>
@@ -22,7 +22,7 @@ function Footer() {
             <Link to="/ads/usedcars" className="link">
               Used cars
             </Link>
-          </div>
+          </div> */}
           
         </div>
 
@@ -34,9 +34,9 @@ function Footer() {
           <div>
             <Link to="/about">About</Link>
           </div>
-          <div>
+          {/* <div>
             <Link to="/myads">My cars</Link>
-          </div>
+          </div> */}
         </div>
       </div>
   );

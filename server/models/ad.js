@@ -39,7 +39,17 @@ const AdSchema = new Schema({
   },
   carUsage: {
     type: String
-  }
+  },
+  carFullDescription: { 
+    type: String
+  },
+  maxSpeed: {
+    type: String
+  },
+  fuelConsumption: {
+    type: String
+  },
+  
 });
 
 const Ad = mongoose.model("Ad", AdSchema);
