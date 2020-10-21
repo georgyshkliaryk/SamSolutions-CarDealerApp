@@ -29,6 +29,8 @@ class UsedCarPage extends React.Component {
   }
 
   componentDidMount() {
+    
+    
     this.fetchAds();
   }
 

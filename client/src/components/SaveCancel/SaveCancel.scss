@@ -1,8 +1,19 @@
-.button {
-    background-color: white;
-    color: black;
-}
-.button-search__container {
+
+.button-search__container.btn {
     display: flex;
     justify-content: space-between;
+    padding: 0em 5em;
+}
+.save {
+    background-color: red;
+    color: white;
+    margin-right: 2em;
+}
+.cancel {
+    background-color: lightgrey;
+    color: black;
+
+}
+.cancel:hover {
+    background-color: grey;
 }

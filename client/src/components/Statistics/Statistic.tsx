@@ -31,7 +31,7 @@ function Statistics(props: any) {
   };
   const settings3 = {
     start: 0,
-    count: 20,
+    count: props.clients,
     duration: 3000,
     useGroup: true,
     animation: "up"

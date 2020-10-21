@@ -24,6 +24,9 @@ const AdSchema = new Schema({
   carDescription: {
     type: String
   },
+  carFullDescription: {
+    type: String
+  },
   carYear: {
     type: Number
   },
@@ -34,13 +37,10 @@ const AdSchema = new Schema({
     type: String
   },
   carUsed: {
-    type: Boolean,
-    default: false
+    type: String,
+   // default: false
   },
   carUsage: {
-    type: String
-  },
-  carFullDescription: { 
     type: String
   },
   maxSpeed: {

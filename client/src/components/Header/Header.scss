@@ -22,6 +22,11 @@
         
     }
 }
+@media screen and (max-width: 1000px) {
+    .first {
+        flex-direction: column;
+    }
+}
 .header__links a:hover {
     color: grey;
 }
@@ -29,8 +34,11 @@
     font-size: 30px;
     font-family: 'Lobster', cursive;
     color: red;
-    
-    span {
+
+    span.dealer {
+        color: red;
+    }
+    span.car {
         color: white;
     }
 }

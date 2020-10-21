@@ -76,10 +76,19 @@ class NewCarPage extends React.Component<any, any> {
             title={this.state.ad.carName}
             image={this.state.ad.carImage}
             description={this.state.ad.carDescription}
+            fulldescription={this.state.ad.carFullDescription}
+            model={this.state.ad.carModel}
+            price={this.state.ad.carPrice}
+            year={this.state.ad.carYear}
+            type={this.state.ad.carType}
+            mileage={this.state.ad.carMileage}
+            maxspeed={this.state.ad.maxSpeed}
+            fuel={this.state.ad.fuelConsumption}
             id={this.props.match.params.id}
             
             inputs={this.props.inputDisabled}
             mode={this.props.pageMode}
+            
             
           />
         ) : (

@@ -50,3 +50,27 @@
 .car__title-input {
     font-size: 25px;
 }
+.car__info-input {
+    font-size: 15px;
+    font-weight: bold;
+}
+.carflex {
+    display: flex;
+    img {
+        width: 1.3em;
+    }
+}
+
+.full {
+
+    width: 100%;
+    margin: 3em auto 1em auto;
+}
+.full2 {
+    min-width: 80%;
+    min-height: 12em;
+}
+.car__btn {
+    margin: auto;
+}
+

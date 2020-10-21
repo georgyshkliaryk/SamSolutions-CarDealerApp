@@ -67,7 +67,7 @@ class Slider extends React.Component<
             alt="lol"
           />
           <div className="slide__title wow fadeInLeft">
-            <Link to={`/ads/${this.props.ads[this.state.currentImageIndex].carUsage}/${this.props.ads[this.state.currentImageIndex].carName}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
+            <Link to={`/ads/view/${this.props.ads[this.state.currentImageIndex]._id}`}>{this.props.ads[this.state.currentImageIndex].carName}</Link>
           </div>  
           <div className="slide__description wow fadeInRight">
             {this.props.ads[this.state.currentImageIndex].carDescription}

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./App.scss";
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  Redirect,
-  useRouteMatch,
-  useParams
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Link,
+    Redirect,
+    useRouteMatch,
+    useParams
 } from "react-router-dom";
 
 //Pages
@@ -20,45 +20,58 @@ import CarsPage from "./pages/CarsPage";
 import UsedCarsPage from "./pages/UsedCarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import UsedCarPage from "./pages/UsedCarPage";
-import LogoutPage from './pages/LogoutPage'; 
-
+import LogoutPage from './pages/LogoutPage';
+import UsersPage from "./pages/UsersPage";
 
 
 class App extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-  }
-  render() {
-    return (
-      <Router>
-        <Route exact path="/login">
-          <LoginPage />
-        </Route>
+    constructor(props: any) {
+        super(props);
+    }
 
-        <Route exact path="/logout">
-          <LogoutPage />
-        </Route>
+    state = {
+        name: ""
+};
 
-        <Route exact path="/">
-          <HomePage />
-        </Route>
+    updateData2 = (value) => {
+        this.setState({ name: value });
+    };
 
-        <Switch>
-          <Route exact path="/ads">
-            <CarsPage />
-          </Route>
-          <Route path="/ads/view/:id" 
-            component={(props) => <NewCarPage {...props} inputDisabled={true} pageMode="view"/>}
-          />
-          <Route path="/ads/create"
-           component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="create"/>}
-          />
-          <Route path="/ads/edit/:id" 
-            component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="edit"/>}
-          />
-        </Switch>
+    render() {
+        return (
+            <Router>
+                <Route exact path="/login">
+                    <LoginPage updateData2={this.updateData2}/>
+                </Route>
 
-        {/* <Switch>
+                <Route exact path="/users">
+                    <UsersPage users={this.state.name}/>
+                </Route>
+
+                <Route exact path="/logout">
+                    <LogoutPage/>
+                </Route>
+
+                <Route exact path="/">
+                    <HomePage/>
+                </Route>
+
+                <Switch>
+                    <Route exact path="/ads">
+                        <CarsPage/>
+                    </Route>
+                    <Route path="/ads/view/:id"
+                           component={(props) => <NewCarPage {...props} inputDisabled={true} pageMode="view"/>}
+                    />
+                    <Route path="/ads/create"
+                           component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="create"/>}
+                    />
+                    <Route path="/ads/edit/:id"
+                           component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="edit"/>}
+                    />
+                </Switch>
+
+                {/* <Switch>
           <Route exact path="/ads/usedcars">
             <UsedCarsPage />
           </Route>
@@ -67,17 +80,17 @@ class App extends React.Component<any, any> {
           </Route>
         </Switch> */}
 
-        <Route exact path="/about">
-          <AboutPage />
-        </Route>
+                <Route exact path="/about">
+                    <AboutPage/>
+                </Route>
 
-        {/* <Route exact path="/404">
+                {/* <Route exact path="/404">
           <NotFoundPage />
         </Route>
         <Redirect to="/404" /> */}
-      </Router>
-    );
-  }
+            </Router>
+        );
+    }
 }
 
 export default App;

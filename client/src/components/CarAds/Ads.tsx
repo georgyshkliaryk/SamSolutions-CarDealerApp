@@ -31,7 +31,7 @@ function Ads(props: IProps) {
           let carUsage: string;
           let newCarAds: object[] = [];
           let usedCarAds: object[] = [];
-          if (ad.carUsed) {
+          if (ad.carUsed=="Used car") {
            // carUsagePath = "usedcars";
             carUsage = "used";
             usedCarAds.push(ad);
@@ -40,8 +40,6 @@ function Ads(props: IProps) {
             carUsage = "new";
             newCarAds.push(ad);
           }
-
-          
 
           return (
             
@@ -53,6 +51,7 @@ function Ads(props: IProps) {
                 price={ad.carPrice}
                 usage={carUsage}
                 description={ad.carDescription}
+                fulldescription={ad.carFullDescription}
                 img={`${ad.carImage}`}
                 path={"/ads/view/" + ad._id}
                 key={i++}

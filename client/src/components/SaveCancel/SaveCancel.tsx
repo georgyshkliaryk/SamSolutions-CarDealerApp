@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../buttons/SearchButton/SearchButton";
-import "./SaveCancel";
+import "./SaveCancel.scss";
 
 class SaveCancel extends React.Component<any, {}> {
   constructor(props: any) {
@@ -13,7 +13,7 @@ class SaveCancel extends React.Component<any, {}> {
 
   render() {
     return (
-      <div className="button-search__container">
+      <div className="button-search__container btn">
         <button className="button-search button save" onClick={this.props.handleClick}> 
           {this.props.save}
         </button>

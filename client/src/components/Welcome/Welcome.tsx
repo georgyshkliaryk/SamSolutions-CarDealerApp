@@ -34,8 +34,9 @@ function Welcome(props: IProps) {
       </div>
       <div className="welcome__components">
         <Statistics
-          newCars={getStatus(props.ads, true).length}
-          usedCars={getStatus(props.ads, false).length}
+          newCars={getStatus(props.ads, "Used car").length}
+          usedCars={getStatus(props.ads, "New car").length}
+          clients={Object.keys(sessionStorage).length}
         />
         <Link to="/about">
           <SearchButton content="Learn More &rsaquo;" />
