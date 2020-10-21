@@ -22,6 +22,7 @@ import NewCarPage from "./pages/NewCarPage";
 import UsedCarPage from "./pages/UsedCarPage";
 import LogoutPage from './pages/LogoutPage';
 import UsersPage from "./pages/UsersPage";
+import CreateAdPage from './pages/CreateAdPage';
 
 
 class App extends React.Component<any, any> {
@@ -63,9 +64,12 @@ class App extends React.Component<any, any> {
                     <Route path="/ads/view/:id"
                            component={(props) => <NewCarPage {...props} inputDisabled={true} pageMode="view"/>}
                     />
-                    <Route path="/ads/create"
+                    {/* <Route path="/ads/create"
                            component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="create"/>}
-                    />
+                    /> */}
+                    <Route path="/ads/create">
+                           <CreateAdPage/>
+                    </Route>
                     <Route path="/ads/edit/:id"
                            component={(props) => <NewCarPage {...props} inputDisabled={false} pageMode="edit"/>}
                     />
