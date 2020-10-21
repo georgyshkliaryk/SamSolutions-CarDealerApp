@@ -8,6 +8,7 @@ export default class RestService {
   post<T>(url: string, body: object, queryParams?: object): Promise<T> {
     return fetch(url, { method: "POST" })
     .then(data => data.json()) as Promise<T>;
+    
   }
   put(url: string, body: object, queryParams?: object) {}
   delete(url: string) {}

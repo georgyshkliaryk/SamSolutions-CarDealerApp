@@ -27,9 +27,6 @@ class Users extends React.Component<any, any> {
 
                 <span>Users on site: </span><br/>
                     {/*{this.props.users.key}*/}
-
-
-
                 <div> {this.getLogins()} </div>
 
 
