@@ -88,8 +88,8 @@ class FilterForm extends Component<IProps, any> {
                     <SelectInput
                         onChange={this.onChangeSelect1}
                         label="SELECT MANUFACTURER"
-                        options={["", "Audi", "BMW", "Mercedes", "Ford", "Mazda", "Porsche"]}
-                        values={["", "Audi", "BMW", "Mercedes", "Ford", "Mazda", "Porsche"]}
+                        options={["", "Audi", "BMW", "Mercedes", "Ford", "Mazda", "Porsche", "Volkswagen", "Honda", "Mitsubishi", "Subaru"]}
+                        values={["", "Audi", "BMW", "Mercedes", "Ford", "Mazda", "Porsche", "Volkswagen", "Honda", "Mitsubishi", "Subaru"]}
                     />
 
                     <SelectInput

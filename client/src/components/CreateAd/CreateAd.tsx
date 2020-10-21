@@ -1,27 +1,27 @@
 import "./CreateAd";
 import React, { useState } from "react";
-//import { useForm } from "react-hook-form";
+import { BrowserRouter } from "react-router-dom";
+//import { useForm } from "react-hook-form";;
 
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./CreateAd.scss";
 
-import SaveCancel from "../SaveCancel/SaveCancel";
-import EditButton from "../buttons/EditButton/EditButton";
-import { register } from "../../serviceWorker";
-import { IProps } from "../Slider/Slider";
-
 import { postAd } from "../../services/RestService";
+import { Link, Redirect } from "react-router-dom";
 
 class CreateAd extends React.Component {
   constructor(props: any) {
     super(props);
 
     this.state = {
+      carImage: "",
       carName: "",
       carDescription: "",
       carModel: "",
       carYear: null,
       carType: "",
+      carTypeImage: "Sedan",
+      carUsed: "New car",
       carPrice: null,
       carMileage: null,
       fuelConsumption: null,
@@ -29,25 +29,59 @@ class CreateAd extends React.Component {
       carFullDescription: "",
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
-  // const { register, handleSubmit } = useForm();
-  handleClick(event) {
+  componentDidMount() {
+    let redirect = false;
+  }
+  onSubmit(event) {
     event.preventDefault();
     console.log([this.state]);
 
     try {
       const created = postAd([this.state]);
       console.log(created);
+      alert("Ad successfully created!");
     } catch (error) {
       console.error(error);
     }
+    // BrowserRouter.push('/ads');
   }
 
   handleChange(event) {
     const target = event.target;
     const name = target.name;
     const value = event.target.value;
+    if (name == "Sedan") {
+        this.setState({
+            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png"
+        })
+    };
+    if (value == "Coupe") {
+        this.setState({
+            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55180.png"
+        })
+    };
+    if (value == "SUV") {
+        this.setState({
+            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55280.png"
+        })
+    };
+    if (value == "4x4") {
+        this.setState({
+            carTypeImage: "https://www.flaticon.com/svg/static/icons/svg/37/37859.svg"
+        })
+    };
+    if (value == "Hatchback") {
+        this.setState({
+            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55308.png"
+        })
+    };
+    if (name == "Pickup") {
+        this.setState({
+            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55277.png"
+        })
+    };
     this.setState({
       [name]: value,
     });
@@ -55,18 +89,17 @@ class CreateAd extends React.Component {
 
   render() {
     return (
-      <form>
-        <div className="title">Please, enter information about your car</div>
+      <form onSubmit={this.onSubmit}>
+        <div className="title">Please, enter information about your car:</div>
         <div className={"car__container"}>
           <div className="car__image">
             <input
               className="car__info-input img"
               type="text"
               name="carImage"
-              //   value={props.model}
-              //   disabled={props.inputs}
               placeholder="car image link (1920x1280)"
               onChange={this.handleChange}
+              required
             />
           </div>
 
@@ -76,21 +109,19 @@ class CreateAd extends React.Component {
               <input
                 className="car__title-input"
                 type="text"
-                //   value={props.title}
                 name="carName"
-                //   disabled={props.inputs}
                 placeholder="car brand and model"
                 onChange={this.handleChange}
+                required
               />{" "}
             </div>
             <div className="car__description">
               <textarea
                 className="car__description-input"
                 name="carDescription"
-                //   value={props.description}
-                //   disabled={props.inputs}
-                placeholder="short description"
+                placeholder="short description (general info about car)"
                 onChange={this.handleChange}
+                required
               />
             </div>
 
@@ -108,8 +139,6 @@ class CreateAd extends React.Component {
                 className="car__info-input"
                 type="text"
                 name="carModel"
-                //   value={props.model}
-                //   disabled={props.inputs}
                 placeholder="car brand"
                 onChange={this.handleChange}
               />
@@ -129,11 +158,27 @@ class CreateAd extends React.Component {
                 className="car__info-input"
                 type="text"
                 name="carYear"
-                //   value={props.year}
-                //   disabled={props.inputs}
                 placeholder="car year"
                 onChange={this.handleChange}
+                required
               />
+            </div>
+            <br />
+            <div className={"car__info carflex"}>
+              <div>
+                <img
+                  title="Usage"
+                  src={"https://cdn.onlinewebfonts.com/svg/img_230655.png"}
+                />
+              </div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <select className="car__info-input"
+                name="carUsed"
+                onChange={this.handleChange}
+                >
+                <option value="New car">New</option>
+                <option value="Used car">Used</option>
+              </select><div>&nbsp;&nbsp;New car or used?</div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -144,15 +189,17 @@ class CreateAd extends React.Component {
                 />
               </div>
               <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-              <input
-                className="car__info-input"
-                type="text"
+              <select className="car__info-input"
                 name="carType"
-                //   value={props.type} //sedan coupe etc
-                //   disabled={props.inputs}
-                placeholder="car type"
                 onChange={this.handleChange}
-              />
+                >
+                <option value="Sedan">Sedan</option>
+                <option value="Coupe">Coupe</option>
+                <option value="SUV">SUV</option>
+                <option value="4x4">4x4</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Pickup">Pickup</option>
+              </select><div>&nbsp;&nbsp;Select car type</div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -169,10 +216,9 @@ class CreateAd extends React.Component {
                 className="car__info-input"
                 type="text"
                 name="carPrice"
-                //   value={props.price}
-                //   disabled={props.inputs}
                 placeholder="car price"
                 onChange={this.handleChange}
+                required
               />
               <div>$</div>
             </div>
@@ -191,9 +237,7 @@ class CreateAd extends React.Component {
                 className="car__info-input"
                 type="text"
                 name="carMileage"
-                //   value={props.mileage}
-                //   disabled={props.inputs}
-                placeholder="car mileage"
+                placeholder="car mileage (if car is new, enter 0)"
                 onChange={this.handleChange}
               />
               <div>km</div>
@@ -213,8 +257,6 @@ class CreateAd extends React.Component {
                 className="car__info-input"
                 type="text"
                 name="fuelConsumption"
-                //   value={props.fuel}
-                //   disabled={props.inputs}
                 placeholder="fuel consumption"
                 onChange={this.handleChange}
               />
@@ -235,8 +277,6 @@ class CreateAd extends React.Component {
                 className="car__info-input"
                 type="text"
                 name="maxSpeed"
-                //   value={props.maxspeed}
-                //   disabled={props.inputs}
                 placeholder="max speed"
                 onChange={this.handleChange}
               />
@@ -248,25 +288,18 @@ class CreateAd extends React.Component {
             <textarea
               className="car__description-input full2"
               name="carFullDescription"
-              // value={props.fulldescription}
-              // disabled={props.inputs}
               placeholder="full description (driving experience, problems, advantages, etc.)"
               onChange={this.handleChange}
             />
           </div>
           <br />
           <div className={"car__btn"}>
-            {/* {props.mode === "edit" ? (
-            <SaveCancel save="Save changes" cancel="Cancel" />
-          ) : props.mode == "view" ? (
-            <EditButton content="Edit" linkTo={props.id} />
-          ) : (
-            <SaveCancel save="Apply" cancel="Cancel" />
-          )} */}
-            <button className="button red" onClick={this.handleClick}>
+
+            <button className="button red">
               Save changes
             </button>
-            <button className="button grey" onClick={this.handleClick}>
+
+            <button className="button grey" onClick={this.onSubmit}>
               Cancel
             </button>
           </div>

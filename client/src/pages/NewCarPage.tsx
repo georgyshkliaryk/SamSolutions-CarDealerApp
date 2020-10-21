@@ -80,6 +80,7 @@ class NewCarPage extends React.Component<any, any> {
             model={this.state.ad.carModel}
             price={this.state.ad.carPrice}
             year={this.state.ad.carYear}
+            used={this.state.ad.carUsed}
             type={this.state.ad.carType}
             mileage={this.state.ad.carMileage}
             maxspeed={this.state.ad.maxSpeed}

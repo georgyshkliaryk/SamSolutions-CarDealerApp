@@ -46,6 +46,7 @@ function Ads(props: IProps) {
               <AdCard
                 title={ad.carName}
                 typeImg={ad.carTypeImage}
+                carUsed={ad.carUsed}
                 type={ad.carType}
                 year={ad.carYear}
                 price={ad.carPrice}
