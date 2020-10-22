@@ -1,13 +1,13 @@
 import "./CreateAd";
 import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
 //import { useForm } from "react-hook-form";;
 
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./CreateAd.scss";
 
 import { postAd } from "../../services/RestService";
-import { Link, Redirect } from "react-router-dom";
+import { Link, BrowserRouter as Router } from "react-router-dom";
+import { IProps } from "../Slider/Slider";
 
 class CreateAd extends React.Component {
   constructor(props: any) {
@@ -31,21 +31,22 @@ class CreateAd extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  componentDidMount() {
-    let redirect = false;
-  }
   onSubmit(event) {
     event.preventDefault();
     console.log([this.state]);
 
     try {
       const created = postAd([this.state]);
-      console.log(created);
       alert("Ad successfully created!");
     } catch (error) {
-      console.error(error);
+      alert("Error creating ad!");
     }
     // BrowserRouter.push('/ads');
+    const createHistory = require("history").createBrowserHistory;
+    let history = createHistory();
+    history.push("/ads");
+    let pathUrl = window.location.href;
+    window.location.href = pathUrl;
   }
 
   handleChange(event) {
@@ -53,35 +54,36 @@ class CreateAd extends React.Component {
     const name = target.name;
     const value = event.target.value;
     if (name == "Sedan") {
-        this.setState({
-            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png"
-        })
-    };
+      this.setState({
+        carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png",
+      });
+    }
     if (value == "Coupe") {
-        this.setState({
-            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55180.png"
-        })
-    };
+      this.setState({
+        carTypeImage: "https://image.flaticon.com/icons/png/512/55/55180.png",
+      });
+    }
     if (value == "SUV") {
-        this.setState({
-            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55280.png"
-        })
-    };
+      this.setState({
+        carTypeImage: "https://image.flaticon.com/icons/png/512/55/55280.png",
+      });
+    }
     if (value == "4x4") {
-        this.setState({
-            carTypeImage: "https://www.flaticon.com/svg/static/icons/svg/37/37859.svg"
-        })
-    };
+      this.setState({
+        carTypeImage:
+          "https://www.flaticon.com/svg/static/icons/svg/37/37859.svg",
+      });
+    }
     if (value == "Hatchback") {
-        this.setState({
-            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55308.png"
-        })
-    };
+      this.setState({
+        carTypeImage: "https://image.flaticon.com/icons/png/512/55/55308.png",
+      });
+    }
     if (name == "Pickup") {
-        this.setState({
-            carTypeImage: "https://image.flaticon.com/icons/png/512/55/55277.png"
-        })
-    };
+      this.setState({
+        carTypeImage: "https://image.flaticon.com/icons/png/512/55/55277.png",
+      });
+    }
     this.setState({
       [name]: value,
     });
@@ -172,13 +174,15 @@ class CreateAd extends React.Component {
                 />
               </div>
               <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-              <select className="car__info-input"
+              <select
+                className="car__info-input"
                 name="carUsed"
                 onChange={this.handleChange}
-                >
+              >
                 <option value="New car">New</option>
                 <option value="Used car">Used</option>
-              </select><div>&nbsp;&nbsp;New car or used?</div>
+              </select>
+              <div>&nbsp;&nbsp;New car or used?</div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -189,17 +193,19 @@ class CreateAd extends React.Component {
                 />
               </div>
               <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-              <select className="car__info-input"
+              <select
+                className="car__info-input"
                 name="carType"
                 onChange={this.handleChange}
-                >
+              >
                 <option value="Sedan">Sedan</option>
                 <option value="Coupe">Coupe</option>
                 <option value="SUV">SUV</option>
                 <option value="4x4">4x4</option>
                 <option value="Hatchback">Hatchback</option>
                 <option value="Pickup">Pickup</option>
-              </select><div>&nbsp;&nbsp;Select car type</div>
+              </select>
+              <div>&nbsp;&nbsp;Select car type</div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -294,14 +300,11 @@ class CreateAd extends React.Component {
           </div>
           <br />
           <div className={"car__btn"}>
+            <button className="button1 red">Save changes</button>
 
-            <button className="button red">
-              Save changes
-            </button>
-
-            <button className="button grey" onClick={this.onSubmit}>
-              Cancel
-            </button>
+            <Link to="/ads">
+              <button className="button1 grey">Cancel</button>
+            </Link>
           </div>
         </div>
       </form>
