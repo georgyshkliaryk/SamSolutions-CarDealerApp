@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WOW from "wowjs";
+import { deleteAd } from "../../services/RestService";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./CarAd.scss";
@@ -9,6 +11,19 @@ import SaveCancel from "../SaveCancel/SaveCancel";
 import EditButton from "../buttons/EditButton/EditButton";
 
 const CarAd = (props: any) => {
+  function handleDelete(path) {
+    try {
+      deleteAd(path);
+      alert("Ad was successfully deleted!");
+    } catch (error) {
+      alert("Error deleting ad!");
+    }
+    const createHistory = require("history").createBrowserHistory;
+    let history = createHistory();
+    history.push("/ads");
+    let pathUrl = window.location.href;
+    window.location.href = pathUrl;
+  }
   return (
     <div>
       <div className={"car__container"}>
@@ -199,13 +214,21 @@ const CarAd = (props: any) => {
         </div>
         <br />
         <div className={"car__btn"}>
-          {props.mode === "edit" ? (
+          {/* {props.mode === "edit" ? (
             <SaveCancel save="Save changes" cancel="Cancel" />
           ) : props.mode == "view" ? (
             <EditButton content="Edit" linkTo={props.id} />
           ) : (
             <SaveCancel save="Apply" cancel="Cancel" />
-          )}
+          )} */}
+          <button
+            className="button red"
+            onClick={() => {
+              handleDelete(`http://localhost:5000/api/ads/${props.id}`);
+            }}
+          >
+            Delete ad
+          </button>
         </div>
       </div>
     </div>

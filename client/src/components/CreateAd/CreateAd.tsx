@@ -1,13 +1,10 @@
 import "./CreateAd";
 import React, { useState } from "react";
 //import { useForm } from "react-hook-form";;
-
-import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./CreateAd.scss";
 
 import { postAd } from "../../services/RestService";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import { IProps } from "../Slider/Slider";
 
 class CreateAd extends React.Component {
   constructor(props: any) {
@@ -19,8 +16,8 @@ class CreateAd extends React.Component {
       carDescription: "",
       carModel: "",
       carYear: null,
-      carType: "",
-      carTypeImage: "Sedan",
+      carType: "Sedan",
+      carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png",
       carUsed: "New car",
       carPrice: null,
       carMileage: null,
