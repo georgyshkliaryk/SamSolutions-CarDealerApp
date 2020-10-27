@@ -7,7 +7,7 @@ import About from '../components/About/About';
 const AboutPage = () => {
   return (
     <div>
-      <Header />
+      <Header lang={"hidden"}/>
       <About />
       <Contacts />
       <Footer />

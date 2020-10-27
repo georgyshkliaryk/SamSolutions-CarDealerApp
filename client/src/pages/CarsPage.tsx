@@ -25,6 +25,8 @@ import {getStatus} from "../components/Welcome/Welcome";
 import CreateAdBtn from "../components/buttons/CreateAdBtn/CreateAdBtn";
 import FilterForm from '../components/FilterForm/FilterForm';
 
+import translate from '../i18n/translate';
+
 interface IState {
     ads: IAd[];
 }
@@ -62,9 +64,9 @@ class NewCarsPage extends React.Component {
         //let { path, url } = useRouteMatch();
         return (
             <>
-                <Header/>
+                <Header lang={"hidden"}/>
                 <Link to="ads/create">
-                    <CreateAdBtn content="Create new ad &rsaquo;"/>
+                    <CreateAdBtn content={translate("createBtn", {arrow: <span>&rsaquo;</span>})}/>
                 </Link>
 
                 <FilterForm
@@ -82,13 +84,13 @@ class NewCarsPage extends React.Component {
 
                 {this.state.isLoaded ? (
                     <Ads
-                        title="Available cars"
+                        title={translate("availableCars")}
                         // ads={getStatus(this.state.ads, false)}
                         ads={this.state.ads}
                         usage="new"
                     />
                 ) : (
-                    <Loading loading_title="Available cars"/>
+                    <Loading loading_title={translate("availableCars")}/>
                 )}
 
                 {/*<Route path={`$/:AdId`}>

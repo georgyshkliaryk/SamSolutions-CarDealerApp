@@ -10,6 +10,8 @@ import "./Statistics.scss";
 import { render } from "@testing-library/react";
 import { useEffect } from "react";
 
+import translate from '../../i18n/translate';
+
 function Statistics(props: any) {
   useEffect(() => {
     new WOW.WOW().init();
@@ -43,20 +45,20 @@ function Statistics(props: any) {
           {" "}
           <AnimationCount {...settings1} />{" "}
         </span>
-        NEW CARS IN STOCK
+        {translate("newCarsCount")}
       </div>
       <div className="statistics__card">
         <span>
           {" "}
           <AnimationCount {...settings2} />{" "}
         </span>
-        USED CARS IN STOCK
+        {translate("usedCarsCount")}
       </div>
       <div className="statistics__card">
         <span>
           <AnimationCount {...settings3} />
         </span>
-        HAPPY CLIENTS
+        {translate("clientsCount")}
       </div>
     </div>
   );

@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import "../Header/Header.scss";
 import "./Footer.scss";
 
+import translate from '../../i18n/translate';
+
 function Footer() {
   return (   
       <div className="header footer">
         <div className="header__links footer__links">
           <div>
             <Link to="/" className="link">
-              Home
+              {translate("home")}
             </Link>
           </div>
           {/* <div>
@@ -32,7 +34,7 @@ function Footer() {
 
         <div className="header__links footer__links">
           <div>
-            <Link to="/about">About</Link>
+            <Link to="/about">{translate("about")}</Link>
           </div>
           {/* <div>
             <Link to="/myads">My cars</Link>

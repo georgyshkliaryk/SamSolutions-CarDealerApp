@@ -8,6 +8,8 @@ import instagram from "../../public/assets/imgs/instagram.png";
 
 import "./Contacts.scss";
 
+import translate from '../../i18n/translate';
+
 class Contacts extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -19,7 +21,7 @@ class Contacts extends React.Component<any, any> {
     return (
       <div className="contacts">
         <div className="contacts__title wow flipInY" data-wow-delay="0.5s">
-          Contacts
+          {translate("contacts")}
         </div>
 
         <div className="contacts__container">
@@ -38,13 +40,19 @@ class Contacts extends React.Component<any, any> {
               <div className="contacts__ul1">
                 <ul>
                   <li>
-                    <strong>Phone:</strong>{" "}
+                    <strong>
+                      {translate("phone")}
+                    </strong>{" "}
                   </li>
                   <li>
-                    <strong>Adress:</strong>{" "}
+                    <strong>
+                      {translate("adress")}
+                    </strong>{" "}
                   </li>
                   <li>
-                    <strong>Email:</strong>{" "}
+                    <strong>
+                    {translate("email")}
+                    </strong>{" "}
                   </li>
                 </ul>
               </div>

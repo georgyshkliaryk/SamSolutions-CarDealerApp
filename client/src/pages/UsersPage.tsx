@@ -6,13 +6,17 @@ import Footer from "../components/Footer/Footer";
 import Users from "../components/Users/Users";
 import Login from "../components/Login/Login";
 
-class UsersPage extends React.Component<any, any> {
+class UsersPage extends React.Component<any, {}> {
+    state = {
+        users: sessionStorage.getItem("login"),
+    };
     constructor(props: any) {
         super(props);
+
+
+        
     }
-    state = {
-        users: sessionStorage.getItem("login")
-    };
+
 
 
     componentDidMount() {
@@ -21,8 +25,8 @@ class UsersPage extends React.Component<any, any> {
     render() {
         return (
             <>
-                <Header/>
-
+                
+                <Header lang={"hidden"}/>
                 <Users users={this.state.users}/>
                 <Footer/>
 

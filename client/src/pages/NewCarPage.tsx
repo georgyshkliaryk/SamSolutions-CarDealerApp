@@ -20,6 +20,8 @@ import { IProps } from "../models/IProps";
 import Ads from "../components/CarAds/Ads";
 import { withRouter } from "react-router";
 
+import translate from '../i18n/translate';
+
 interface IId {
   _id: string;
 }
@@ -93,7 +95,7 @@ class NewCarPage extends React.Component<any, any> {
             
           />
         ) : (
-          <Loading loading_title="Loading ad..." />
+          <Loading loading_title={translate("loading")} />
         )}
         
         

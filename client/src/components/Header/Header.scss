@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 .header {
     color: white;
-    background-color: black;
+    background-color: rgb(17, 17, 17);
     display: flex;
     justify-content: space-between;
     padding: 1.5em 2em;
@@ -34,6 +34,7 @@
     font-size: 30px;
     font-family: 'Lobster', cursive;
     color: red;
+    margin-top: 0.5rem;
 
     span.dealer {
         color: red;
@@ -75,4 +76,17 @@
         margin: 0.5em auto;
     }
 }
+.flag {
+    width: 2rem;
+    cursor: pointer;
+    margin-left: 0.3rem;
+}
+.flag:hover {
+    transform: scale(1.2);
+}
+.link {
+    margin-top: 0.5rem;
+}
+
+
 

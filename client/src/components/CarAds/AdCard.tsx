@@ -8,6 +8,8 @@ import "./AdCard.scss";
 import Loading from "../Loading/Loading";
 import handleCard from '../CarAds/Ads';
 
+import translate from '../../i18n/translate';
+
 
 const AdCard = (props: any) => {
   return (
@@ -23,7 +25,7 @@ const AdCard = (props: any) => {
       <div className="ad__carTypeImg"><img src={props.typeImg} alt="type" title={props.type}/><div className="ad__year">{props.year}</div></div>
       
       <div className="ad__button">
-        <Link to={props.path}><SearchButton className="button__card" content="More info &rsaquo;" /></Link>
+        <Link to={props.path}><SearchButton className="button__card" content={translate("moreInfoBtn", {arrow: <span>&rsaquo;</span>})} /></Link>
       </div>  
     </div>
   );

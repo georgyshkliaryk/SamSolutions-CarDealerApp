@@ -10,6 +10,8 @@ import Statistics from "../Statistics/Statistic";
 import { IProps } from "../../models/IProps";
 import { IAd } from "../../models/IAd";
 
+import translate from '../../i18n/translate';
+
 import WOW from "wowjs";
 
 //import {ads} from '../CarAds/Ads';
@@ -30,7 +32,8 @@ function Welcome(props: IProps) {
   return (
     <div className="welcome">
       <div className="welcome__title wow flipInX" data-wow-delay="0.5s">
-        Welcome to CarDealer!
+        {/* Welcome to CarDealer! */}
+        {translate("welcome")}
       </div>
       <div className="welcome__components">
         <Statistics
@@ -39,7 +42,8 @@ function Welcome(props: IProps) {
           clients={Object.keys(sessionStorage).length}
         />
         <Link to="/about">
-          <SearchButton content="Learn More &rsaquo;" />
+          <SearchButton content={translate("learnMoreBtn", {arrow: <span>&rsaquo;</span>})}/>
+          {/* "Learn More &rsaquo;" */}
         </Link>
       </div>
     </div>
