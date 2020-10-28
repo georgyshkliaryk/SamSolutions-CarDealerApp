@@ -47,7 +47,7 @@ class App extends React.Component<any, any> {
         <Router>
             <Switch>
           <Route exact path="/login">
-            <LoginPage updateData2={this.onUpdate} />
+            <LoginPage onUpdate={this.onUpdate} />
           </Route>
 
           <Route exact path="/users">

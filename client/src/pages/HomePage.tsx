@@ -85,6 +85,17 @@ class HomePage extends React.Component<any, {}> {
       });
   }
 
+  handleSubmit = (qparams) => {
+    this.fetchAds({
+      carModel: qparams.manufacturer || "",
+      carName: qparams.search || "",
+      carType: qparams.type || "",
+      carUsed: qparams.used || "",
+      min_price: qparams.minPrice?.toString() || "",
+      max_price: qparams.maxPrice?.toString() || "",
+    });
+  }
+
   render() {
     this.props.updateData(this.state.lang);
     if (this.state.loggedIn == false) {
@@ -101,16 +112,7 @@ class HomePage extends React.Component<any, {}> {
         )}
 
         <FilterForm
-          onSubmit={(qparams) =>
-            this.fetchAds({
-              carModel: qparams.manufacturer || "",
-              carName: qparams.search || "",
-              carType: qparams.type || "",
-              carUsed: qparams.used || "",
-              min_price: qparams.minPrice?.toString() || "",
-              max_price: qparams.maxPrice?.toString() || "",
-            })
-          }
+          onSubmit={this.handleSubmit}
         />
 
         {this.state.isLoaded ? (

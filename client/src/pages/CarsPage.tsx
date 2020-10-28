@@ -56,6 +56,17 @@ class NewCarsPage extends React.Component {
       });
   }
 
+  handleSubmit = (qparams) => {
+    this.fetchAds({
+      carModel: qparams.manufacturer || "",
+      carName: qparams.search || "",
+      carType: qparams.type || "",
+      carUsed: qparams.used || "",
+      min_price: qparams.minPrice?.toString() || "",
+      max_price: qparams.maxPrice?.toString() || "",
+    });
+  }
+
   render() {
     return (
       <>
@@ -67,16 +78,7 @@ class NewCarsPage extends React.Component {
         </Link>
 
         <FilterForm
-          onSubmit={(qparams) =>
-            this.fetchAds({
-              carModel: qparams.manufacturer || "",
-              carName: qparams.search || "",
-              carType: qparams.type || "",
-              carUsed: qparams.used || "",
-              min_price: qparams.minPrice?.toString() || "",
-              max_price: qparams.maxPrice?.toString() || "",
-            })
-          }
+          onSubmit={this.handleSubmit}
         />
 
         {this.state.isLoaded ? (

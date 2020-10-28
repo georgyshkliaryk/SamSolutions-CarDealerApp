@@ -47,6 +47,7 @@ export default {
         "buyCars": "buy cars;",
         "sellCars": "sell cars;",
         "sortCars": "Sort car ads by:",
+        "carTypeLi": "car type",
         "priceLi": "price",
         "carBrandLi": "car brand",
         "updateAd": "Update and edit your car ad.",
@@ -58,7 +59,7 @@ export default {
 
         "404": "Page not Found :(",
 
-        "avtiveUsers": "Users on site:",
+        "activeUsers": "Users on site:",
 
         "deleteAd": "Delete ad",
         "liters": "liters",

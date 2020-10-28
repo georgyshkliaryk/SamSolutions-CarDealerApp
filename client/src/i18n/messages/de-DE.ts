@@ -48,6 +48,7 @@ export default {
         "sellCars": "Autos verkaufen;",
         "sortCars": "Sortieren Sie Autoanzeigen nach:",
         "priceLi": "Preis",
+        "carTypeLi": "Auto Typ",
         "carBrandLi": "Automarke",
         "updateAd": "Aktualisieren und bearbeiten Sie Ihre Autoanzeige.",
 
@@ -58,7 +59,7 @@ export default {
 
         "404": "Seite nicht gefunden :(",
 
-        "avtiveUsers": "Benutzer vor Ort:",
+        "activeUsers": "Benutzer vor Ort:",
 
         "deleteAd": "Anzeige löschen",
         "liters": "Liter",

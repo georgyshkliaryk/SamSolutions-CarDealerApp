@@ -18,7 +18,7 @@ class LoginPage extends React.Component<any, any> {
       <>
         <Login
           updateData={() => {
-            this.props.updateData2(this.state.name);
+            this.props.onUpdate(this.state.name);
           }}
         />
       </>
