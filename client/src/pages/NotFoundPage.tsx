@@ -1,8 +1,9 @@
 import React from "react";
-import SearchButton from "../components/buttons/SearchButton/SearchButton";
 import { Link } from "react-router-dom";
 
 import translate from "../i18n/translate";
+
+import SearchButton from "../components/buttons/SearchButton/SearchButton";
 
 const NotFoundPage = () => {
   return (

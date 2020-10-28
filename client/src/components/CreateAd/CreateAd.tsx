@@ -1,5 +1,6 @@
-import "./CreateAd";
 import React from "react";
+
+import "./CreateAd";
 import "./CreateAd.scss";
 
 import { postAd } from "../../services/RestService";

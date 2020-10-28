@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./RangeInput.scss";
 
 import Nouislider from "nouislider-react";

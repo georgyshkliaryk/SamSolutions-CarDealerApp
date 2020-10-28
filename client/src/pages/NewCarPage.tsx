@@ -7,6 +7,7 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
+
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import RestService from "../services/RestService";
@@ -15,7 +16,7 @@ import Loading from "../components/Loading/Loading";
 import CarAd from "../components/CarAd/CarAd";
 
 import { IAd } from "../models/IAd";
-import { withRouter } from "react-router";
+
 
 import translate from "../i18n/translate";
 

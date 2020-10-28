@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "./Login.scss";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import { Redirect } from "react-router-dom";

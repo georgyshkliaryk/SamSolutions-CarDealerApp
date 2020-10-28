@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./SearchInput.scss";
 interface ISearch {
   placeholder: string;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import WOW from "wowjs";
+
 import "./FilterForm.scss";
 import SelectInput from "../SelectInput/SelectInput";
 import SearchButton from "../buttons/SearchButton/SearchButton";
