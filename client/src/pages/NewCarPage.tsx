@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import RestService from "../services/RestService";
@@ -87,4 +95,5 @@ class NewCarPage extends React.Component<any, any> {
   }
 }
 
-export default withRouter(NewCarPage as any);
+// export default withRouter(NewCarPage as any);
+export default NewCarPage;

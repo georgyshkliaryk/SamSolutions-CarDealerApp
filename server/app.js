@@ -1,8 +1,9 @@
 const express = require('express');
 const routes = require('./routes/ads');
 const mongoose = require('mongoose');
-process.env.NODE_CONFIG_DIR = 'C:/Users/HP/Documents/GitHub/sam-solutions-Car-Dealer-App/server/config';
+process.env.NODE_CONFIG_DIR = './server/config';
 const config = require('config');
+//console.log('NODE_CONFIG_DIR: ' + config.util.getEnv('NODE_CONFIG_DIR'));
 const bodyParser = require('body-parser');
 var cors = require('cors');
 
@@ -10,11 +11,10 @@ const app = express();
 const PORT = config.get('port') || 5000;
 const MongoUri = config.get('MongoUri');
 
-const authRoute = require('./routes/auth');
-
- 
+const authRoute = require('./routes/auth'); 
+  
 mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false); 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
