@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes/ads');
 const mongoose = require('mongoose');
+process.env.NODE_CONFIG_DIR = 'C:/Users/HP/Documents/GitHub/sam-solutions-Car-Dealer-App/server/config';
 const config = require('config');
 const bodyParser = require('body-parser');
 var cors = require('cors');
