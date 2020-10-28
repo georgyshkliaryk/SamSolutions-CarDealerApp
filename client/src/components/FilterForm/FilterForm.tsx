@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import WOW from "wowjs";
 import "./FilterForm.scss";
-import SearchInput from "../SearchInput/SearchInput";
 import SelectInput from "../SelectInput/SelectInput";
-import RangeInput from "../RangeInput/RangeInput";
 import SearchButton from "../buttons/SearchButton/SearchButton";
-import { IAd } from "../../models/IAd";
 
 import "../../components/RangeInput/RangeInput";
 import Nouislider from "nouislider-react";
@@ -22,11 +18,9 @@ interface IState {
   minPrice?: number;
   maxPrice?: number;
 }
-
 interface IProps {
   onSubmit(params: IState): void;
 }
-
 class FilterForm extends Component<IProps, any> {
   constructor(props: any) {
     super(props);
@@ -60,33 +54,12 @@ class FilterForm extends Component<IProps, any> {
         className="filter"
         onSubmit={(event) => {
           event.preventDefault(); // Prevents page reloading
-          /* TODO */
-
-          // let query =
-          //   //   this.state.search +
-          //   " " +
-          //   this.state.manufacturer +
-          //   " " +
-          //   this.state.type +
-          //   " " +
-          //   this.state.minPrice +
-          //   " " +
-          //   this.state.maxPrice;
-          // alert(query);
 
           this.props.onSubmit(this.state);
         }}
       >
-        <div className="filter__title">
-          {translate("chooseCar")}
-        </div>
+        <div className="filter__title">{translate("chooseCar")}</div>
         <div className="filter__components">
-          {/* <SearchInput
-            onChange={this.onChangeSearch}
-            placeholder="Search"
-            label="KEYWORD SEARCH?"
-          /> */}
-
           <SelectInput
             onChange={this.onChangeSelect1}
             label={translate("carManufacturer")}
@@ -161,11 +134,6 @@ class FilterForm extends Component<IProps, any> {
     );
   }
 
-  onChangeSearch = (value: string) => {
-    this.setState({
-      search: value,
-    });
-  };
   onChangeSelect1 = (value: string) => {
     this.setState({
       manufacturer: value,

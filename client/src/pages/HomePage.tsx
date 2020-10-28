@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Slider, { IProps } from "../components/Slider/Slider";
@@ -16,11 +16,9 @@ import { IAd } from "../models/IAd";
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 
-import queryString from "query-string";
 import WOW from "wowjs";
 
 import translate from "../i18n/translate";
-import { createLogicalAnd } from "typescript";
 
 interface IState {
   ads: IAd[];
@@ -94,7 +92,7 @@ class HomePage extends React.Component<any, {}> {
     }
     return (
       <>
-        <Header updateData={this.updateData} lang={"visible"}/>
+        <Header updateData={this.updateData} lang={"visible"} />
 
         {this.state.isLoaded ? (
           <Slider ads={this.state.ads} />

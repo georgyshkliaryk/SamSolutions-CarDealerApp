@@ -10,9 +10,6 @@ class Header extends React.Component<any, {}> {
     eng: 0,
     de: 1,
   };
-  constructor(props: any) {
-    super(props);
-  }
   componentDidMount() {
     new WOW.WOW().init();
   }
@@ -28,25 +25,10 @@ class Header extends React.Component<any, {}> {
             <Link to="/ads" className="link cars__link">
               {translate("cars")} <div></div>
             </Link>
-            {/* <div className="header__chose-menu">
-              <div>
-                <Link to="/ads/newcars" className="link">
-                  New cars
-                </Link>
-              </div>
-              <div>
-                <Link to="/ads/usedcars" className="link">
-                  Used cars
-                </Link>
-              </div>
-            </div> */}
           </div>
           <div className="link wow bounceInDown" data-wow-delay="0.2s">
             <Link to="/about">{translate("about")}</Link>
           </div>
-          {/* <div className="wow bounceInDown" data-wow-delay="0.1s">
-            <Link to="/myads">My cars</Link>
-          </div> */}
         </div>
 
         <div className="header__title">
@@ -66,7 +48,7 @@ class Header extends React.Component<any, {}> {
               alt="eng"
               title="English"
               onClick={() => this.props.updateData(this.state.eng)}
-              style={{visibility: this.props.lang}}
+              style={{ visibility: this.props.lang }}
             />
             <img
               className="flag de"
@@ -74,7 +56,7 @@ class Header extends React.Component<any, {}> {
               alt="de"
               title="German"
               onClick={() => this.props.updateData(this.state.de)}
-              style={{visibility: this.props.lang}}
+              style={{ visibility: this.props.lang }}
             />
           </div>
 
@@ -82,9 +64,8 @@ class Header extends React.Component<any, {}> {
             <Link to="/users">{translate("users")}</Link>
           </div>
 
-          {/*<Link to="/login"></Link>*/}
           <div className="link wow bounceInDown" data-wow-delay="0.4s">
-          <Link to="/logout">{translate("logout")}</Link>
+            <Link to="/logout">{translate("logout")}</Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import "./SearchInput.scss";
-
 interface ISearch {
   placeholder: string;
   label: string;
@@ -15,7 +12,7 @@ function SearchForm(props: ISearch) {
       <input
         className="search__input"
         type="text"
-        onChange={event => props.onChange(event.target.value)}
+        onChange={(event) => props.onChange(event.target.value)}
         placeholder={props.placeholder}
       />
       <br />

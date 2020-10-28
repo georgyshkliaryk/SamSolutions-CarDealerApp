@@ -1,76 +1,73 @@
-
 .car__container {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    margin: 2em 2em;
-    min-height: 59.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 2em 2em;
+  min-height: 59.5vh;
 
-    input, textarea {
-        width: 100%;
-        border: 1px solid lightgrey;
-    }
-    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-        font-size: 15px;
-        padding-left: 0.5em;
-        font-family: 'Roboto Mono', ;
-    }
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid lightgrey;
+  }
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    font-size: 15px;
+    padding-left: 0.5em;
+    font-family: "Roboto Mono";
+  }
 
-    input {
-        border-bottom: 1px solid lightgrey !important;
-    }
+  input {
+    border-bottom: 1px solid lightgrey !important;
+  }
 
-    input:disabled, textarea:disabled {
-        border: none;
-        background-color: white;
-        
-    }
-    textarea {
-        font-size: 15px;
-        resize: none;
-        height: 8em;
-        width: 35em;
-        
-    }
+  input:disabled,
+  textarea:disabled {
+    border: none;
+    background-color: white;
+  }
+  textarea {
+    font-size: 15px;
+    resize: none;
+    height: 8em;
+    width: 35em;
+  }
 }
 .car__image {
-    margin: auto 10em;
-    min-width: 20em;
-    img {
-        width: 30em;
-        border-radius: 10px;
-    }
+  margin: auto 10em;
+  min-width: 20em;
+  img {
+    width: 30em;
+    border-radius: 10px;
+  }
 }
 .car__title {
-    text-align: center;
-    margin: 1em auto;
-    margin-bottom: 2em;
-    
+  text-align: center;
+  margin: 1em auto;
+  margin-bottom: 2em;
 }
 .car__title-input {
-    font-size: 25px;
+  font-size: 25px;
 }
 .car__info-input {
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
 .carflex {
-    display: flex;
-    img {
-        width: 1.3em;
-    }
+  display: flex;
+  img {
+    width: 1.3em;
+  }
 }
 
 .full {
-
-    width: 100%;
-    margin: 3em auto 1em auto;
+  width: 100%;
+  margin: 3em auto 1em auto;
 }
 .full2 {
-    min-width: 80%;
-    min-height: 12em;
+  min-width: 80%;
+  min-height: 12em;
 }
 .car__btn {
-    margin: auto;
+  margin: auto;
 }
-

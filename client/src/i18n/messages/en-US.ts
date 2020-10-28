@@ -58,7 +58,16 @@ export default {
 
         "404": "Page not Found :(",
 
-        "avtiveUsers": "Users on site:"
+        "avtiveUsers": "Users on site:",
+
+        "deleteAd": "Delete ad",
+        "liters": "liters",
+        "saveChanges": "Save changes",
+        "cancel": "Cancel",
+        "selectCarType": "Select car type",
+        "newOrUsed": "New car or used?",
+        "enterInfo": "Please, enter information about your car:"
+
 
 
 

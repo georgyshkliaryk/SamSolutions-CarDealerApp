@@ -1,14 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import WOW from "wowjs";
 import { deleteAd } from "../../services/RestService";
-import { BrowserRouter as Router } from "react-router-dom";
 
-import SearchButton from "../buttons/SearchButton/SearchButton";
 import "./CarAd.scss";
 
-import SaveCancel from "../SaveCancel/SaveCancel";
-import EditButton from "../buttons/EditButton/EditButton";
+import translate from "../../i18n/translate";
 
 const CarAd = (props: any) => {
   function handleDelete(path) {
@@ -180,7 +175,7 @@ const CarAd = (props: any) => {
               disabled={props.inputs}
               placeholder="fuel consumption"
             />
-            <div>liters/100km</div>
+            <div>{translate("liters")}/100km</div>
           </div>
           <br />
           <div className={"car__info carflex"}>
@@ -214,20 +209,13 @@ const CarAd = (props: any) => {
         </div>
         <br />
         <div className={"car__btn"}>
-          {/* {props.mode === "edit" ? (
-            <SaveCancel save="Save changes" cancel="Cancel" />
-          ) : props.mode == "view" ? (
-            <EditButton content="Edit" linkTo={props.id} />
-          ) : (
-            <SaveCancel save="Apply" cancel="Cancel" />
-          )} */}
           <button
             className="button red"
             onClick={() => {
               handleDelete(`http://localhost:5000/api/ads/${props.id}`);
             }}
           >
-            Delete ad
+            {translate("deleteAd")}
           </button>
         </div>
       </div>

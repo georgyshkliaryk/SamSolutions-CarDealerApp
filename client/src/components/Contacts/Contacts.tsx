@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import car_transparent from "../../public/assets/imgs/car_transparent.png";
 import facebook from "../../public/assets/imgs/facebook.png";
 import twitter from "../../public/assets/imgs/twitter.png";
@@ -8,7 +7,7 @@ import instagram from "../../public/assets/imgs/instagram.png";
 
 import "./Contacts.scss";
 
-import translate from '../../i18n/translate';
+import translate from "../../i18n/translate";
 
 class Contacts extends React.Component<any, any> {
   constructor(props: any) {
@@ -40,19 +39,13 @@ class Contacts extends React.Component<any, any> {
               <div className="contacts__ul1">
                 <ul>
                   <li>
-                    <strong>
-                      {translate("phone")}
-                    </strong>{" "}
+                    <strong>{translate("phone")}</strong>{" "}
                   </li>
                   <li>
-                    <strong>
-                      {translate("adress")}
-                    </strong>{" "}
+                    <strong>{translate("adress")}</strong>{" "}
                   </li>
                   <li>
-                    <strong>
-                    {translate("email")}
-                    </strong>{" "}
+                    <strong>{translate("email")}</strong>{" "}
                   </li>
                 </ul>
               </div>
@@ -65,14 +58,26 @@ class Contacts extends React.Component<any, any> {
               </div>
             </div>
             <div className="contacts__links">
-              <a href="https://www.facebook.com" target="_blank"><img className="wow fadeInRight" src={facebook} alt="facebook" /></a>
-              <a href="https://www.twitter.com" target="_blank"><img src={twitter} alt="twitter" className="wow fadeInRight" /></a>
-              <a href="https://www.youtube.com" target="_blank"><img src={youtube} alt="youtube" className="wow fadeInRight" /></a>
-              <a href="https://www.instagram.com" target="_blank"><img
-                src={instagram}
-                alt="instagram"
-                className="wow fadeInRight"
-              /></a>
+              <a href="https://www.facebook.com" target="_blank">
+                <img
+                  className="wow fadeInRight"
+                  src={facebook}
+                  alt="facebook"
+                />
+              </a>
+              <a href="https://www.twitter.com" target="_blank">
+                <img src={twitter} alt="twitter" className="wow fadeInRight" />
+              </a>
+              <a href="https://www.youtube.com" target="_blank">
+                <img src={youtube} alt="youtube" className="wow fadeInRight" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <img
+                  src={instagram}
+                  alt="instagram"
+                  className="wow fadeInRight"
+                />
+              </a>
             </div>
           </div>
         </div>

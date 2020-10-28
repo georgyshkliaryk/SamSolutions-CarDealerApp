@@ -10,15 +10,13 @@ import Statistics from "../Statistics/Statistic";
 import { IProps } from "../../models/IProps";
 import { IAd } from "../../models/IAd";
 
-import translate from '../../i18n/translate';
+import translate from "../../i18n/translate";
 
 import WOW from "wowjs";
 
-//import {ads} from '../CarAds/Ads';
-
 export function getStatus(ads: IAd[], search: any) {
-  return ads.filter(function(item: any) {
-    return Object.keys(item).some(function(key) {
+  return ads.filter(function (item: any) {
+    return Object.keys(item).some(function (key) {
       return item[key] === search;
     });
   });
@@ -32,7 +30,6 @@ function Welcome(props: IProps) {
   return (
     <div className="welcome">
       <div className="welcome__title wow flipInX" data-wow-delay="0.5s">
-        {/* Welcome to CarDealer! */}
         {translate("welcome")}
       </div>
       <div className="welcome__components">
@@ -42,8 +39,11 @@ function Welcome(props: IProps) {
           clients={Object.keys(sessionStorage).length}
         />
         <Link to="/about">
-          <SearchButton content={translate("learnMoreBtn", {arrow: <span>&rsaquo;</span>})}/>
-          {/* "Learn More &rsaquo;" */}
+          <SearchButton
+            content={translate("learnMoreBtn", {
+              arrow: <span>&rsaquo;</span>,
+            })}
+          />
         </Link>
       </div>
     </div>

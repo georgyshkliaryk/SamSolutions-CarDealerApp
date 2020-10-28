@@ -5,12 +5,6 @@ import "../SearchButton/SearchButton";
 import "./EditButton";
 
 class EditButton extends React.Component<any, {}> {
-  constructor(props: any) {
-    super(props);
-  }
-
-  componentDidMount() {}
-
   render() {
     return (
       <div className="button-search__container">

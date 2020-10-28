@@ -58,7 +58,15 @@ export default {
 
         "404": "Seite nicht gefunden :(",
 
-        "avtiveUsers": "Benutzer vor Ort:"
+        "avtiveUsers": "Benutzer vor Ort:",
+
+        "deleteAd": "Anzeige löschen",
+        "liters": "Liter",
+        "saveChanges": "Änderungen",
+        "cancel": "Stornieren",
+        "selectCarType": "Wählen Sie den Fahrzeugtyp",
+        "newOrUsed": "Neues Auto oder gebraucht?",
+        "enterInfo": "Bitte geben Sie Informationen zu Ihrem Auto ein:"
     }
 
 }

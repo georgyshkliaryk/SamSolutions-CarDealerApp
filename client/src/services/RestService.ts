@@ -1,5 +1,3 @@
-const axios = require("axios").default;
-
 export default class RestService {
   get<T>(url: string, queryParams: object = {}): Promise<T> {
     return fetch(url, { method: "GET" }).then((data) => data.json()) as Promise<

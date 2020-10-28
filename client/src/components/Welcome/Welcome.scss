@@ -1,15 +1,13 @@
 .welcome {
-
-    text-align: center;
-    background: url('../../public/assets/imgs/bmw2blur.jpg') 100%;
-    width: 99.9%;
-    min-height: 60em;
-    display: flow-root;
-
+  text-align: center;
+  background: url("../../public/assets/imgs/bmw2blur.jpg") 100%;
+  width: 99.9%;
+  min-height: 60em;
+  display: flow-root;
 }
 
 .welcome__title {
-    font-size: 45px;
-    color: white;
-    margin: 3em auto;
+  font-size: 45px;
+  color: white;
+  margin: 3em auto;
 }

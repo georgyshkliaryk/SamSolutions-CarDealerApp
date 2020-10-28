@@ -1,29 +1,29 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 .footer {
-    height: 5em;
-    width: 100%;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: grey;
-    margin-top: 0;
-    padding: 4em 0 0 0;
-    display: flex;
-    justify-content: space-evenly;
+  height: 5em;
+  width: 100%;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  color: grey;
+  margin-top: 0;
+  padding: 4em 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
 }
 .footer__title {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: grey;
+  font-size: 20px;
+
+  span {
     color: grey;
     font-size: 20px;
-
-    span {
-        color: grey;
-        font-size: 20px;
-    }
+  }
 }
 .footer__links {
-    margin: 0;
-    padding: 0;
-    color: grey;
-    justify-content: space-evenly;
-    width: 40em;
+  margin: 0;
+  padding: 0;
+  color: grey;
+  justify-content: space-evenly;
+  width: 40em;
 }

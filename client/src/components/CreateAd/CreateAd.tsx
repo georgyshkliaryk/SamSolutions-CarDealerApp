@@ -1,11 +1,11 @@
 import "./CreateAd";
-import React, { useState } from "react";
-//import { useForm } from "react-hook-form";;
+import React from "react";
 import "./CreateAd.scss";
 
 import { postAd } from "../../services/RestService";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
+import translate from "../../i18n/translate";
 class CreateAd extends React.Component {
   constructor(props: any) {
     super(props);
@@ -38,7 +38,6 @@ class CreateAd extends React.Component {
     } catch (error) {
       alert("Error creating ad!");
     }
-    // BrowserRouter.push('/ads');
     const createHistory = require("history").createBrowserHistory;
     let history = createHistory();
     history.push("/ads");
@@ -89,7 +88,7 @@ class CreateAd extends React.Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <div className="title">Please, enter information about your car:</div>
+        <div className="title">{translate("enterInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
             <input
@@ -179,7 +178,10 @@ class CreateAd extends React.Component {
                 <option value="New car">New</option>
                 <option value="Used car">Used</option>
               </select>
-              <div>&nbsp;&nbsp;New car or used?</div>
+              <div>
+                &nbsp;&nbsp;
+                {translate("newOrUsed")}
+              </div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -202,7 +204,10 @@ class CreateAd extends React.Component {
                 <option value="Hatchback">Hatchback</option>
                 <option value="Pickup">Pickup</option>
               </select>
-              <div>&nbsp;&nbsp;Select car type</div>
+              <div>
+                &nbsp;&nbsp;
+                {translate("selectCarType")}
+              </div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -263,7 +268,7 @@ class CreateAd extends React.Component {
                 placeholder="fuel consumption"
                 onChange={this.handleChange}
               />
-              <div>liters/100km</div>
+              <div>{translate("liters")}/100km</div>
             </div>
             <br />
             <div className={"car__info carflex"}>
@@ -297,10 +302,10 @@ class CreateAd extends React.Component {
           </div>
           <br />
           <div className={"car__btn"}>
-            <button className="button1 red">Save changes</button>
+            <button className="button1 red">{translate("saveChanges")}</button>
 
             <Link to="/ads">
-              <button className="button1 grey">Cancel</button>
+              <button className="button1 grey">{translate("cancel")}</button>
             </Link>
           </div>
         </div>

@@ -1,92 +1,87 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 .header {
-    color: white;
-    background-color: rgb(17, 17, 17);
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5em 2em;
-    top: 0;
-    
-    z-index: 5;
+  color: white;
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 2em;
+  top: 0;
+
+  z-index: 5;
 }
 .header__links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 20em;
-    padding: 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 20em;
+  padding: 0.5em 0;
+  color: white;
+  a {
+    text-decoration: none;
     color: white;
-    a {
-        text-decoration: none;
-        color: white;
-        
-    }
+  }
 }
 @media screen and (max-width: 1000px) {
-    .first {
-        flex-direction: column;
-    }
+  .first {
+    flex-direction: column;
+  }
 }
 .header__links a:hover {
-    color: grey;
+  color: grey;
 }
 .header__title {
-    font-size: 30px;
-    font-family: 'Lobster', cursive;
-    color: red;
-    margin-top: 0.5rem;
+  font-size: 30px;
+  font-family: "Lobster", cursive;
+  color: red;
+  margin-top: 0.5rem;
 
-    span.dealer {
-        color: red;
-    }
-    span.car {
-        color: white;
-    }
+  span.dealer {
+    color: red;
+  }
+  span.car {
+    color: white;
+  }
 }
 
 .cars__link {
-    div {
-        display: inline;
-        font-size: 10px;
-        font-family: 'Abel', sans-serif;
-    }
+  div {
+    display: inline;
+    font-size: 10px;
+    font-family: "Abel", sans-serif;
+  }
 }
 .link-1:hover {
-
-    .header__chose-menu {
-        display: block !important;
-    }
+  .header__chose-menu {
+    display: block !important;
+  }
 }
 .header__chose-menu {
-    position: absolute;
-    left: 7%;
-    top: 3.3em;
-    z-index: 4;
-    background-color: black;
-    border: solid grey 1px;
-    padding: 0.2em 1em;
-    display: none !important;
+  position: absolute;
+  left: 7%;
+  top: 3.3em;
+  z-index: 4;
+  background-color: black;
+  border: solid grey 1px;
+  padding: 0.2em 1em;
+  display: none !important;
 
-    div {
-        font-size: 17px;
-        color: white;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0.5em auto;
-    }
+  div {
+    font-size: 17px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5em auto;
+  }
 }
 .flag {
-    width: 2rem;
-    cursor: pointer;
-    margin-left: 0.3rem;
+  width: 2rem;
+  cursor: pointer;
+  margin-left: 0.3rem;
 }
 .flag:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 .link {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
-
-
-

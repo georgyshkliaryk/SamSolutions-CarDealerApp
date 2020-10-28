@@ -1,15 +1,14 @@
 .button-create {
-    width: 9em;
-    background-color: lightgrey;  // #ffe600
-    color: black;
-    cursor: pointer;
+  width: 9em;
+  background-color: lightgrey; // #ffe600
+  color: black;
+  cursor: pointer;
 }
 .button-create:hover {
-    background-color: grey; // rgb(165, 135, 0);
-   
+  background-color: grey; // rgb(165, 135, 0);
 }
 .button-create__container {
-    position: absolute;
-    right: 4em;
-    top: 27em;
+  position: absolute;
+  right: 4em;
+  top: 27em;
 }

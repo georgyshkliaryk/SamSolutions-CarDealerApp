@@ -1,16 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "react-count-animation/dist/count.min.css";
 import AnimationCount from "react-count-animation";
 
-import CountUp from "react-countup";
 import WOW from "wowjs";
 
 import "./Statistics.scss";
-import { render } from "@testing-library/react";
 import { useEffect } from "react";
 
-import translate from '../../i18n/translate';
+import translate from "../../i18n/translate";
 
 function Statistics(props: any) {
   useEffect(() => {
@@ -22,21 +19,21 @@ function Statistics(props: any) {
     count: props.newCars,
     duration: 3000,
     useGroup: true,
-    animation: "up"
+    animation: "up",
   };
   const settings2 = {
     start: 0,
     count: props.usedCars,
     duration: 3000,
     useGroup: true,
-    animation: "up"
+    animation: "up",
   };
   const settings3 = {
     start: 0,
     count: props.clients,
     duration: 3000,
     useGroup: true,
-    animation: "up"
+    animation: "up",
   };
   return (
     <div className="statistics">

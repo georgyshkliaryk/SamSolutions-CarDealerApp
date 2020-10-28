@@ -1,74 +1,70 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .slider {
-    margin-top: 0;
-    position: relative;
+  margin-top: 0;
+  position: relative;
 }
 .slider__slide {
-    position: relative;
-    img {
-       width: 100%;
-    }
+  position: relative;
+  img {
+    width: 100%;
+  }
 }
 
 .slider__button {
-    background-color: red;
-    color: lightgrey;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 48px;
-    margin: 4px 2px;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    
+  background-color: red;
+  color: lightgrey;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 48px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 .prev {
-    position: absolute;
-    top: 40%;
-    left: 1em;
+  position: absolute;
+  top: 40%;
+  left: 1em;
 }
 .next {
-    position: absolute;
-    top: 40%;
-    right: 1em;
+  position: absolute;
+  top: 40%;
+  right: 1em;
 }
 .slider__button:hover {
-    background-color: rgb(134, 0, 0);
+  background-color: rgb(134, 0, 0);
 }
 .slide__title {
-    font-family: 'Sriracha', cursive;
-    color: white;
-    font-size: 60px;
-    position: absolute;
-    bottom: 3em;
-    left: 2em;
-    border-bottom: red 5px solid;
-    padding-right: 13em;
+  font-family: "Sriracha", cursive;
+  color: white;
+  font-size: 60px;
+  position: absolute;
+  bottom: 3em;
+  left: 2em;
+  border-bottom: red 5px solid;
+  padding-right: 13em;
 }
 .slide__description {
-    color: white;
-    position: absolute;
-    font-size: 30px;
-    bottom: 2.5em;
-    right: 1em;
-    text-align: right;
-    color: lightgray;
-    font-style: italic;
-    margin-left: 7em;
-
+  color: white;
+  position: absolute;
+  font-size: 30px;
+  bottom: 2.5em;
+  right: 1em;
+  text-align: right;
+  color: lightgray;
+  font-style: italic;
+  margin-left: 7em;
 }
 a:hover {
-    color: rgb(219, 219, 219);
+  color: rgb(219, 219, 219);
 }
 
 @media screen and (max-width: 1500px) {
-    .slider {
-        display: none;
-    }
+  .slider {
+    display: none;
+  }
 }
-
-

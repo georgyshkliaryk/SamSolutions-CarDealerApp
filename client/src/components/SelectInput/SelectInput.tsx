@@ -1,21 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import "./SelectInput.scss";
-import { render } from "@testing-library/react";
 
 interface ISelect {
   label: string;
   options: string[];
   onChange(value: string): void;
 }
-
-class SelectInput extends React.Component<
-  any,
-  {
-    // value: string;
-  }
-> {
+class SelectInput extends React.Component<any, {}> {
   constructor(props: ISelect) {
     super(props);
     this.state = { value: this.props.options[0] };
@@ -35,15 +26,16 @@ class SelectInput extends React.Component<
   render() {
     return (
       <div className="select__container">
-          <select 
-            onChange={event => this.props.onChange(event.target.value)}
-          >
-            {this.props.options.map((option: string, i: number = 0) => ( 
-              <option value={option} key={i++}> {option} </option> 
-            ))}
-          </select>
-          <br />
-          <span className="filter__label">{this.props.label}</span>
+        <select onChange={(event) => this.props.onChange(event.target.value)}>
+          {this.props.options.map((option: string, i: number = 0) => (
+            <option value={option} key={i++}>
+              {" "}
+              {option}{" "}
+            </option>
+          ))}
+        </select>
+        <br />
+        <span className="filter__label">{this.props.label}</span>
       </div>
     );
   }

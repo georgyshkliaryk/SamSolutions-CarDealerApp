@@ -52,20 +52,18 @@
 }
 
 .ad__carTypeImg {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
   img {
     width: 40px;
     height: auto;
     border-right: solid grey 1px;
     border-radius: unset;
     padding-right: 1em;
-
-    
   }
 }
 .ad__year {
-    margin-top: 0.5em;
-    padding-left: 1em;
+  margin-top: 0.5em;
+  padding-left: 1em;
 }

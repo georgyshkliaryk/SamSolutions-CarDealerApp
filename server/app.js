@@ -27,7 +27,6 @@ mongoose.connect(MongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(function(e) {
      console.log(e);
    });
-
    app.use(cors());
 //middlewares
 app.use(bodyParser.json());
@@ -38,7 +37,7 @@ app.use('/api', routes);
 app.use(function(err, req, res, next) {
   //console.log(err);
   res.status(400).send({error: err.message});
-});
+}); 
 
 app.get('/', function(req, res) {
    res.send('server is working...');

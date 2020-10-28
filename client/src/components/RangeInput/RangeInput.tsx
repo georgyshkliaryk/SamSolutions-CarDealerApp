@@ -1,15 +1,10 @@
 import React from "react";
-
 import "./RangeInput.scss";
-//import Range from './Range';
 
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 
 export default class RangeForm extends React.Component<any> {
-  constructor(props: any) {
-    super(props);
-  }
   state = {
     value: [this.props.min, this.props.max],
     range: { min: this.props.min, max: this.props.max },
