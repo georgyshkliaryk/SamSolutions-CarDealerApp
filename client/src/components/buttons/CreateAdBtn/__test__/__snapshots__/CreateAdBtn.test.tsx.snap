@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create ad button matches snapshot 1`] = `
+<div
+  className="button-create__container absolute"
+  data-testid="createAdBtn"
+>
+  <button
+    className="button button-create"
+  >
+    Create new ad
+  </button>
+</div>
+`;
+
+exports[`Create ad button matches snapshot 1 1`] = `
+<div
+  className="button-create__container absolute"
+  data-testid="createAdBtn"
+>
+  <button
+    className="button button-create"
+  >
+    Create new ad
+  </button>
+</div>
+`;
+
+exports[`Create ad button matches snapshot 2 1`] = `
+<div
+  className="button-create__container absolute"
+  data-testid="createAdBtn"
+>
+  <button
+    className="button button-create"
+  >
+    Save
+  </button>
+</div>
+`;
