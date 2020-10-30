@@ -4,7 +4,7 @@ import "./CreateAd";
 import "./CreateAd.scss";
 
 import { postAd } from "../../services/RestService";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import translate from "../../i18n/translate";
 class CreateAd extends React.Component {
@@ -39,6 +39,13 @@ class CreateAd extends React.Component {
     } catch (error) {
       alert("Error creating ad!");
     }
+    const createHistory = require("history").createBrowserHistory;
+    let history = createHistory();
+    history.push("/ads");
+    let pathUrl = window.location.href;
+    window.location.href = pathUrl;
+  }
+  handleCancel(event) {
     const createHistory = require("history").createBrowserHistory;
     let history = createHistory();
     history.push("/ads");
@@ -88,7 +95,7 @@ class CreateAd extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} data-testid="createAd">
         <div className="title">{translate("enterInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
@@ -304,10 +311,9 @@ class CreateAd extends React.Component {
           <br />
           <div className={"car__btn"}>
             <button className="button1 red">{translate("saveChanges")}</button>
+                <button className="button1 grey" onClick={this.handleCancel}>{translate("cancel")}</button>
 
-            <Link to="/ads">
-              <button className="button1 grey">{translate("cancel")}</button>
-            </Link>
+             
           </div>
         </div>
       </form>

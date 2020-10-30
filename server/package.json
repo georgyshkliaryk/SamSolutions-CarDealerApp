@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "server": "nodemon server/app.js",
+    "ndoemonStart": "nodemon server/app.js",
     "test": "jest"
   },
   "jest": {

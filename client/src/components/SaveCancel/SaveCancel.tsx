@@ -6,7 +6,7 @@ import "./SaveCancel.scss";
 class SaveCancel extends React.Component<any, {}> {
   render() {
     return (
-      <div className="button-search__container btn">
+      <div className="button-search__container btn" data-testid="save">
         <button
           className="button-search button save"
           onClick={this.props.handleClick}

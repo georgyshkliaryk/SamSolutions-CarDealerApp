@@ -19,7 +19,7 @@ export default class RangeForm extends React.Component<any> {
 
   render() {
     return (
-      <div className="range__container">
+      <div className="range__container" data-testid="range">
         <div className="range__title"> {this.props.label} </div>
         <Nouislider
           className="range"
