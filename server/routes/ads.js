@@ -50,6 +50,7 @@ router.post("/ads", async function(req, res, next) {
     })
     .catch(next);
     
+  
 });
 
 //update an ad in the db by _id
@@ -66,7 +67,7 @@ router.delete("/ads/:id", async function(req, res, next) {
   Ad.findByIdAndRemove({ _id: req.params.id })
     .then(function(Ad) {
       res.send(Ad);
-    })
+    }) 
     .catch(next);
 });
 
