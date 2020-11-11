@@ -13,5 +13,6 @@ export interface IAd {
   carMileage?: string;
   maxSpeed?: string;
   fuelConsumption?: string;
+  createdBy?: string;
   _id?: string;
 }

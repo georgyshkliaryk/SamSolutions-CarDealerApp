@@ -7,7 +7,7 @@ import { postAd } from "../../services/RestService";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import translate from "../../i18n/translate";
-class CreateAd extends React.Component {
+class CreateAd extends React.Component<any, {}> {
   constructor(props: any) {
     super(props);
 
@@ -25,6 +25,7 @@ class CreateAd extends React.Component {
       fuelConsumption: null,
       maxSpeed: null,
       carFullDescription: "",
+      createdBy: this.props.userName,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
@@ -33,6 +34,9 @@ class CreateAd extends React.Component {
   }
   onSubmit(event) {
     event.preventDefault();
+    this.setState({
+      createdBy: this.props.userName,
+    });
     console.log([this.state]);
 
     try {
@@ -140,7 +144,6 @@ class CreateAd extends React.Component {
               required
             />
           </div>
-
           <div className="car__info">
             <div className="car__title">
               {" "}

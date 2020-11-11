@@ -49,6 +49,10 @@ const AdSchema = new Schema({
   fuelConsumption: {
     type: String
   },
+
+  createdBy: {
+    type: String
+  }
   
 });
 
