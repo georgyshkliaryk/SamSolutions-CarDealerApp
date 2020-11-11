@@ -20,8 +20,6 @@ import WOW from "wowjs";
 
 import translate from "../i18n/translate";
 
-import LoginButton from '../components/LoginButton/LoginButton';
-
 interface IState {
   ads: IAd[];
 }
@@ -105,7 +103,6 @@ class HomePage extends React.Component<any, {}> {
     }
     return (
       <>
-        <LoginButton />
         <Header updateData={this.updateData} lang={"visible"} />
 
         {this.state.isLoaded ? (

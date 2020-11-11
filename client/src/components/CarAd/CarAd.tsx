@@ -1,11 +1,28 @@
 import React from "react";
 import { deleteAd } from "../../services/RestService";
+import { useAuth0 } from '@auth0/auth0-react';
 
 import "./CarAd.scss";
 
 import translate from "../../i18n/translate";
 
+
+
 const CarAd = (props: any) => {
+  const { isAuthenticated } = useAuth0();
+  let btnVisibility = {
+    display: "none"
+  } as React.CSSProperties;
+  if (!isAuthenticated) {
+    btnVisibility = {
+      display: "none"
+    }
+  } else {
+    btnVisibility = {
+      display: "block"
+    }
+  }
+
   function handleDelete(path) {
     try {
       deleteAd(path);
@@ -143,7 +160,7 @@ const CarAd = (props: any) => {
               <img
                 title="Mileage"
                 src={
-                  "https://obhajiwala.com/assets/less/icons/ionicons/png/512/ios7-speedometer.png"
+                  "https://image.flaticon.com/icons/png/512/53/53128.png"
                 }
               />
             </div>
@@ -208,7 +225,8 @@ const CarAd = (props: any) => {
           />
         </div>
         <br />
-        <div className={"car__btn"}>
+        <div className={"car__btn"}
+          style={btnVisibility}>
           <button
             className="button red"
             onClick={() => {

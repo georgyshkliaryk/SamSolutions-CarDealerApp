@@ -52,12 +52,12 @@ function Statistics(props: any) {
         </span>
         {translate("usedCarsCount")}
       </div>
-      <div className="statistics__card">
+      {/* <div className="statistics__card">
         <span>
           <AnimationCount {...settings3} />
         </span>
         {translate("clientsCount")}
-      </div>
+      </div> */}
     </div>
   );
 }

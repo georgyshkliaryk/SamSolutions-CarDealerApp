@@ -20,7 +20,6 @@ import AboutPage from "./pages/AboutPage";
 import CarsPage from "./pages/CarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import LogoutPage from "./pages/LogoutPage";
-import UsersPage from "./pages/UsersPage";
 import CreateAdPage from "./pages/CreateAdPage";
 
 import { I18nProvider, LOCALES } from "./i18n";
@@ -50,10 +49,6 @@ class App extends React.Component<any, any> {
             <Switch>
           <Route exact path="/login">
             <LoginPage onUpdate={this.onUpdate} />
-          </Route>
-
-          <Route exact path="/users">
-            <UsersPage users={this.state.name} updateData={this.updateData}/>
           </Route>
 
           <Route exact path="/logout">

@@ -65,21 +65,17 @@ class NewCarsPage extends React.Component {
       min_price: qparams.minPrice?.toString() || "",
       max_price: qparams.maxPrice?.toString() || "",
     });
-  }
+  };
 
   render() {
     return (
       <>
         <Header lang={"hidden"} />
         <Link to="ads/create">
-          <CreateAdBtn
-            content={translate("createBtn", { arrow: <span>&rsaquo;</span> })}
-          />
+            <CreateAdBtn/>
         </Link>
 
-        <FilterForm
-          onSubmit={this.handleSubmit}
-        />
+        <FilterForm onSubmit={this.handleSubmit} />
 
         {this.state.isLoaded ? (
           <Ads
