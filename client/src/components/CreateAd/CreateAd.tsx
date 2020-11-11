@@ -27,6 +27,8 @@ class CreateAd extends React.Component {
       carFullDescription: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeNumber = this.handleChangeNumber.bind(this);
+    this.handleChangeDecimal = this.handleChangeDecimal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
   onSubmit(event) {
@@ -51,6 +53,36 @@ class CreateAd extends React.Component {
     history.push("/ads");
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
+  }
+
+  handleChangeNumber(event) {
+    const digitsOnly = new RegExp("^[0-9]+$");
+    const target = event.target;
+    const name = target.name;
+    const value = event.target.value;
+    if (!value.match(digitsOnly) && value != "") {
+      alert("Digits only!");
+      event.target.value = "";
+    } else {
+      this.setState({
+        [name]: value,
+      });
+    }
+  }
+
+  handleChangeDecimal(event) {
+    const decimals = new RegExp("^[0-9.]+$");
+    const target = event.target;
+    const name = target.name;
+    const value = event.target.value;
+    if (!value.match(decimals) && value != "") {
+      alert("Digits/Decimals only!");
+      event.target.value = "";
+    } else {
+      this.setState({
+        [name]: value,
+      });
+    }
   }
 
   handleChange(event) {
@@ -165,7 +197,7 @@ class CreateAd extends React.Component {
                 type="text"
                 name="carYear"
                 placeholder="car year"
-                onChange={this.handleChange}
+                onChange={this.handleChangeNumber}
                 required
               />
             </div>
@@ -233,7 +265,7 @@ class CreateAd extends React.Component {
                 type="text"
                 name="carPrice"
                 placeholder="car price"
-                onChange={this.handleChange}
+                onChange={this.handleChangeNumber}
                 required
               />
               <div>$</div>
@@ -243,9 +275,7 @@ class CreateAd extends React.Component {
               <div>
                 <img
                   title="Mileage"
-                  src={
-                    "https://static.thenounproject.com/png/238953-200.png"
-                  }
+                  src={"https://static.thenounproject.com/png/238953-200.png"}
                 />
               </div>
               <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -254,7 +284,7 @@ class CreateAd extends React.Component {
                 type="text"
                 name="carMileage"
                 placeholder="car mileage (if car is new, enter 0)"
-                onChange={this.handleChange}
+                onChange={this.handleChangeNumber}
               />
               <div>km</div>
             </div>
@@ -274,7 +304,7 @@ class CreateAd extends React.Component {
                 type="text"
                 name="fuelConsumption"
                 placeholder="fuel consumption"
-                onChange={this.handleChange}
+                onChange={this.handleChangeDecimal}
               />
               <div>{translate("liters")}/100km</div>
             </div>
@@ -294,7 +324,7 @@ class CreateAd extends React.Component {
                 type="text"
                 name="maxSpeed"
                 placeholder="max speed"
-                onChange={this.handleChange}
+                onChange={this.handleChangeNumber}
               />
               <div>km/h</div>
             </div>
@@ -311,9 +341,9 @@ class CreateAd extends React.Component {
           <br />
           <div className={"car__btn"}>
             <button className="button1 red">{translate("saveChanges")}</button>
-                <button className="button1 grey" onClick={this.handleCancel}>{translate("cancel")}</button>
-
-             
+            <button className="button1 grey" onClick={this.handleCancel}>
+              {translate("cancel")}
+            </button>
           </div>
         </div>
       </form>
