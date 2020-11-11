@@ -21,6 +21,7 @@ import CarsPage from "./pages/CarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import LogoutPage from "./pages/LogoutPage";
 import CreateAdPage from "./pages/CreateAdPage";
+import AccountPage from './pages/AccountPage';
 
 import { I18nProvider, LOCALES } from "./i18n";
 
@@ -53,6 +54,10 @@ class App extends React.Component<any, any> {
 
           <Route exact path="/logout">
             <LogoutPage />
+          </Route>
+
+          <Route exact path="/profile">
+            <AccountPage />
           </Route>
 
           <Route exact path="/">

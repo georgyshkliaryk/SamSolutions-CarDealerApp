@@ -1,0 +1,38 @@
+.account__container {
+    min-height: 70vh;
+    text-align: center;
+    margin: 5em 0;
+}
+.account__info {
+    display: flex;
+    justify-content: space-around;
+    margin: 5em 15em;
+
+    img {
+        width: 12em;
+        border-radius: 10%;
+    }
+}
+
+.account__user {
+    text-align: left;
+    font-size: 25px;
+    margin-left: 5em;
+
+    div {
+        margin-bottom: 2em;
+    }
+    a {
+        text-decoration: underline;
+        color: blue;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: red;
+    }
+}
+h1 {
+    border-bottom: grey solid 1px;
+    padding-bottom: 2em;
+    margin: 0 5em;
+}

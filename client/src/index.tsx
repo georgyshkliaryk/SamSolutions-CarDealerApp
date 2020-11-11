@@ -6,18 +6,22 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN!;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID!;
+const REACT_APP_AUTH0_DOMAIN="dev-b7mle7hf.eu.auth0.com";
+const REACT_APP_AUTH0_CLIENT_ID="EUKkhkZ1193uEW4FWkE7VPMj17OVwk5X"
+
+const domain = REACT_APP_AUTH0_DOMAIN!;
+const clientId = REACT_APP_AUTH0_CLIENT_ID!;
 
 ReactDOM.render(
-  <Auth0Provider
-    domain={domain}
-    clientId={clientId}
-    redirectUri={window.location.origin}>
-    {/* <BrowserRouter> */}
+  <BrowserRouter>
+    <Auth0Provider
+      domain={domain}
+      clientId={clientId}
+      redirectUri={window.location.origin}
+    >
       <App />
-    {/* </BrowserRouter> */}
-  </Auth0Provider>,
+    </Auth0Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

@@ -67,7 +67,14 @@ export default {
         "cancel": "Cancel",
         "selectCarType": "Select car type",
         "newOrUsed": "New car or used?",
-        "enterInfo": "Please, enter information about your car:"
+        "enterInfo": "Please, enter information about your car:",
+
+        "account": "My Account",
+        "hello": "Hello",
+        "accountName": "Account name:",
+        "nickname": "Nickname",
+        "latestLogin": "Latest login:"
+
 
 
 

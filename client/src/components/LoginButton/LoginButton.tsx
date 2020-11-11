@@ -22,7 +22,7 @@ const LoginButton = () => {
   }
 
   return (
-    <div className="loginButton">
+    <div className="headerButton">
       
       <div
         onClick={() => handleClick()}

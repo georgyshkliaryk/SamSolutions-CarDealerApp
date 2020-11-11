@@ -67,7 +67,13 @@ export default {
         "cancel": "Stornieren",
         "selectCarType": "Wählen Sie den Fahrzeugtyp",
         "newOrUsed": "Neues Auto oder gebraucht?",
-        "enterInfo": "Bitte geben Sie Informationen zu Ihrem Auto ein:"
+        "enterInfo": "Bitte geben Sie Informationen zu Ihrem Auto ein:",
+
+        "account": "Mein Konto",
+        "hello": "Hallo",
+        "accountName": "Kontobezeichnung:",
+        "nickname": "Spitzname",
+        "latestLogin": "Letzter Login:"
     }
 
 }

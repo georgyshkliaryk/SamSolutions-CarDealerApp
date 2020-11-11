@@ -160,7 +160,7 @@ const CarAd = (props: any) => {
               <img
                 title="Mileage"
                 src={
-                  "https://image.flaticon.com/icons/png/512/53/53128.png"
+                  "https://static.thenounproject.com/png/238953-200.png"
                 }
               />
             </div>

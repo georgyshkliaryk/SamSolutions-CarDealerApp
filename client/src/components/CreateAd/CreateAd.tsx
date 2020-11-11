@@ -45,7 +45,7 @@ class CreateAd extends React.Component {
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
   }
-  handleCancel(event) {
+  handleCancel() {
     const createHistory = require("history").createBrowserHistory;
     let history = createHistory();
     history.push("/ads");
@@ -244,7 +244,7 @@ class CreateAd extends React.Component {
                 <img
                   title="Mileage"
                   src={
-                    "https://obhajiwala.com/assets/less/icons/ionicons/png/512/ios7-speedometer.png"
+                    "https://static.thenounproject.com/png/238953-200.png"
                   }
                 />
               </div>
