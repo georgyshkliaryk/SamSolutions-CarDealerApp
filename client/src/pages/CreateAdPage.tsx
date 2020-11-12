@@ -13,7 +13,7 @@ const CreateAdPage = () => {
   if (isAuthenticated) {
     return (
       <div>
-        <Header lang={"visible"}/>
+        <Header lang={"hidden"}/>
         <CreateAd userName={user.nickname}/> 
         <Footer />
       </div>

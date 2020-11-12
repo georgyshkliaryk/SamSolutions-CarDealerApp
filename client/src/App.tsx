@@ -48,13 +48,6 @@ class App extends React.Component<any, any> {
       <I18nProvider locale={this.state.locales[this.state.name]}>
         <Router>
             <Switch>
-          <Route exact path="/login">
-            <LoginPage onUpdate={this.onUpdate} />
-          </Route>
-
-          <Route exact path="/logout">
-            <LogoutPage />
-          </Route>
 
           <Route exact path="/profile">
             <AccountPage />

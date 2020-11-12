@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Slider, { IProps } from "../components/Slider/Slider";
@@ -10,6 +10,7 @@ import Contacts from "../components/Contacts/Contacts";
 import Footer from "../components/Footer/Footer";
 import Ads from "../components/CarAds/Ads";
 import Loading from "../components/Loading/Loading";
+import MoreButton from "../components/buttons/MoreButton/MoreButton";
 
 import { IAd } from "../models/IAd";
 
@@ -22,6 +23,9 @@ import translate from "../i18n/translate";
 
 interface IState {
   ads: IAd[];
+  startAds: IAd[];
+  isLoaded: boolean;
+  lang: number;
 }
 
 interface IAdQueryParams {
@@ -35,10 +39,10 @@ interface IAdQueryParams {
 
 class HomePage extends React.Component<any, {}> {
   adService: AdService;
-  state = {
+  state: IState = {
     ads: [],
+    startAds: [],
     isLoaded: false,
-    loggedIn: true,
     lang: 0,
   };
 
@@ -57,8 +61,8 @@ class HomePage extends React.Component<any, {}> {
 
     this.state = {
       ads: [],
+      startAds: [],
       isLoaded: false,
-      loggedIn,
       lang: 0,
     };
   }
@@ -78,6 +82,12 @@ class HomePage extends React.Component<any, {}> {
       .getAllAds(queryParams)
       .then((data) => {
         this.setState({ ads: data, isLoaded: true });
+        for (let i = 0; i < 3; i++) {
+          let newArr = this.state.startAds.concat(this.state.ads[i]);
+          this.setState({
+            startAds: newArr,
+          });
+        }
       })
       .catch((data) => {
         alert(data);
@@ -85,41 +95,32 @@ class HomePage extends React.Component<any, {}> {
       });
   }
 
-  handleSubmit = (qparams) => {
-    this.fetchAds({
-      carModel: qparams.manufacturer || "",
-      carName: qparams.search || "",
-      carType: qparams.type || "",
-      carUsed: qparams.used || "",
-      min_price: qparams.minPrice?.toString() || "",
-      max_price: qparams.maxPrice?.toString() || "",
-    });
-  }
-
   render() {
-    this.props.updateData(this.state.lang);
-    if (this.state.loggedIn == false) {
-      return <Redirect to="/login" />;
-    }
     return (
       <>
         <Header updateData={this.updateData} lang={"visible"} />
 
         {this.state.isLoaded ? (
-          <Slider ads={this.state.ads} />
+          <Slider ads={this.state.startAds} />
         ) : (
           <Loading loading_title={translate("popularCars")} />
         )}
 
-        <FilterForm
-          onSubmit={this.handleSubmit}
-        />
-
         {this.state.isLoaded ? (
-          <Ads ads={this.state.ads} title={translate("availableCars")} />
+          <Ads ads={this.state.startAds} title={translate("availableCars")} />
         ) : (
           <Loading loading_title="Available cars" />
         )}
+
+        <div style={{textAlign: "center", marginBottom: "5em", marginTop: "-6em"}}>
+          <Link to="/ads">
+            <MoreButton
+              content={translate("moreAds", {
+                arrow: <span>&rsaquo;</span>,
+              })}
+            />
+          </Link>
+        </div>
 
         <Welcome ads={this.state.ads} />
 

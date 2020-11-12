@@ -73,7 +73,14 @@ export default {
         "hello": "Hallo",
         "accountName": "Kontobezeichnung:",
         "nickname": "Spitzname",
-        "latestLogin": "Letzter Login:"
+        "latestLogin": "Letzter Login:",
+
+        "postedBy": "Geschrieben von:",
+        "role": "Rolle:",
+        "yourCars": "Autos, die Sie bei CarDealer verkaufen",
+        "noCars": "Sie haben 0 Autos, die derzeit bei CarDealer verkaufen :(",
+
+        "moreAds": "Alle Autos anzeigen {arrow}",
     }
 
 }

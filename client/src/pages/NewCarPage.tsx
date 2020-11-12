@@ -67,7 +67,7 @@ class NewCarPage extends React.Component<any, any> {
   render() {
     return (
       <>
-        <Header />
+        <Header lang={"hidden"}/>
         {this.state.isLoaded ? (
           <CarAd
             title={this.state.ad.carName}
@@ -82,6 +82,7 @@ class NewCarPage extends React.Component<any, any> {
             mileage={this.state.ad.carMileage}
             maxspeed={this.state.ad.maxSpeed}
             fuel={this.state.ad.fuelConsumption}
+            createdBy={this.state.ad.createdBy}
             id={this.props.match.params.id}
             inputs={this.props.inputDisabled}
             mode={this.props.pageMode}

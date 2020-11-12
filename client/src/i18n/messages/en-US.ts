@@ -73,7 +73,14 @@ export default {
         "hello": "Hello",
         "accountName": "Account name:",
         "nickname": "Nickname",
-        "latestLogin": "Latest login:"
+        "latestLogin": "Latest login:",
+
+        "postedBy": "Posted by:",
+        "role": "Role:",
+        "yourCars": "Cars You sell at CarDealer",
+        "noCars": "You have 0 cars currently selling at CarDealer :(",
+
+        "moreAds": "See all cars {arrow}",
 
 
 

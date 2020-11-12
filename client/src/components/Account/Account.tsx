@@ -2,13 +2,22 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import translate from "../../i18n/translate";
+import adminList from '../../admin/adminList';
 
 import "./Account.scss";
 import EditButton from "../buttons/EditButton/EditButton";
 import LogoutPage from "../../pages/LogoutPage";
+import AccountAds from "./AccountAds/AccountAds";
 
 const Account = () => {
   const { user, isAuthenticated, logout } = useAuth0();
+
+  let role = "user";
+  if (isAuthenticated && adminList.includes(user.nickname)) {
+    role = "admin";
+  } else {
+    role = "user";
+  }
 
   if (isAuthenticated) {
     return (
@@ -33,6 +42,9 @@ const Account = () => {
             <div>
               <b>{translate("latestLogin")} </b>
             </div>
+            <div>
+              <b>{translate("role")} </b>
+            </div>
           </div>
           <div className="account__user">
             <div>{user.name}</div>
@@ -41,8 +53,10 @@ const Account = () => {
               <a href={`mailto:${user.email}`}>{user.email}</a>
             </div>
             <div>{user.updated_at.replace("T",", ").substr(0,20)}</div>
+            <div>{role}</div>
           </div>
         </div>
+        <AccountAds nickname={user.nickname}/>
         <EditButton content={"Logout"} handleClick={() => {alert("You've benn logged out!"); logout()}}/>
       </div>
     );

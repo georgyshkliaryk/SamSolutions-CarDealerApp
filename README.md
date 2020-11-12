@@ -9,3 +9,6 @@ nodemon server/app.js
 
 cd client
 npm start 
+
+cardealer.main@gmail.com
+cardealer.main123

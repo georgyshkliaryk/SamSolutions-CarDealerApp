@@ -1,27 +1,34 @@
 import React from "react";
 import { deleteAd } from "../../services/RestService";
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from "@auth0/auth0-react";
+
+import adminList from '../../admin/adminList';
 
 import "./CarAd.scss";
 
 import translate from "../../i18n/translate";
 
-
-
 const CarAd = (props: any) => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
+  
   let btnVisibility = {
-    display: "none"
+    display: "none",
   } as React.CSSProperties;
-  if (!isAuthenticated) {
+  if (isAuthenticated && props.createdBy == user.nickname) {
     btnVisibility = {
-      display: "none"
-    }
+      display: "block",
+    };
   } else {
     btnVisibility = {
-      display: "block"
-    }
+      display: "none",
+    };     
   }
+  if (isAuthenticated && adminList.includes(user.nickname)) {
+    btnVisibility = {
+      display: "block",
+    };
+  }
+
 
   function handleDelete(path) {
     try {
@@ -41,11 +48,12 @@ const CarAd = (props: any) => {
       <div className={"car__container"}>
         <div className="car__image">
           <img src={props.image} alt="car image" />
+          <div><b>{translate("postedBy")} &nbsp;&nbsp;&nbsp;&nbsp;</b>{props.createdBy}</div>
         </div>
 
         <div className="car__info">
           <div className="car__title">
-            {" "}
+            {" "} 
             <input
               className="car__title-input"
               type="text"
@@ -159,9 +167,7 @@ const CarAd = (props: any) => {
             <div>
               <img
                 title="Mileage"
-                src={
-                  "https://static.thenounproject.com/png/238953-200.png"
-                }
+                src={"https://static.thenounproject.com/png/238953-200.png"}
               />
             </div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -225,8 +231,7 @@ const CarAd = (props: any) => {
           />
         </div>
         <br />
-        <div className={"car__btn"}
-          style={btnVisibility}>
+        <div className={"car__btn"} style={btnVisibility}>
           <button
             className="button red"
             onClick={() => {
