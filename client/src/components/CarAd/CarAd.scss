@@ -71,3 +71,11 @@
 .car__btn {
   margin: auto;
 }
+.emailLink {
+  text-decoration: underline;
+  color: blue;
+}
+.emailLink:hover {
+  text-decoration: underline;
+  color: red;
+}

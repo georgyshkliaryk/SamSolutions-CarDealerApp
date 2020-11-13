@@ -14,10 +14,10 @@ const CreateAdPage = () => {
     return (
       <div>
         <Header lang={"hidden"}/>
-        <CreateAd userName={user.nickname}/> 
+        <CreateAd userName={user.nickname} userEmail={user.email}/> 
         <Footer />
       </div>
-    );
+    ); 
   } else {
     return (
       <div>

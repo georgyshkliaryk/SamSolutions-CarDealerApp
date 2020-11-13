@@ -83,7 +83,8 @@ class NewCarPage extends React.Component<any, any> {
             maxspeed={this.state.ad.maxSpeed}
             fuel={this.state.ad.fuelConsumption}
             createdBy={this.state.ad.createdBy}
-            id={this.props.match.params.id}
+            createdByEmail={this.state.ad.createdByEmail}
+            id={this.props.match.params.id} 
             inputs={this.props.inputDisabled}
             mode={this.props.pageMode}
           />

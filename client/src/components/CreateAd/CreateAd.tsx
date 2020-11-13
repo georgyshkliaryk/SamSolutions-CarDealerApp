@@ -26,6 +26,7 @@ class CreateAd extends React.Component<any, {}> {
       maxSpeed: null,
       carFullDescription: "",
       createdBy: this.props.userName,
+      createdByEmail: this.props.userEmail
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
@@ -36,6 +37,7 @@ class CreateAd extends React.Component<any, {}> {
     event.preventDefault();
     this.setState({
       createdBy: this.props.userName,
+      createdByEmail: this.props.userEmail,
     });
     console.log([this.state]);
 

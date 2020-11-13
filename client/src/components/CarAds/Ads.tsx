@@ -46,6 +46,7 @@ function Ads(props: IProps) {
               description={ad.carDescription}
               fulldescription={ad.carFullDescription}
               createdBy={ad.createdBy} 
+              createdByEmail={ad.createdByEmail} 
               img={`${ad.carImage}`}
               path={"/ads/view/" + ad._id}
               key={i++}

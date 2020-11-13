@@ -68,28 +68,49 @@ class NewCarsPage extends React.Component {
   };
 
   render() {
-    return (
-      <>
-        <Header lang={"hidden"} />
-        <Link to="ads/create">
-            <CreateAdBtn/>
-        </Link>
+    if (this.state.ads.length > 0) {
+      return (
+        <>
+          <Header lang={"hidden"} />
+          <Link to="ads/create">
+            <CreateAdBtn />
+          </Link>
 
-        <FilterForm onSubmit={this.handleSubmit} />
+          <FilterForm onSubmit={this.handleSubmit} />
 
-        {this.state.isLoaded ? (
-          <Ads
-            title={translate("availableCars")}
-            ads={this.state.ads}
-            usage="new"
-          />
-        ) : (
-          <Loading loading_title={translate("availableCars")} />
-        )}
+          {this.state.isLoaded ? (
+            <Ads
+              title={translate("availableCars")}
+              ads={this.state.ads}
+              usage="new"
+            />
+          ) : (
+            <Loading loading_title={translate("availableCars")} />
+          )}
 
-        <Footer />
-      </>
-    );
+          <Footer />
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Header lang={"hidden"} />
+          <Link to="ads/create">
+            <CreateAdBtn />
+          </Link>
+
+          <FilterForm onSubmit={this.handleSubmit} />
+
+          <div className="ads">
+            <div className="ads__title wow flipInY" data-wow-delay="0.3s">
+              {translate("availableCars")}
+            </div>
+            <div>No cars available with parameters you've chosen</div>
+          </div>
+          <Footer />
+        </>
+      );
+    }
   }
 }
 

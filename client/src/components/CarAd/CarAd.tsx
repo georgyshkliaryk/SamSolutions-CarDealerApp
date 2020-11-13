@@ -49,6 +49,7 @@ const CarAd = (props: any) => {
         <div className="car__image">
           <img src={props.image} alt="car image" />
           <div><b>{translate("postedBy")} &nbsp;&nbsp;&nbsp;&nbsp;</b>{props.createdBy}</div>
+          <div><b>{translate("emailForCommunication")} &nbsp;&nbsp;&nbsp;&nbsp;</b><a className="emailLink" href={`mailto:${props.createdByEmail}`}>{props.createdByEmail}</a></div>
         </div>
 
         <div className="car__info">

@@ -31,7 +31,7 @@ function Statistics(props: any) {
   };
   const settings3 = {
     start: 0,
-    count: props.clients,
+    count: props.myAds,
     duration: 3000,
     useGroup: true,
     animation: "up",
@@ -52,12 +52,12 @@ function Statistics(props: any) {
         </span>
         {translate("usedCarsCount")}
       </div>
-      {/* <div className="statistics__card">
+      <div className="statistics__card">
         <span>
           <AnimationCount {...settings3} />
         </span>
-        {translate("clientsCount")}
-      </div> */}
+        {translate("myAds")}
+      </div>
     </div>
   );
 }

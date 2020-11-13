@@ -14,5 +14,6 @@ export interface IAd {
   maxSpeed?: string;
   fuelConsumption?: string;
   createdBy?: string;
+  createdByEmail?: string;
   _id?: string;
 }

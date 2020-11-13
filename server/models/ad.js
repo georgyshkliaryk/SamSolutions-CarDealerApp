@@ -52,6 +52,10 @@ const AdSchema = new Schema({
 
   createdBy: {
     type: String
+  },
+
+  createdByEmail: {
+    type: String
   }
   
 });

@@ -76,11 +76,14 @@ export default {
         "latestLogin": "Letzter Login:",
 
         "postedBy": "Geschrieben von:",
+        "emailForCommunication": "E-Mail für die Kommunikation:",
         "role": "Rolle:",
         "yourCars": "Autos, die Sie bei CarDealer verkaufen",
         "noCars": "Sie haben 0 Autos, die derzeit bei CarDealer verkaufen :(",
 
         "moreAds": "Alle Autos anzeigen {arrow}",
+
+        "myAds": "MEINE AUTOS AUF LAGER",
     }
 
 }

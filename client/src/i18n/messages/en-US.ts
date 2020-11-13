@@ -76,11 +76,14 @@ export default {
         "latestLogin": "Latest login:",
 
         "postedBy": "Posted by:",
+        "emailForCommunication": "Email for communication:",
         "role": "Role:",
         "yourCars": "Cars You sell at CarDealer",
         "noCars": "You have 0 cars currently selling at CarDealer :(",
 
         "moreAds": "See all cars {arrow}",
+
+        "myAds": "MY CARS IN STOCK",
 
 
 
