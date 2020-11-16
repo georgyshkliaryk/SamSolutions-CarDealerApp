@@ -98,7 +98,7 @@ class HomePage extends React.Component<any, {}> {
   render() {
     return (
       <>
-        <Header updateData={this.updateData} lang={"visible"} />
+        <Header updateData={this.updateData} lang={"hidden"} />
 
         {this.state.isLoaded ? (
           <Slider ads={this.state.startAds} />

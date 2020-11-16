@@ -10,8 +10,6 @@ var cors = require('cors');
 const app = express();
 const PORT = config.get('port') || 5000;
 const MongoUri = config.get('MongoUri');
-
-const authRoute = require('./routes/auth'); 
   
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false); 
@@ -24,7 +22,7 @@ mongoose.connect(MongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(function() {
      console.log('MongoDB is working...');
     })
-  .catch(function(e) {
+  .catch(function(e) { 
      console.log(e);
    });
    app.use(cors());

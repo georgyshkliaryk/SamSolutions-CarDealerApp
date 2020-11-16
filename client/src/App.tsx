@@ -23,7 +23,6 @@ import AccountPage from './pages/AccountPage';
 import EditAdPage from './pages/EditAdPage';
 
 import { I18nProvider, LOCALES } from "./i18n";
-import LOCALE from './admin/locale';
 
 
 class App extends React.Component<any, any> {
