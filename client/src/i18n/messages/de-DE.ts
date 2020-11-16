@@ -68,6 +68,7 @@ export default {
         "selectCarType": "Wählen Sie den Fahrzeugtyp",
         "newOrUsed": "Neues Auto oder gebraucht?",
         "enterInfo": "Bitte geben Sie Informationen zu Ihrem Auto ein:",
+        "editInfo": "Bitte bearbeiten Sie Informationen zu Ihrem Auto:",
 
         "account": "Mein Konto",
         "hello": "Hallo",
@@ -84,6 +85,8 @@ export default {
         "moreAds": "Alle Autos anzeigen {arrow}",
 
         "myAds": "MEINE AUTOS AUF LAGER",
+
+        "editAd": "Anzeige bearbeiten",
     }
 
 }

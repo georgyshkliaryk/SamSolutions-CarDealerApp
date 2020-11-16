@@ -23,6 +23,16 @@ export async function postAd(entry) {
   });
   return response.json();
 }
+export async function editAd(entry, id) {
+  const response = await fetch(`http://localhost:5000/api/ads/${id}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json", 
+    },
+    body: JSON.stringify(entry),
+  });
+  return response.json();
+}
 export async function deleteAd(path) {
   fetch(path, {
     method: "DELETE",

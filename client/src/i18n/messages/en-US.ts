@@ -68,6 +68,7 @@ export default {
         "selectCarType": "Select car type",
         "newOrUsed": "New car or used?",
         "enterInfo": "Please, enter information about your car:",
+        "editInfo": "Please, edit information about your car:",
 
         "account": "My Account",
         "hello": "Hello",
@@ -84,6 +85,8 @@ export default {
         "moreAds": "See all cars {arrow}",
 
         "myAds": "MY CARS IN STOCK",
+
+        "editAd": "Edit ad",
 
 
 

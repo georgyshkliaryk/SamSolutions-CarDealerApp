@@ -13,17 +13,18 @@ import {
 
 
 //Pages
-import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AboutPage from "./pages/AboutPage";
 import CarsPage from "./pages/CarsPage";
 import NewCarPage from "./pages/NewCarPage";
-import LogoutPage from "./pages/LogoutPage";
 import CreateAdPage from "./pages/CreateAdPage";
 import AccountPage from './pages/AccountPage';
+import EditAdPage from './pages/EditAdPage';
 
 import { I18nProvider, LOCALES } from "./i18n";
+import LOCALE from './admin/locale';
+
 
 class App extends React.Component<any, any> {
   constructor(props: any) {
@@ -42,10 +43,10 @@ class App extends React.Component<any, any> {
     this.setState({ name: value })
     }
   };
-
+  //{this.state.locales[this.state.name]}
   render() {
     return (
-      <I18nProvider locale={this.state.locales[this.state.name]}>
+      <I18nProvider locale={this.state.locales[this.state.name]}>      
         <Router>
             <Switch>
 
@@ -72,7 +73,7 @@ class App extends React.Component<any, any> {
             <Route
               path="/ads/edit/:id"
               component={(props) => (
-                <NewCarPage {...props} inputDisabled={false} pageMode="edit" />
+                <EditAdPage {...props} />
               )}
             />
 

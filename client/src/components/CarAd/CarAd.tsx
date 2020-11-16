@@ -1,8 +1,9 @@
 import React from "react";
 import { deleteAd } from "../../services/RestService";
 import { useAuth0 } from "@auth0/auth0-react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
-import adminList from '../../admin/adminList';
+import adminList from "../../admin/adminList";
 
 import "./CarAd.scss";
 
@@ -10,7 +11,7 @@ import translate from "../../i18n/translate";
 
 const CarAd = (props: any) => {
   const { isAuthenticated, user } = useAuth0();
-  
+
   let btnVisibility = {
     display: "none",
   } as React.CSSProperties;
@@ -21,14 +22,13 @@ const CarAd = (props: any) => {
   } else {
     btnVisibility = {
       display: "none",
-    };     
+    };
   }
   if (isAuthenticated && adminList.includes(user.nickname)) {
     btnVisibility = {
       display: "block",
     };
   }
-
 
   function handleDelete(path) {
     try {
@@ -43,18 +43,27 @@ const CarAd = (props: any) => {
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
   }
+
   return (
     <div>
       <div className={"car__container"}>
         <div className="car__image">
           <img src={props.image} alt="car image" />
-          <div><b>{translate("postedBy")} &nbsp;&nbsp;&nbsp;&nbsp;</b>{props.createdBy}</div>
-          <div><b>{translate("emailForCommunication")} &nbsp;&nbsp;&nbsp;&nbsp;</b><a className="emailLink" href={`mailto:${props.createdByEmail}`}>{props.createdByEmail}</a></div>
+          <div>
+            <b>{translate("postedBy")} &nbsp;&nbsp;&nbsp;&nbsp;</b>
+            {props.createdBy}
+          </div>
+          <div>
+            <b>{translate("emailForCommunication")} &nbsp;&nbsp;&nbsp;&nbsp;</b>
+            <a className="emailLink" href={`mailto:${props.createdByEmail}`}>
+              {props.createdByEmail}
+            </a>
+          </div>
         </div>
 
         <div className="car__info">
           <div className="car__title">
-            {" "} 
+            {" "}
             <input
               className="car__title-input"
               type="text"
@@ -232,15 +241,23 @@ const CarAd = (props: any) => {
           />
         </div>
         <br />
-        <div className={"car__btn"} style={btnVisibility}>
-          <button
-            className="button red"
-            onClick={() => {
-              handleDelete(`http://localhost:5000/api/ads/${props.id}`);
-            }}
-          >
-            {translate("deleteAd")}
-          </button>
+        <div className="car__btn-container">
+          <div className={"car__btn"} style={btnVisibility}>
+            <button
+              className="button red"
+              onClick={() => {
+                handleDelete(`http://localhost:5000/api/ads/${props.id}`);
+              }}
+            >
+              {translate("deleteAd")}
+            </button>
+          </div>
+
+          <Link to={`/ads/edit/${props.id}`}>
+            <div className={"car__btn"} style={btnVisibility}>
+              <button className="button grey">{translate("editAd")}</button>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

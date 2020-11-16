@@ -1,49 +1,49 @@
 import React from "react";
 
-import "./CreateAd";
-import "./CreateAd.scss";
+import "./EditAd.scss";
 
-import { postAd } from "../../services/RestService";
+import { editAd } from "../../services/RestService";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { IAd } from "../../models/IAd";
 
 import translate from "../../i18n/translate";
-class CreateAd extends React.Component<any, {}> {
+class EditAd extends React.Component<any, {}> {
+  state: IAd;
   constructor(props: any) {
     super(props);
 
     this.state = {
-      carImage: "",
-      carName: "",
-      carDescription: "",
-      carModel: "",
-      carYear: null,
-      carType: "Sedan",
+      carImage: this.props.image,
+      carName: this.props.title,
+      carDescription: this.props.description,
+      carModel: this.props.model,
+      carYear: this.props.year,
+      carType: this.props.type,
       carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png",
-      carUsed: "New car",
-      carPrice: null,
-      carMileage: null,
-      fuelConsumption: null,
-      maxSpeed: null,
-      carFullDescription: "",
-      createdBy: this.props.userName,
-      createdByEmail: this.props.userEmail
+      carUsed: this.props.used,
+      carPrice: this.props.price,
+      carMileage: this.props.mileage,
+      fuelConsumption: this.props.fuel, 
+      maxSpeed: this.props.maxspeed, 
+      carFullDescription: this.props.fulldescription,
+      createdBy: this.props.createdBy,
+      createdByEmail: this.props.createdByEmail,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
     this.handleChangeDecimal = this.handleChangeDecimal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
   onSubmit(event) {
     event.preventDefault();
     this.setState({
       createdBy: this.props.userName,
       createdByEmail: this.props.userEmail,
     });
-    console.log([this.state]);
-
-    try {
-      const created = postAd([this.state]);
-      alert("Ad successfully created!");
+    try { 
+      const edited = editAd(this.state, this.props.id);
+      alert("Ad successfully updated!");
     } catch (error) {
       alert("Error creating ad!");
     }
@@ -55,8 +55,8 @@ class CreateAd extends React.Component<any, {}> {
   }
   handleCancel() {
     const createHistory = require("history").createBrowserHistory;
-    let history = createHistory();
-    history.push("/ads");
+    let history = createHistory();  
+    history.push(`/ads`);
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
   }
@@ -92,9 +92,9 @@ class CreateAd extends React.Component<any, {}> {
   }
 
   handleChange(event) {
-    const target = event.target;
-    const name = target.name;
-    const value = event.target.value;
+    let target = event.target;
+    let name = target.name;
+    let value = event.target.value;
     if (name == "Sedan") {
       this.setState({
         carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png",
@@ -134,13 +134,14 @@ class CreateAd extends React.Component<any, {}> {
   render() {
     return (
       <form onSubmit={this.onSubmit} data-testid="createAd">
-        <div className="title">{translate("enterInfo")}</div>
+        <div className="title">{translate("editInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
             <input
               className="car__info-input img"
               type="text"
               name="carImage"
+              value={this.state.carImage}
               placeholder="car image link (1920x1280)"
               onChange={this.handleChange}
               required
@@ -153,7 +154,8 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__title-input"
                 type="text"
                 name="carName"
-                placeholder="car brand and model"
+                value={this.state.carName}
+                // placeholder="car brand and model"
                 onChange={this.handleChange}
                 required
               />{" "}
@@ -162,6 +164,7 @@ class CreateAd extends React.Component<any, {}> {
               <textarea
                 className="car__description-input"
                 name="carDescription"
+                value={this.state.carDescription}
                 placeholder="short description (general info about car)"
                 onChange={this.handleChange}
                 required
@@ -182,6 +185,7 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carModel"
+                value={this.state.carModel}
                 placeholder="car brand"
                 onChange={this.handleChange}
               />
@@ -201,6 +205,7 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carYear"
+                value={this.state.carYear}
                 placeholder="car year"
                 onChange={this.handleChangeNumber}
                 required
@@ -218,6 +223,7 @@ class CreateAd extends React.Component<any, {}> {
               <select
                 className="car__info-input"
                 name="carUsed"
+                value={this.state.carUsed}
                 onChange={this.handleChange}
               >
                 <option value="New car">New</option>
@@ -240,6 +246,7 @@ class CreateAd extends React.Component<any, {}> {
               <select
                 className="car__info-input"
                 name="carType"
+                value={this.state.carType}
                 onChange={this.handleChange}
               >
                 <option value="Sedan">Sedan</option>
@@ -269,6 +276,7 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carPrice"
+                value={this.state.carPrice}
                 placeholder="car price"
                 onChange={this.handleChangeNumber}
                 required
@@ -288,6 +296,7 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carMileage"
+                value={this.state.carMileage}
                 placeholder="car mileage (if car is new, enter 0)"
                 onChange={this.handleChangeNumber}
               />
@@ -308,6 +317,7 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="fuelConsumption"
+                value={this.state.fuelConsumption}
                 placeholder="fuel consumption"
                 onChange={this.handleChangeDecimal}
               />
@@ -328,6 +338,7 @@ class CreateAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="maxSpeed"
+                value={this.state.maxSpeed}
                 placeholder="max speed"
                 onChange={this.handleChangeNumber}
               />
@@ -339,6 +350,7 @@ class CreateAd extends React.Component<any, {}> {
             <textarea
               className="car__description-input full2"
               name="carFullDescription"
+              value={this.state.carFullDescription}
               placeholder="full description (driving experience, problems, advantages, etc.)"
               onChange={this.handleChange}
             />
@@ -356,4 +368,4 @@ class CreateAd extends React.Component<any, {}> {
   }
 }
 
-export default CreateAd;
+export default EditAd;
