@@ -26,7 +26,7 @@ class Header extends React.Component<any, {}> {
 
   }
   componentDidUpdate() {
-   // console.log(this.state.lang);
+    console.log(this.state.lang);
     //this.props.updateData(this.state.lang);
   }
 
