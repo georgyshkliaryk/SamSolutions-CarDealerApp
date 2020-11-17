@@ -53,7 +53,7 @@ class Contacts extends React.Component<any, any> {
               <div className="contacts__ul2">
                 <ul>
                   <li>(+792) 423-34-32 </li>
-                  <li>2621 S Wilmington St, Raleigh, NC </li>
+                  <li>Alt-Lichtenrade, 100, Berlin, Germany</li>
                   <li>cardealer.main@gmail.com </li>
                 </ul>
               </div>
