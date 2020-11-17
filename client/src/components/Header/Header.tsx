@@ -7,21 +7,38 @@ import "./Header.scss";
 import translate from "../../i18n/translate";
 import LoginButton from "../LoginButton/LoginButton";
 import AccountButton from "../AccountButton/AccountButton";
+import Language from "./Language";
+import { throws } from "assert";
 
 class Header extends React.Component<any, {}> {
+  sendData = () => {
+    this.props.updateData(this.state.lang);
+  }
+  state = {
+    lang: 0
+  }
   constructor(props: any) {
     super(props);
     // const { loginWithRedirect, isAuthenticated } = useAuth0();
   }
-  state = {
-    eng: 0,
-    de: 1,
-  };
   componentDidMount() {
     new WOW.WOW().init();
+
+  }
+  componentDidUpdate() {
+    console.log(this.state.lang);
+    //this.props.updateData(this.state.lang);
   }
 
+  updateLang = (value) => {
+    this.setState({ lang: value });
+    
+    
+ }
+
+
   render() {
+    
     return (
       <div className="header">
         <div className="header__links first">
@@ -48,13 +65,13 @@ class Header extends React.Component<any, {}> {
           className="header__links register wow bounceInDown"
           data-wow-delay="0.3s"
         >
-          <div className="link wow bounceInDown" data-wow-delay="0.2s">
+          {/* <div className="link wow bounceInDown" data-wow-delay="0.2s">
             <img
               className="flag uk"
               src="https://icon-library.com/images/icon-english/icon-english-11.jpg"
               alt="eng"
               title="English"
-              onClick={() => this.props.updateData(this.state.eng)}
+    
               style={{ visibility: this.props.lang }}
             />
             <img
@@ -62,17 +79,17 @@ class Header extends React.Component<any, {}> {
               src="https://cdn.countryflags.com/thumbs/germany/flag-round-250.png"
               alt="de"
               title="German"
-              onClick={() => this.props.updateData(this.state.de)}
+
               style={{ visibility: this.props.lang }}
             />
-          </div>
+          </div> */}
+          <Language updateLang={this.updateLang}/>
 
           <div className="link wow bounceInDown" data-wow-delay="0.3s">
             <Link to="/profile">
               <AccountButton />
             </Link>
           </div>
-
           <div className="link wow bounceInDown" data-wow-delay="0.4s">
             <LoginButton />
           </div>

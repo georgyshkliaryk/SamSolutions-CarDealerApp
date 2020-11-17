@@ -37,11 +37,6 @@ class App extends React.Component<any, any> {
 
   onUpdate = (value) => {};
 
-  updateData = (value) => {
-    if (this.state.name != value) {
-    this.setState({ name: value })
-    }
-  };
   //{this.state.locales[this.state.name]}
   render() {
     return (
@@ -54,7 +49,7 @@ class App extends React.Component<any, any> {
           </Route>
 
           <Route exact path="/">
-            <HomePage updateData={this.updateData} />
+            <HomePage/>
           </Route>
 
             <Route exact path="/ads">

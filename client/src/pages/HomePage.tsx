@@ -24,7 +24,7 @@ import translate from "../i18n/translate";
 interface IState {
   ads: IAd[];
   startAds: IAd[];
-  isLoaded: boolean;
+  isLoaded: boolean; 
   lang: number;
 }
 
@@ -43,7 +43,7 @@ class HomePage extends React.Component<any, {}> {
     ads: [],
     startAds: [],
     isLoaded: false,
-    lang: 0,
+    lang: 0
   };
 
   constructor(props: IProps) {
@@ -63,19 +63,25 @@ class HomePage extends React.Component<any, {}> {
       ads: [],
       startAds: [],
       isLoaded: false,
-      lang: 0,
+      lang: 0
     };
   }
 
   componentDidMount() {
     new WOW.WOW().init();
     this.fetchAds({} as any);
+    
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.lang);
   }
 
   updateData = (value) => {
-    this.setState({ lang: value });
-    console.log(this.state.lang);
-  };
+    this.setState({ lang: value })
+ }
+
+
 
   fetchAds(queryParams: IAdQueryParams) {
     this.adService
@@ -98,7 +104,7 @@ class HomePage extends React.Component<any, {}> {
   render() {
     return (
       <>
-        <Header updateData={this.updateData} lang={"visible"} />
+        <Header lang={"visible"} updateData={this.updateData}/>
 
         {this.state.isLoaded ? (
           <Slider ads={this.state.startAds} />
