@@ -25,7 +25,6 @@ interface IState {
   ads: IAd[];
   startAds: IAd[];
   isLoaded: boolean; 
-  lang: number;
 }
 
 interface IAdQueryParams {
@@ -43,7 +42,6 @@ class HomePage extends React.Component<any, {}> {
     ads: [],
     startAds: [],
     isLoaded: false,
-    lang: 0
   };
 
   constructor(props: IProps) {
@@ -63,7 +61,6 @@ class HomePage extends React.Component<any, {}> {
       ads: [],
       startAds: [],
       isLoaded: false,
-      lang: 0
     };
   }
 
@@ -74,12 +71,10 @@ class HomePage extends React.Component<any, {}> {
   }
 
   componentDidUpdate() {
-    console.log(this.state.lang);
+   // console.log(this.state.lang);
+    
   }
 
-  updateData = (value) => {
-    this.setState({ lang: value })
- }
 
 
 
@@ -104,7 +99,7 @@ class HomePage extends React.Component<any, {}> {
   render() {
     return (
       <>
-        <Header lang={"visible"} updateData={this.updateData}/>
+        <Header lang={"visible"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
 
         {this.state.isLoaded ? (
           <Slider ads={this.state.startAds} />

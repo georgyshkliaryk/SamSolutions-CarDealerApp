@@ -28,7 +28,7 @@ interface IState {
   ads: IAd[];
 }
 
-class NewCarsPage extends React.Component {
+class NewCarsPage extends React.Component<any, {}> {
   adService: AdService;
   state = {
     ads: [],
@@ -71,7 +71,7 @@ class NewCarsPage extends React.Component {
     if (this.state.ads.length > 0) {
       return (
         <>
-          <Header lang={"hidden"} />
+          <Header lang={"visible"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
           <Link to="ads/create">
             <CreateAdBtn />
           </Link>
@@ -94,7 +94,7 @@ class NewCarsPage extends React.Component {
     } else {
       return (
         <>
-          <Header lang={"hidden"} />
+          <Header lang={"hidden"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
           <Link to="ads/create">
             <CreateAdBtn />
           </Link>

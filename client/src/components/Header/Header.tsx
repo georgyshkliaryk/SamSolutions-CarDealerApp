@@ -11,31 +11,18 @@ import Language from "./Language";
 import { throws } from "assert";
 
 class Header extends React.Component<any, {}> {
-  sendData = () => {
-    this.props.updateData(this.state.lang);
-  }
-  state = {
-    lang: 0
-  }
   constructor(props: any) {
     super(props);
-    // const { loginWithRedirect, isAuthenticated } = useAuth0();
+
+    
   }
   componentDidMount() {
     new WOW.WOW().init();
 
   }
   componentDidUpdate() {
-    console.log(this.state.lang);
-    //this.props.updateData(this.state.lang);
+    // console.log(this.state.lang);
   }
-
-  updateLang = (value) => {
-    this.setState({ lang: value });
-    
-    
- }
-
 
   render() {
     
@@ -65,25 +52,8 @@ class Header extends React.Component<any, {}> {
           className="header__links register wow bounceInDown"
           data-wow-delay="0.3s"
         >
-          {/* <div className="link wow bounceInDown" data-wow-delay="0.2s">
-            <img
-              className="flag uk"
-              src="https://icon-library.com/images/icon-english/icon-english-11.jpg"
-              alt="eng"
-              title="English"
-    
-              style={{ visibility: this.props.lang }}
-            />
-            <img
-              className="flag de"
-              src="https://cdn.countryflags.com/thumbs/germany/flag-round-250.png"
-              alt="de"
-              title="German"
-
-              style={{ visibility: this.props.lang }}
-            />
-          </div> */}
-          <Language updateLang={this.updateLang}/>
+          
+          <Language handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/> 
 
           <div className="link wow bounceInDown" data-wow-delay="0.3s">
             <Link to="/profile">
@@ -94,9 +64,6 @@ class Header extends React.Component<any, {}> {
             <LoginButton />
           </div>
 
-          {/* <div className="link wow bounceInDown" data-wow-delay="0.4s">
-            <Link to="/logout">{translate("logout")}</Link>
-          </div> */}
         </div>
       </div>
     );

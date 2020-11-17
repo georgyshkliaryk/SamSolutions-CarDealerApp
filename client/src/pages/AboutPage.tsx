@@ -5,10 +5,10 @@ import Footer from "../components/Footer/Footer";
 import Contacts from "../components/Contacts/Contacts";
 import About from "../components/About/About";
 
-const AboutPage = () => {
+const AboutPage = (props: any) => {
   return (
     <div>
-      <Header lang={"hidden"} />
+      <Header lang={"visible"} handleClickEng={props.handleClickEng} handleClickDe={props.handleClickDe}/>
       <About />
       <Contacts />
       <Footer />
