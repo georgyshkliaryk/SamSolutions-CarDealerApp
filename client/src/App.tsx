@@ -57,7 +57,6 @@ class App extends React.Component<any, any> {
 
   onUpdate = (value) => {};
 
-  //{this.state.locales[this.state.name]}
   render() {
     return (
       <I18nProvider locale={this.state.locales[this.state.name]}>
