@@ -68,7 +68,7 @@ class EditAdPage extends React.Component<any, any> {
   render() {
     return (
       <>
-        <Header lang={"hidden"}/>
+        <Header lang={"visible"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
         {this.state.isLoaded ? (
           <EditAd
             title={this.state.ad.carName}

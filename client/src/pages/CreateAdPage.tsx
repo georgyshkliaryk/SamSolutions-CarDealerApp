@@ -7,13 +7,13 @@ import CreateAd from "../components/CreateAd/CreateAd";
 
 import { useAuth0 } from '@auth0/auth0-react';
 
-const CreateAdPage = () => {
+const CreateAdPage = (props:any) => {
   const { user, isAuthenticated } = useAuth0();
 
   if (isAuthenticated) {
     return (
       <div>
-        <Header lang={"hidden"}/>
+        <Header lang={"visible"} handleClickEng={props.handleClickEng} handleClickDe={props.handleClickDe}/> 
         <CreateAd userName={user.nickname} userEmail={user.email}/> 
         <Footer />
       </div>
@@ -21,7 +21,7 @@ const CreateAdPage = () => {
   } else {
     return (
       <div>
-        <Header lang={"visible"}/>
+        <Header lang={"visible"} handleClickEng={props.handleClickEng} handleClickDe={props.handleClickDe}/>
         <CreateAd/> 
         <Footer />
       </div>
