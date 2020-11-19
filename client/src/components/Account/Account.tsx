@@ -26,15 +26,17 @@ const Account = () => {
           {translate("hello")},&nbsp;&nbsp;&nbsp; {user.name}!
         </h1>
         <div className="account__info">
+          
           <div>
             <img src={user.picture} alt={user.name} />
           </div>
+          <div className="user__info">
           <div className="account__user">
             <div>
               <b>{translate("accountName")} </b>
             </div>
             <div>
-              <b>CarDealer {translate("nickname")}: </b>
+              <b>CarDealer&nbsp;{translate("nickname")}: </b>
             </div>
             <div>
               <b>{translate("email")} </b>
@@ -55,9 +57,10 @@ const Account = () => {
             <div>{user.updated_at.replace("T",", ").substr(0,20)}</div>
             <div>{role}</div>
           </div>
+          </div>
         </div>
         <AccountAds nickname={user.nickname}/>
-        <EditButton content={"Logout"} handleClick={() => {alert("You've benn logged out!"); logout()}}/>
+        <EditButton content={"Logout"} handleClick={() => {alert("You've been logged out!"); logout()}}/>
       </div>
     );
   } else {

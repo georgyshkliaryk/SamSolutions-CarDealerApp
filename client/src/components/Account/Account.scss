@@ -5,6 +5,7 @@
 }
 .account__info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 5em 15em;
     border-bottom: grey solid 1px;
@@ -13,7 +14,13 @@
     img {
         width: 12em;
         border-radius: 10%;
+        margin-bottom: 5em;
     }
+}
+
+
+.user__info {
+    display: flex;
 }
 
 .account__user {
