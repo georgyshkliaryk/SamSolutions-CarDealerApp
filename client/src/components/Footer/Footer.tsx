@@ -18,7 +18,7 @@ function Footer() {
       </div>
 
       <div className="header__title footer__title">
-        <span>Car</span>Dealer, 2020
+        <span>Car</span>Dealer,&nbsp;2020
       </div>
 
       <div className="header__links footer__links">

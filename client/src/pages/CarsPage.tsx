@@ -71,7 +71,11 @@ class NewCarsPage extends React.Component<any, {}> {
     if (this.state.ads.length > 0) {
       return (
         <>
-          <Header lang={"visible"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
+          <Header
+            lang={"visible"}
+            handleClickEng={this.props.handleClickEng}
+            handleClickDe={this.props.handleClickDe}
+          />
           <Link to="ads/create">
             <CreateAdBtn />
           </Link>
@@ -94,7 +98,12 @@ class NewCarsPage extends React.Component<any, {}> {
     } else {
       return (
         <>
-          <Header lang={"hidden"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
+          <Header
+            lang={"hidden"}
+            handleClickEng={this.props.handleClickEng}
+            handleClickDe={this.props.handleClickDe}
+          />
+
           <Link to="ads/create">
             <CreateAdBtn />
           </Link>

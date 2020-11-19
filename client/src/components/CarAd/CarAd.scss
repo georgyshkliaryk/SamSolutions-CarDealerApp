@@ -34,7 +34,7 @@
   }
 }
 .car__image {
-  margin: auto 10em;
+  margin: auto;
   min-width: 20em;
   img {
     width: 30em;
@@ -82,5 +82,9 @@
 .car__btn-container {
   display: flex;
   justify-content: space-around;
+  margin: auto;
+}
+
+.car__info {
   margin: auto;
 }

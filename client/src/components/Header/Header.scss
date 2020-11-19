@@ -6,6 +6,7 @@
   justify-content: space-between;
   padding: 1.5em 2em;
   top: 0;
+  position: relative;
 
   z-index: 5;
 }
@@ -21,11 +22,7 @@
     color: white;
   }
 }
-@media screen and (max-width: 1000px) {
-  .first {
-    flex-direction: column;
-  }
-}
+
 .header__links a:hover {
   color: grey;
 }
@@ -84,4 +81,85 @@
 }
 .link {
   margin-top: 0.5rem;
+}
+
+.hamburger__btn {
+  padding-top: 0em;
+  display: none;
+  font-size: 25px;
+  color: white;
+}
+
+.menu {
+  display: block;
+  position: absolute;
+  background-color: rgba(17, 17, 17, 1);
+  padding: 1em 5em;
+  top: 6rem;
+  font-size: 25px;
+  left: 0;
+  border-radius: 10px;
+
+  display: none;
+}
+
+.menu__link {
+  margin-bottom: 4rem;
+
+}
+
+.menu__link {
+  a:hover {
+    color: grey;
+  }
+}
+
+#toggleMenu {
+  display: none;
+}
+
+#labelToggleClose {
+  display: none;
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .hamburger__btn {
+    display: block;
+    width: 1em;
+  }
+  #labelToggle {
+    cursor: pointer;
+  }
+  #labelToggleClose {
+    cursor: pointer;
+  }
+  #labelToggle:hover {
+    color: grey;
+  }
+  #labelToggleClose:hover {
+    color: grey;
+  }
+  .first {
+    display: none;
+  }
+  .register {
+    display: none;
+  }
+  .header__title {
+    text-align: center;
+    margin: auto;
+  }
+  #toggleMenu:checked ~ .menu {
+    display: block;
+  }
+  #toggleMenu:checked ~ #labelToggle {
+    display: none;
+  }
+  #toggleMenu:checked ~ #labelToggleClose {
+    display: block;
+  }
+
 }

@@ -7,16 +7,13 @@ class Language extends React.Component<any, {}> {
 
   constructor(props: any) {
     super(props);
-    // this.handleClickDe = this.handleClickDe.bind(this);
-    // this.handleClickEng = this.handleClickEng.bind(this);
-    // this.props.lang(this.state.lang);
   }
 
 
 
   render() {
     return (
-      <div className="link wow bounceInDown" data-wow-delay="0.2s">
+      <div className={this.props.classes} data-wow-delay="0.2s">
         <img
           className="flag uk"
           src="https://icon-library.com/images/icon-english/icon-english-11.jpg"
@@ -24,7 +21,6 @@ class Language extends React.Component<any, {}> {
           title="English"
           onClick={this.props.handleClickEng}
 
-          //   style={{ visibility: this.props.lang }}
         />
         <img
           className="flag de"
@@ -33,7 +29,6 @@ class Language extends React.Component<any, {}> {
           title="German"
           onClick={this.props.handleClickDe}
 
-          //   style={{ visibility: this.props.lang }}
         />
       </div>
     );

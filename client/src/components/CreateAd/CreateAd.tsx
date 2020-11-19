@@ -137,6 +137,7 @@ class CreateAd extends React.Component<any, {}> {
         <div className="title">{translate("enterInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
+            <img src="https://static.thenounproject.com/png/3927-200.png" alt="upload image icon" className="car__image-icon"/>
             <input
               className="car__info-input img"
               type="text"
