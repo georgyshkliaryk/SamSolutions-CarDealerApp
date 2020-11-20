@@ -87,6 +87,7 @@ export default {
         "myAds": "MY CARS IN STOCK",
 
         "editAd": "Edit ad",
+        "noCarsFilter": "No cars available with parameters you've chosen",
 
 
 

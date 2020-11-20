@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .about {
   padding: 5em 0 5em 0;
   text-align: center;
@@ -6,12 +8,12 @@
 .about__title {
   font-size: 40px;
   margin-bottom: 1em;
-  color: black;
+  color: $header_footer_color;
 }
 
 .about__container {
   font-size: 20px;
-  color: grey;
+  color: $secondary_buttons_hover_color;
   margin: auto 10em;
 
   ul {

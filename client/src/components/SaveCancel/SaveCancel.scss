@@ -1,17 +1,19 @@
+@import "../../styles/variables";
+
 .button-search__container.btn {
   display: flex;
   justify-content: space-between;
   padding: 0em 5em;
 }
 .save {
-  background-color: red;
-  color: white;
+  background-color: $main_buttons_color;
+  color: $main_background_color;
   margin-right: 2em;
 }
 .cancel {
-  background-color: lightgrey;
+  background-color: $secondary_buttons_color;
   color: black;
 }
 .cancel:hover {
-  background-color: grey;
+  background-color: $secondary_buttons_hover_color;
 }

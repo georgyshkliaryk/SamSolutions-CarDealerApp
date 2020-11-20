@@ -12,8 +12,8 @@
 }
 
 .slider__button {
-  background-color: red;
-  color: lightgrey;
+  background-color: $main_buttons_color;
+  color: $secondary_buttons_color;
   padding: 10px 30px;
   text-align: center;
   text-decoration: none;
@@ -36,31 +36,31 @@
   right: 1em;
 }
 .slider__button:hover {
-  background-color: rgb(134, 0, 0);
+  background-color: $main_buttons_hover_color;
 }
 .slide__title {
   font-family: "Sriracha", cursive;
-  color: white;
+  color: $main_background_color;
   font-size: 60px;
   position: absolute;
   bottom: 3em;
   left: 2em;
-  border-bottom: red 5px solid;
+  border-bottom: $main_buttons_color 5px solid;
   padding-right: 13em;
 }
 .slide__description {
-  color: white;
+  color: $main_background_color;
   position: absolute;
   font-size: 30px;
   bottom: 2.5em;
   right: 1em;
   text-align: right;
-  color: lightgray;
+  color: $secondary_buttons_color;
   font-style: italic;
   margin-left: 7em;
 }
 a:hover {
-  color: rgb(219, 219, 219);
+  color: $secondary_buttons_color;
 }
 
 @media screen and (max-width: 1500px) {

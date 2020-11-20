@@ -1,26 +1,28 @@
+@import "../../styles/variables";
+
 .button1 {
   width: 8em;
   height: 2.5em;
   font-size: 20px;
   border-radius: 2em;
   border: none;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  color: white;
+  box-shadow: 0 0 3px $box_shadow_color;
+  color: $main_background_color;
   cursor: pointer;
 }
 .red:hover {
-  background-color: rgb(99, 0, 0);
+  background-color: $main_buttons_hover_color;
 }
 .grey:hover {
-  background-color: grey;
+  background-color: $secondary_buttons_hover_color;
 }
 .red {
-  background-color: rgb(206, 0, 0);
+  background-color: $main_buttons_color;
   margin-right: 2em;
 }
 .grey {
-  background-color: rgb(212, 212, 212);
-  color: black;
+  background-color: $secondary_buttons_color;
+  color: $header_footer_color;
 }
 .title {
   font-size: 30px;

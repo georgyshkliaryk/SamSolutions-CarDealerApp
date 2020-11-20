@@ -5,7 +5,7 @@
   padding: 1em;
   width: 15em;
   border: none;
-  background-color: rgb(250, 250, 250);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  margin-top: 0.5em;
+  background-color: $main_background_color;
+  box-shadow: 0 0 3px $box_shadow_color;
+  margin-top: 0.5em; 
 }

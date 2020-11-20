@@ -1,6 +1,8 @@
+@import "../../styles/variables";
+
 .headerButton {
     cursor: pointer;
 }
 .headerButton:hover {
-    color: grey;
+    color: $secondary_buttons_hover_color;
 }

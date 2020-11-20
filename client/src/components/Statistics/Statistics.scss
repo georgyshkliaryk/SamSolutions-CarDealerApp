@@ -1,5 +1,7 @@
+@import "../../styles/variables";
+
 .statistics {
-  color: white;
+  color: $main_background_color;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 25em;
@@ -7,6 +9,6 @@
 .statistics__card {
   span {
     font-size: 40px;
-    color: yellow;
+    color: $price_color;
   }
 }

@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .account__container {
     min-height: 70vh;
     text-align: center;
@@ -8,7 +10,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 5em 15em;
-    border-bottom: grey solid 1px;
+    border-bottom: $secondary_buttons_hover_color solid 1px;
     padding-bottom: 5em;
 
     img {
@@ -41,7 +43,7 @@
     }
 }
 h1 {
-    border-bottom: grey solid 1px;
+    border-bottom: $secondary_buttons_hover_color solid 1px;
     padding-bottom: 2em;
     margin: 0 5em;
 }

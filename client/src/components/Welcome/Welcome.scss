@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .welcome {
   text-align: center;
   background: url("../../public/assets/imgs/bmw2blur.jpg") 100%;
@@ -8,6 +10,6 @@
 
 .welcome__title {
   font-size: 45px;
-  color: white;
+  color: $main_background_color;
   margin: 3em auto;
 }

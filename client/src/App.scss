@@ -2,9 +2,9 @@
 body {
   font-size: $font_size_default;
   font-family: $font_default;
-  background-color: white;
+  background-color: $main_background_color;
 }
 a {
   text-decoration: none;
-  color: white;
+  color: $main_background_color;
 }

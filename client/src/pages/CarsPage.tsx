@@ -114,7 +114,7 @@ class NewCarsPage extends React.Component<any, {}> {
             <div className="ads__title wow flipInY" data-wow-delay="0.3s">
               {translate("availableCars")}
             </div>
-            <div>No cars available with parameters you've chosen</div>
+            <div>{translate("noCarsFilter")}</div>
           </div>
           <Footer />
         </>

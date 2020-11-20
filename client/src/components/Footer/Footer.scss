@@ -1,10 +1,11 @@
 @import "../../styles/variables";
+
 .footer {
   height: 5em;
   width: 100%;
   font-size: 15px;
   font-family: "Montserrat", sans-serif;
-  color: grey;
+  color: $secondary_buttons_hover_color;
   margin-top: 0;
   padding: 4em 0 0 0;
   display: flex;
@@ -12,19 +13,19 @@
 }
 .footer__title {
   font-family: "Montserrat", sans-serif;
-  color: grey;
+  color: $secondary_buttons_hover_color;
   font-size: 20px;
   margin-top: 0;
 
   span {
-    color: grey;
+    color: $secondary_buttons_hover_color;
     font-size: 20px;
   }
 }
 .footer__links {
   margin: 0;
   padding: 0;
-  color: grey;
+  color: $secondary_buttons_hover_color;
   justify-content: space-evenly;
   width: 40em;
 }

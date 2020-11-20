@@ -1,7 +1,8 @@
 @import "../../styles/variables";
+
 .header {
-  color: white;
-  background-color: rgb(17, 17, 17);
+  color: $main_background_color;
+  background-color: $header_footer_color;
   display: flex;
   justify-content: space-between;
   padding: 1.5em 2em;
@@ -16,27 +17,27 @@
   justify-content: space-between;
   width: 20em;
   padding: 0.5em 0;
-  color: white;
+  color: $main_background_color;
   a {
     text-decoration: none;
-    color: white;
+    color: $main_background_color;
   }
 }
 
 .header__links a:hover {
-  color: grey;
+  color: $secondary_buttons_hover_color;
 }
 .header__title {
   font-size: 30px;
   font-family: "Lobster", cursive;
-  color: red;
+  color: $main_buttons_color;
   margin-top: 0.5rem;
 
   span.dealer {
-    color: red;
+    color: $main_buttons_color;
   }
   span.car {
-    color: white;
+    color: $main_background_color;
   }
 }
 
@@ -57,14 +58,14 @@
   left: 7%;
   top: 3.3em;
   z-index: 4;
-  background-color: black;
-  border: solid grey 1px;
+  background-color: $header_footer_color;
+  border: solid $secondary_buttons_hover_color 1px;
   padding: 0.2em 1em;
   display: none !important;
 
   div {
     font-size: 17px;
-    color: white;
+    color: $main_background_color;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -87,13 +88,13 @@
   padding-top: 0em;
   display: none;
   font-size: 25px;
-  color: white;
+  color: $main_background_color;
 }
 
 .menu {
   display: block;
   position: absolute;
-  background-color: rgba(17, 17, 17, 1);
+  background-color: $header_footer_color;
   padding: 1em 5em;
   top: 6rem;
   font-size: 25px;
@@ -110,7 +111,7 @@
 
 .menu__link {
   a:hover {
-    color: grey;
+    color: $secondary_buttons_hover_color;
   }
 }
 
@@ -137,10 +138,10 @@
     cursor: pointer;
   }
   #labelToggle:hover {
-    color: grey;
+    color: $secondary_buttons_hover_color;
   }
   #labelToggleClose:hover {
-    color: grey;
+    color: $secondary_buttons_hover_color;
   }
   .first {
     display: none;

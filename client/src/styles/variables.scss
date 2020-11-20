@@ -1,8 +1,22 @@
+//width/heights
 $width: 1080px;
 $img_width: 855px;
 $img_height: 1515px;
 
-$header_margin: 0;            /*89px;*/
+//margins
+$header_margin: 0;
 
+//fonts
 $font_default: 'Arvo', serif;
 $font_size_default: 17px;
+
+//colors
+$header_footer_color: rgb(17, 17, 17);
+$main_background_color: white;
+$main_buttons_color: rgb(206, 0, 0);
+$main_buttons_hover_color: rgb(134, 0, 0);
+$secondary_buttons_color: lightgrey;
+$secondary_buttons_hover_color: grey;
+$price_color: rgb(255, 230, 0);
+$my_nickname_color: green;
+$box_shadow_color: rgba(0, 0, 0, 0.5);

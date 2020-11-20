@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .car__container {
   display: flex;
   flex-wrap: wrap;
@@ -8,7 +10,7 @@
   input,
   textarea {
     width: 100%;
-    border: 1px solid lightgrey;
+    border: 1px solid $secondary_buttons_color;
   }
   input::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
@@ -18,13 +20,13 @@
   }
 
   input {
-    border-bottom: 1px solid lightgrey !important;
+    border-bottom: 1px solid $secondary_buttons_color !important;
   }
 
   input:disabled,
   textarea:disabled {
     border: none;
-    background-color: white;
+    background-color: $main_background_color;
   }
   textarea {
     font-size: 15px;

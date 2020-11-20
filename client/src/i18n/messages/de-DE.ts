@@ -87,6 +87,7 @@ export default {
         "myAds": "MEINE AUTOS AUF LAGER",
 
         "editAd": "Anzeige bearbeiten",
+        "noCarsFilter": "Keine Autos mit den von Ihnen gewählten Parametern verfügbar",
     }
 
 }

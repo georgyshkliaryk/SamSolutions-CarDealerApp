@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .select__container {
   margin-top: 0.35em;
 
@@ -5,8 +7,8 @@
     width: 15em;
     padding: 1em;
     border-radius: 2em;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px $box_shadow_color;
     border: none;
-    background-color: rgb(250, 250, 250);
+    background-color: $main_background_color;
   }
 }

@@ -4,8 +4,8 @@
   border-radius: 1em;
   padding: 2em;
   padding-bottom: 4em;
-  background-color: white;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  background-color: $main_background_color;
+  box-shadow: 0 0 3px $box_shadow_color;
   margin: 2em 1em;
 }
 .filter__components {
@@ -21,6 +21,6 @@
 
 .filter__label {
   font-size: 10px;
-  color: grey;
+  color: $secondary_buttons_hover_color;
   margin-left: 2em;
 }

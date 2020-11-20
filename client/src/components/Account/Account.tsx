@@ -6,7 +6,6 @@ import adminList from '../../admin/adminList';
 
 import "./Account.scss";
 import EditButton from "../buttons/EditButton/EditButton";
-import LogoutPage from "../../pages/LogoutPage";
 import AccountAds from "./AccountAds/AccountAds";
 
 const Account = () => {

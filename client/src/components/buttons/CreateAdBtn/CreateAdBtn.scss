@@ -1,11 +1,14 @@
+@import "../../../styles/variables";
+
 .button-create {
   width: 9em;
-  background-color: lightgrey; // #ffe600
-  color: black;
+  background-color: $secondary_buttons_color;
+  color: $header_footer_color;
+  box-shadow: 0 0 3px $box_shadow_color;
   cursor: pointer;
 }
 .button-create:hover {
-  background-color: grey; // rgb(165, 135, 0);
+  background-color: $secondary_buttons_hover_color; 
 }
 .button-create__container {
   position: absolute;
