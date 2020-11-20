@@ -1,19 +1,19 @@
 @import "../../../styles/variables";
 
 .btn-more {
-    width: 28em;
-    height: 2.5em;
-    font-size: 20px;
-    border-radius: 2em;
-    border: none;
-    box-shadow: 0 0 3px $box_shadow_color;
-    color: white;
-    background-color: $main_buttons_color;
-    cursor: pointer;
-  }
-  .button:hover {
-    background-color: $main_buttons_hover_color;
-  }
-  .button-search__container {
-    padding-top: 0.7em;
-  } 
+  width: 28em;
+  height: 2.5em;
+  font-size: 20px;
+  border-radius: 2em;
+  border: none;
+  box-shadow: 0 0 3px $box_shadow_color;
+  color: white;
+  background-color: $main_buttons_color;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: $main_buttons_hover_color;
+}
+.button-search__container {
+  padding-top: 0.7em;
+}

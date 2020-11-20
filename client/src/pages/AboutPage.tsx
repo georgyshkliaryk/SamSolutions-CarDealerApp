@@ -8,7 +8,11 @@ import About from "../components/About/About";
 const AboutPage = (props: any) => {
   return (
     <div>
-      <Header lang={"visible"} handleClickEng={props.handleClickEng} handleClickDe={props.handleClickDe}/>
+      <Header
+        lang={"visible"}
+        handleClickEng={props.handleClickEng}
+        handleClickDe={props.handleClickDe}
+      />
       <About />
       <Contacts />
       <Footer />

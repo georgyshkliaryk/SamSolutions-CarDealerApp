@@ -4,7 +4,7 @@ const Ad = require("../models/Ad");
 //const verify = require("./verifyToken");
 
 //get a list of ads to sale from db
-router.get("/ads", async function(req, res, next) {
+router.get("/ads", async function (req, res, next) {
   let criteria = {};
   if (req.query.carModel) {
     criteria.carModel = req.query.carModel;
@@ -13,7 +13,7 @@ router.get("/ads", async function(req, res, next) {
   if (req.query.min_price && req.query.max_price) {
     criteria.carPrice = {
       $gte: req.query.min_price,
-      $lte: req.query.max_price  
+      $lte: req.query.max_price,
     };
   }
   if (req.query.carUsed) {
@@ -27,47 +27,45 @@ router.get("/ads", async function(req, res, next) {
   }
 
   Ad.find(criteria)
-    .then(function(Ad) {
+    .then(function (Ad) {
       res.send(Ad);
     })
     .catch(next);
 });
 
 //show an ad with a specified _id
-router.get("/ads/:id", async function(req, res, next) {
+router.get("/ads/:id", async function (req, res, next) {
   Ad.findById({ _id: req.params.id })
-    .then(function(Ad) {
+    .then(function (Ad) {
       res.send(Ad);
     })
     .catch(next);
 });
 
 //add a new ad to the db
-router.post("/ads", async function(req, res, next) {
+router.post("/ads", async function (req, res, next) {
   Ad.create(req.body)
-    .then(function(Ad) {
+    .then(function (Ad) {
       res.send(Ad);
     })
     .catch(next);
-    
-  
 });
 
 //update an ad in the db by _id
-router.put("/ads/:id", async function(req, res, next) {
+router.put("/ads/:id", async function (req, res, next) {
   Ad.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
-    function(Ad) {
+    function (Ad) {
       res.send(Ad);
     }
   );
 });
 
 //delete an ad from the db by _id
-router.delete("/ads/:id", async function(req, res, next) {
+router.delete("/ads/:id", async function (req, res, next) {
   Ad.findByIdAndRemove({ _id: req.params.id })
-    .then(function(Ad) {
+    .then(function (Ad) {
       res.send(Ad);
-    }) 
+    })
     .catch(next);
 });
 

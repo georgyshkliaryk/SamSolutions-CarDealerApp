@@ -12,9 +12,9 @@ export default class RangeForm extends React.Component<any> {
     pips: {
       mode: "values",
       values: [(this.props.min + this.props.max) / 2],
-      density: 10
+      density: 10,
     },
-    step: 100
+    step: 100,
   };
 
   render() {
@@ -29,9 +29,9 @@ export default class RangeForm extends React.Component<any> {
           connect
           pips={this.state.pips}
           step={this.state.step}
-          onSlide={data => {
+          onSlide={(data) => {
             this.setState({
-              value: data
+              value: data,
             });
           }}
         />

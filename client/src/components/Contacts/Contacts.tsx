@@ -15,8 +15,6 @@ class Contacts extends React.Component<any, any> {
     super(props);
   }
 
-  componentDidMount() {}
-
   render() {
     return (
       <div className="contacts">
@@ -53,7 +51,9 @@ class Contacts extends React.Component<any, any> {
               <div className="contacts__ul2">
                 <ul>
                   <li>(+792) 423-34-32 </li>
-                  <li>&nbsp;&nbsp;&nbsp;Alt-Lichtenrade, 100, Berlin, Germany</li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;Alt-Lichtenrade, 100, Berlin, Germany
+                  </li>
                   <li>cardealer.main@gmail.com </li>
                 </ul>
               </div>

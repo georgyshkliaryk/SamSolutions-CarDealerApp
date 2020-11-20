@@ -3,10 +3,10 @@ import React from "react";
 import "./EditAd.scss";
 
 import { editAd } from "../../services/RestService";
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { IAd } from "../../models/IAd";
 
 import translate from "../../i18n/translate";
+
 class EditAd extends React.Component<any, {}> {
   state: IAd;
   constructor(props: any) {
@@ -23,8 +23,8 @@ class EditAd extends React.Component<any, {}> {
       carUsed: this.props.used,
       carPrice: this.props.price,
       carMileage: this.props.mileage,
-      fuelConsumption: this.props.fuel, 
-      maxSpeed: this.props.maxspeed, 
+      fuelConsumption: this.props.fuel,
+      maxSpeed: this.props.maxspeed,
       carFullDescription: this.props.fulldescription,
       createdBy: this.props.createdBy,
       createdByEmail: this.props.createdByEmail,
@@ -41,7 +41,7 @@ class EditAd extends React.Component<any, {}> {
       createdBy: this.props.userName,
       createdByEmail: this.props.userEmail,
     });
-    try { 
+    try {
       const edited = editAd(this.state, this.props.id);
       alert("Ad successfully updated!");
     } catch (error) {
@@ -55,7 +55,7 @@ class EditAd extends React.Component<any, {}> {
   }
   handleCancel() {
     const createHistory = require("history").createBrowserHistory;
-    let history = createHistory();  
+    let history = createHistory();
     history.push(`/ads`);
     let pathUrl = window.location.href;
     window.location.href = pathUrl;
@@ -137,7 +137,11 @@ class EditAd extends React.Component<any, {}> {
         <div className="title">{translate("editInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
-            <img src="https://static.thenounproject.com/png/3927-200.png" alt="upload image icon" className="car__image-icon"/>
+            <img
+              src="https://static.thenounproject.com/png/3927-200.png"
+              alt="upload image icon"
+              className="car__image-icon"
+            />
             <input
               className="car__info-input img"
               type="text"
@@ -156,7 +160,6 @@ class EditAd extends React.Component<any, {}> {
                 type="text"
                 name="carName"
                 value={this.state.carName}
-                // placeholder="car brand and model"
                 onChange={this.handleChange}
                 required
               />{" "}
@@ -359,7 +362,11 @@ class EditAd extends React.Component<any, {}> {
           <br />
           <div className={"car__btn"}>
             <button className="button1 red">{translate("saveChanges")}</button>
-            <button type="button" className="button1 grey" onClick={this.handleCancel}>
+            <button
+              type="button"
+              className="button1 grey"
+              onClick={this.handleCancel}
+            >
               {translate("cancel")}
             </button>
           </div>

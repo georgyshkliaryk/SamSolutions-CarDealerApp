@@ -1,13 +1,6 @@
 import React from "react";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import Loading from "../components/Loading/Loading";
 import Ads from "../components/CarAds/Ads";
@@ -23,10 +16,6 @@ import CreateAdBtn from "../components/buttons/CreateAdBtn/CreateAdBtn";
 import FilterForm from "../components/FilterForm/FilterForm";
 
 import translate from "../i18n/translate";
-
-interface IState {
-  ads: IAd[];
-}
 
 class NewCarsPage extends React.Component<any, {}> {
   adService: AdService;

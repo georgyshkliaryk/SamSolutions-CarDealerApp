@@ -8,12 +8,11 @@
   cursor: pointer;
 }
 .button-create:hover {
-  background-color: $secondary_buttons_hover_color; 
+  background-color: $secondary_buttons_hover_color;
 }
 .button-create__container {
   position: absolute;
   right: 4em;
   top: 27em;
   margin-top: 1em;
-
 }

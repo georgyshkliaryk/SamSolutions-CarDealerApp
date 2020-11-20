@@ -1,13 +1,4 @@
-
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch
-} from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -18,12 +9,8 @@ import EditAd from "../components/EditAd/EditAd";
 
 import { IAd } from "../models/IAd";
 
-
 import translate from "../i18n/translate";
 
-interface IId {
-  _id: string;
-}
 interface IState {
   ad: IAd;
   isLoaded: boolean;
@@ -68,7 +55,11 @@ class EditAdPage extends React.Component<any, any> {
   render() {
     return (
       <>
-        <Header lang={"visible"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
+        <Header
+          lang={"visible"}
+          handleClickEng={this.props.handleClickEng}
+          handleClickDe={this.props.handleClickDe}
+        />
         {this.state.isLoaded ? (
           <EditAd
             title={this.state.ad.carName}
@@ -85,7 +76,7 @@ class EditAdPage extends React.Component<any, any> {
             fuel={this.state.ad.fuelConsumption}
             createdBy={this.state.ad.createdBy}
             createdByEmail={this.state.ad.createdByEmail}
-            id={this.props.match.params.id} 
+            id={this.props.match.params.id}
             inputs={this.props.inputDisabled}
             mode={this.props.pageMode}
           />
@@ -99,5 +90,4 @@ class EditAdPage extends React.Component<any, any> {
   }
 }
 
-// export default withRouter(NewCarPage as any);
 export default EditAdPage;

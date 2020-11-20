@@ -7,7 +7,11 @@ import Account from "../components/Account/Account";
 const AboutPage = (props: any) => {
   return (
     <div>
-      <Header lang={"visible"} handleClickEng={props.handleClickEng} handleClickDe={props.handleClickDe}/>
+      <Header
+        lang={"visible"}
+        handleClickEng={props.handleClickEng}
+        handleClickDe={props.handleClickDe}
+      />
       <Account />
       <Footer />
     </div>

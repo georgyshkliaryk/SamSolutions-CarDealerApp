@@ -4,10 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
   Redirect,
-  useRouteMatch,
-  useParams,
 } from "react-router-dom";
 
 //Pages
@@ -37,8 +34,8 @@ class App extends React.Component<any, any> {
 
   componentDidMount() {
     this.setState({
-      name: sessionStorage.getItem("lang")
-    })
+      name: sessionStorage.getItem("lang"),
+    });
   }
 
   async handleClickEng() {
@@ -55,40 +52,65 @@ class App extends React.Component<any, any> {
     sessionStorage.setItem("lang", "1");
   }
 
-  onUpdate = (value) => {};
-
   render() {
     return (
       <I18nProvider locale={this.state.locales[this.state.name]}>
         <Router>
           <Switch>
             <Route exact path="/profile">
-              <AccountPage handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>
+              <AccountPage
+                handleClickEng={this.handleClickEng}
+                handleClickDe={this.handleClickDe}
+              />
             </Route>
 
             <Route exact path="/">
-              <HomePage handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>
+              <HomePage
+                handleClickEng={this.handleClickEng}
+                handleClickDe={this.handleClickDe}
+              />
             </Route>
 
             <Route exact path="/ads">
-              <CarsPage handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>
+              <CarsPage
+                handleClickEng={this.handleClickEng}
+                handleClickDe={this.handleClickDe}
+              />
             </Route>
             <Route
               path="/ads/view/:id"
               component={(props) => (
-                <NewCarPage {...props} inputDisabled={true} pageMode="view" handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>
+                <NewCarPage
+                  {...props}
+                  inputDisabled={true}
+                  pageMode="view"
+                  handleClickEng={this.handleClickEng}
+                  handleClickDe={this.handleClickDe}
+                />
               )}
             />
             <Route path="/ads/create">
-              <CreateAdPage handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>
+              <CreateAdPage
+                handleClickEng={this.handleClickEng}
+                handleClickDe={this.handleClickDe}
+              />
             </Route>
             <Route
               path="/ads/edit/:id"
-              component={(props) => <EditAdPage {...props} handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>}
+              component={(props) => (
+                <EditAdPage
+                  {...props}
+                  handleClickEng={this.handleClickEng}
+                  handleClickDe={this.handleClickDe}
+                />
+              )}
             />
 
             <Route exact path="/about">
-              <AboutPage handleClickEng={this.handleClickEng} handleClickDe={this.handleClickDe}/>
+              <AboutPage
+                handleClickEng={this.handleClickEng}
+                handleClickDe={this.handleClickDe}
+              />
             </Route>
 
             <Route exact path="/404">

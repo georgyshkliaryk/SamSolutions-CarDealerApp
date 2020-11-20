@@ -4,10 +4,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import adminList from "../../admin/adminList";
+import translate from "../../i18n/translate";
 
 import "./CarAd.scss";
-
-import translate from "../../i18n/translate";
 
 const CarAd = (props: any) => {
   const { isAuthenticated, user } = useAuth0();

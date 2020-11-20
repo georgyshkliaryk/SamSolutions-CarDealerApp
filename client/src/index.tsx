@@ -6,8 +6,8 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-const REACT_APP_AUTH0_DOMAIN="dev-b7mle7hf.eu.auth0.com";
-const REACT_APP_AUTH0_CLIENT_ID="EUKkhkZ1193uEW4FWkE7VPMj17OVwk5X"
+const REACT_APP_AUTH0_DOMAIN = "dev-b7mle7hf.eu.auth0.com";
+const REACT_APP_AUTH0_CLIENT_ID = "EUKkhkZ1193uEW4FWkE7VPMj17OVwk5X";
 
 const domain = REACT_APP_AUTH0_DOMAIN!;
 const clientId = REACT_APP_AUTH0_CLIENT_ID!;

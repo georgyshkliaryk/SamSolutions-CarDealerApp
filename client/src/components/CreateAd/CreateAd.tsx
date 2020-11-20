@@ -1,12 +1,13 @@
 import React from "react";
 
 import "./CreateAd";
+
 import "./CreateAd.scss";
 
 import { postAd } from "../../services/RestService";
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import translate from "../../i18n/translate";
+
 class CreateAd extends React.Component<any, {}> {
   constructor(props: any) {
     super(props);
@@ -26,7 +27,7 @@ class CreateAd extends React.Component<any, {}> {
       maxSpeed: null,
       carFullDescription: "",
       createdBy: this.props.userName,
-      createdByEmail: this.props.userEmail
+      createdByEmail: this.props.userEmail,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
@@ -137,7 +138,11 @@ class CreateAd extends React.Component<any, {}> {
         <div className="title">{translate("enterInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
-            <img src="https://static.thenounproject.com/png/3927-200.png" alt="upload image icon" className="car__image-icon"/>
+            <img
+              src="https://static.thenounproject.com/png/3927-200.png"
+              alt="upload image icon"
+              className="car__image-icon"
+            />
             <input
               className="car__info-input img"
               type="text"
@@ -347,7 +352,11 @@ class CreateAd extends React.Component<any, {}> {
           <br />
           <div className={"car__btn"}>
             <button className="button1 red">{translate("saveChanges")}</button>
-            <button type="button" className="button1 grey" onClick={this.handleCancel}>
+            <button
+              type="button"
+              className="button1 grey"
+              onClick={this.handleCancel}
+            >
               {translate("cancel")}
             </button>
           </div>

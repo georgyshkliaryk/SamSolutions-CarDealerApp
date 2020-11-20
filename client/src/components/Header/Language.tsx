@@ -1,15 +1,11 @@
 import React from "react";
-import WOW from "wowjs";
 
 import "./Header.scss";
 
 class Language extends React.Component<any, {}> {
-
   constructor(props: any) {
     super(props);
   }
-
-
 
   render() {
     return (
@@ -20,7 +16,6 @@ class Language extends React.Component<any, {}> {
           alt="eng"
           title="English"
           onClick={this.props.handleClickEng}
-
         />
         <img
           className="flag de"
@@ -28,7 +23,6 @@ class Language extends React.Component<any, {}> {
           alt="de"
           title="German"
           onClick={this.props.handleClickDe}
-
         />
       </div>
     );

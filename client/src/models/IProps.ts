@@ -6,4 +6,4 @@ export interface IProps {
   usage?: string;
   fulldescription?: string;
   type?: string;
-} 
+}

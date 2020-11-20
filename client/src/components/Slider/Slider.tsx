@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import "./Slider.scss";
 import WOW from "wowjs";
 
+import "./Slider.scss";
+
 import { IAd } from "../../models/IAd";
+
 export interface IProps {
   ads: IAd[];
 }

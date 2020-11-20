@@ -160,5 +160,3 @@ fetch(`http://localhost:${PORT}/api/ads`, {
 })
   .then((res) => res.json())
   .then((json) => console.log(json));
-
-

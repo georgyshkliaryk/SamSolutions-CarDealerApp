@@ -16,19 +16,14 @@ const LoginButton = () => {
     if (isAuthenticated == true) {
       alert("You've been logged out!");
       logout();
-    } else {;
+    } else {
       loginWithRedirect();
     }
   }
 
   return (
     <div className="headerButton">
-      
-      <div
-        onClick={() => handleClick()}
-      >
-        {content}
-      </div>
+      <div onClick={() => handleClick()}>{content}</div>
     </div>
   );
 };

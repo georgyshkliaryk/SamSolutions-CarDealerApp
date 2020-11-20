@@ -4,16 +4,17 @@ import WOW from "wowjs";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import "./Header.scss";
-import translate from "../../i18n/translate";
+
 import LoginButton from "../LoginButton/LoginButton";
 import AccountButton from "../AccountButton/AccountButton";
 import Language from "./Language";
-import { throws } from "assert";
+
+import translate from "../../i18n/translate";
 
 class Header extends React.Component<any, {}> {
   state = {
-    class: "slideInLeft"
-  }
+    class: "slideInLeft",
+  };
   constructor(props: any) {
     super(props);
   }
@@ -21,16 +22,16 @@ class Header extends React.Component<any, {}> {
     new WOW.WOW().init();
   }
 
-
-
   render() {
     return (
       <div>
         <div className="header">
           <div className="header__links hamburger__btn link">
-            
-            
-            <input type="checkbox" id="toggleMenu" onChange={() => new WOW.WOW().init()}/>
+            <input
+              type="checkbox"
+              id="toggleMenu"
+              onChange={() => new WOW.WOW().init()}
+            />
             <label htmlFor="toggleMenu" id="labelToggle">
               &#9776;
             </label>

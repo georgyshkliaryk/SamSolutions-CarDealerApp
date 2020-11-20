@@ -7,6 +7,7 @@ import SearchButton from "../buttons/SearchButton/SearchButton";
 
 import "../../components/RangeInput/RangeInput";
 import Nouislider from "nouislider-react";
+
 import "nouislider/distribute/nouislider.css";
 
 import translate from "../../i18n/translate";

@@ -1,12 +1,6 @@
 import React from "react";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router, useRouteMatch } from "react-router-dom";
 
 import "./Ads.scss";
 import AdCard from "./AdCard";
@@ -14,8 +8,6 @@ import AdCard from "./AdCard";
 import { IProps } from "../../models/IProps";
 
 function Ads(props: IProps) {
-  let { path, url } = useRouteMatch();
-
   return (
     <div className="ads">
       <div className="ads__title wow flipInY" data-wow-delay="0.3s">
@@ -45,8 +37,8 @@ function Ads(props: IProps) {
               usage={carUsage}
               description={ad.carDescription}
               fulldescription={ad.carFullDescription}
-              createdBy={ad.createdBy} 
-              createdByEmail={ad.createdByEmail} 
+              createdBy={ad.createdBy}
+              createdByEmail={ad.createdByEmail}
               img={`${ad.carImage}`}
               path={"/ads/view/" + ad._id}
               key={i++}

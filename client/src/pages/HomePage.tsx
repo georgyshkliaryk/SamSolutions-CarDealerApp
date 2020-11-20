@@ -1,9 +1,8 @@
 import React from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Slider, { IProps } from "../components/Slider/Slider";
-import FilterForm from "../components/FilterForm/FilterForm";
 import Welcome from "../components/Welcome/Welcome";
 import MapComponent from "../components/MapComponent/MapComponent";
 import Contacts from "../components/Contacts/Contacts";
@@ -24,7 +23,7 @@ import translate from "../i18n/translate";
 interface IState {
   ads: IAd[];
   startAds: IAd[];
-  isLoaded: boolean; 
+  isLoaded: boolean;
 }
 
 interface IAdQueryParams {
@@ -52,11 +51,6 @@ class HomePage extends React.Component<any, {}> {
 
     const token: any = localStorage.getItem("token");
 
-    let loggedIn: boolean = true;
-    if (token == null) {
-      loggedIn = false;
-    }
-
     this.state = {
       ads: [],
       startAds: [],
@@ -67,16 +61,7 @@ class HomePage extends React.Component<any, {}> {
   componentDidMount() {
     new WOW.WOW().init();
     this.fetchAds({} as any);
-    
   }
-
-  componentDidUpdate() {
-   // console.log(this.state.lang);
-    
-  }
-
-
-
 
   fetchAds(queryParams: IAdQueryParams) {
     this.adService
@@ -99,7 +84,11 @@ class HomePage extends React.Component<any, {}> {
   render() {
     return (
       <>
-        <Header lang={"visible"} handleClickEng={this.props.handleClickEng} handleClickDe={this.props.handleClickDe}/>
+        <Header
+          lang={"visible"}
+          handleClickEng={this.props.handleClickEng}
+          handleClickDe={this.props.handleClickDe}
+        />
 
         {this.state.isLoaded ? (
           <Slider ads={this.state.startAds} />
@@ -113,7 +102,13 @@ class HomePage extends React.Component<any, {}> {
           <Loading loading_title="Available cars" />
         )}
 
-        <div style={{textAlign: "center", marginBottom: "5em", marginTop: "-6em"}}>
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "5em",
+            marginTop: "-6em",
+          }}
+        >
           <Link to="/ads">
             <MoreButton
               content={translate("moreAds", {
