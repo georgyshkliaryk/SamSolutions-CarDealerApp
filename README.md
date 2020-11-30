@@ -11,5 +11,5 @@ cd client
 npm start 
 
 admin page:
-cardealer.main@gmail.com
-cardealer.main123
+Login: cardealer.main@gmail.com \n
+Password: cardealer.main123
