@@ -1,15 +1,15 @@
 # SamSolutions-CarDealerApp
-Client+server app using React (TypeScript), Express, MongoDB, NodeJS.
+### Client+server app using React (TypeScript), Express, MongoDB, NodeJS.
 
-Application for searching and selling cars. There is user authentication, selection of cars by body type, price, manufacturer, etc. It is possible change the language of the application. You can inspect car ads, edit or delete your own ads, post new ones.
+Application for searching and selling cars. There is user user authentication, selection of cars by body type, price, manufacturer, etc. It is possible change the language of the application (English/German). You can inspect car ads, edit or delete your own ads, post new ones.
 
 
+To start the app:
+>nodemon server/app.js
 
-nodemon server/app.js
+> cd client
+> npm start 
 
-cd client
-npm start 
-
-admin page:
-Login: cardealer.main@gmail.com \n
-Password: cardealer.main123
+Admin page:
+**Login:** *cardealer.main@gmail.com*
+**Password:** *cardealer.main123*
