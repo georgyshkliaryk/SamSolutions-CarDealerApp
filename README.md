@@ -10,6 +10,6 @@ To start the app:
 > cd client  
 > npm start 
 
-Admin page:
+Admin page:  
 **Login:** *cardealer.main@gmail.com*  
 **Password:** *cardealer.main123*
