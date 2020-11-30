@@ -15,6 +15,5 @@ Admin page:
 **Password:** *cardealer.main123*
 
 ```diff
-text in red
-
+- ### For correct work of the app, disable AdBlock services on the pages of the app!
 ```
