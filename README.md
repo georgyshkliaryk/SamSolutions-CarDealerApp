@@ -11,6 +11,5 @@ To start the app:
 > npm start 
 
 Admin page:
-
 **Login:** *cardealer.main@gmail.com*  
 **Password:** *cardealer.main123*
