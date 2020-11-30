@@ -13,7 +13,3 @@ To start the app:
 Admin page:  
 **Login:** *cardealer.main@gmail.com*  
 **Password:** *cardealer.main123*
-
-<div class="text-purple">
-  This text is purple, <a href="#" class="text-inherit">including the link</a>
-</div>
