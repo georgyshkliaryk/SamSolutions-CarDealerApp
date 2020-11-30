@@ -7,7 +7,7 @@ Application for searching and selling cars. There is user user authentication, s
 To start the app:
 >nodemon server/app.js
 
-> cd client
+> cd client  
 > npm start 
 
 Admin page:
