@@ -38,7 +38,7 @@ app.use("/api", routes);
 
 //error handling middleware
 app.use(function (err, req, res, next) {
-  //console.log(err);
+  console.log(err);
   res.status(400).send({ error: err.message });
 });
 
