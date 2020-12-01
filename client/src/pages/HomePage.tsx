@@ -19,6 +19,7 @@ import AdService from "../services/AdsService";
 import WOW from "wowjs";
 
 import translate from "../i18n/translate";
+import { threadId } from "worker_threads";
 
 interface IState {
   ads: IAd[];
@@ -49,8 +50,6 @@ class HomePage extends React.Component<any, {}> {
     const restService = new RestService();
     this.adService = new AdService(restService);
 
-    const token: any = localStorage.getItem("token");
-
     this.state = {
       ads: [],
       startAds: [],
@@ -68,8 +67,18 @@ class HomePage extends React.Component<any, {}> {
       .getAllAds(queryParams)
       .then((data) => {
         this.setState({ ads: data, isLoaded: true });
-        for (let i = 0; i < 3; i++) {
-          let newArr = this.state.startAds.concat(this.state.ads[i]);
+        if (this.state.ads.length == 0) {
+          this.setState({
+            startAds: [],
+          });
+        } else {
+          let newArr: IAd[] = [];
+          if (this.state.ads.length < 3) {
+            newArr = this.state.ads.slice(0, this.state.ads.length);
+          } else {
+              newArr = this.state.ads.slice(0, 3);
+              console.log(newArr);
+          }
           this.setState({
             startAds: newArr,
           });
@@ -101,22 +110,6 @@ class HomePage extends React.Component<any, {}> {
         ) : (
           <Loading loading_title="Available cars" />
         )}
-
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: "5em",
-            marginTop: "-6em",
-          }}
-        >
-          <Link to="/ads">
-            <MoreButton
-              content={translate("moreAds", {
-                arrow: <span>&rsaquo;</span>,
-              })}
-            />
-          </Link>
-        </div>
 
         <Welcome ads={this.state.ads} />
 
