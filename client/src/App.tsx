@@ -16,13 +16,15 @@ import NewCarPage from "./pages/NewCarPage";
 import CreateAdPage from "./pages/CreateAdPage";
 import AccountPage from "./pages/AccountPage";
 import EditAdPage from "./pages/EditAdPage";
+  
 
 import { I18nProvider, LOCALES } from "./i18n";
 
 class App extends React.Component<any, any> {
+  
   constructor(props: any) {
+    
     super(props);
-
     this.handleClickDe = this.handleClickDe.bind(this);
     this.handleClickEng = this.handleClickEng.bind(this);
   }
@@ -78,7 +80,7 @@ class App extends React.Component<any, any> {
               />
             </Route>
             <Route
-              path="/ads/view/:id"
+              exact path="/ads/view/:id"
               component={(props) => (
                 <NewCarPage
                   {...props}
@@ -89,14 +91,14 @@ class App extends React.Component<any, any> {
                 />
               )}
             />
-            <Route path="/ads/create">
+            <Route exact path="/ads/create">
               <CreateAdPage
                 handleClickEng={this.handleClickEng}
                 handleClickDe={this.handleClickDe}
               />
             </Route>
             <Route
-              path="/ads/edit/:id"
+              exact path="/ads/edit/:id"
               component={(props) => (
                 <EditAdPage
                   {...props}
