@@ -37,11 +37,13 @@
 }
 .car__image {
   margin: auto;
-  min-width: 20em;
   img {
     width: 30em;
     border-radius: 10px;
   }
+}
+.car__description {
+  margin-bottom: 1em;
 }
 .car__title {
   text-align: center;
@@ -90,3 +92,4 @@
 .car__info {
   margin: auto;
 }
+

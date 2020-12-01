@@ -44,7 +44,7 @@ const CarAd = (props: any) => {
   }
 
   return (
-    <div>
+    <div className="car__fragment">
       <div className={"car__container"}>
         <div className="car__image">
           <img src={props.image} alt="car image" />

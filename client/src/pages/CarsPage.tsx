@@ -76,6 +76,7 @@ class NewCarsPage extends React.Component<any, {}> {
               title={translate("availableCars")}
               ads={this.state.ads}
               usage="new"
+              moreAdsBtn={{display: "none"}}
             />
           ) : (
             <Loading loading_title={translate("availableCars")} />
@@ -100,10 +101,16 @@ class NewCarsPage extends React.Component<any, {}> {
           <FilterForm onSubmit={this.handleSubmit} />
 
           <div className="ads">
-            <div className="ads__title wow flipInY" data-wow-delay="0.3s">
-              {translate("availableCars")}
-            </div>
-            <div>{translate("noCarsFilter")}</div>
+            {this.state.isLoaded ? (
+              <div>
+                <div className="ads__title wow flipInY" data-wow-delay="0.3s">
+                  {translate("availableCars")}
+                </div>
+                <div>{translate("noCarsFilter")}</div>
+              </div>
+            ) : (
+              <Loading loading_title={translate("availableCars")} />
+            )}
           </div>
           <Footer />
         </>
