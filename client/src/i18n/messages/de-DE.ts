@@ -42,7 +42,7 @@ export default {
         kann speziell für Sie geeignet wählen.`,
         "about2": `Anwendung für die Suche und den Verkauf von Autos. Es gibt Benutzerauthentifizierung, Auswahl der Autos nach Karosserie
         Typ, Preis, Hersteller usw. Es ist möglich, eine Bewertung abzugeben, die Sprache der zu ändern
-        Anwendung. Möglich als Kauf eines Autos und Veröffentlichung von Ankündigungen über deren Verkauf.`,
+        Anwendung.`,
         "usingApp": "Mit dieser Web-App können Sie:",
         "buyCars": "Autos kaufen;",
         "sellCars": "Autos verkaufen;",

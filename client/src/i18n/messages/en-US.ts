@@ -41,11 +41,10 @@ export default {
         and etc. Also there is the separation between new and old cars so You
         can choose suitable especcially for You.`,
         "about2":  `Application for searching and selling cars. There is user authentication, selection of cars by body
-        type, price, manufacturer, etc. It is possible to leave a review, change the language of the
-        application. Possible as buying a car, and posting announcements about their sale.`, 
+        type, price, manufacturer, etc.`, 
         "usingApp": "Using this web-app you can:",
-        "buyCars": "buy cars;",
-        "sellCars": "sell cars;",
+        "buyCars": "Buy cars;",
+        "sellCars": "Sell cars;",
         "sortCars": "Sort car ads by:",
         "carTypeLi": "car type",
         "priceLi": "price",
@@ -87,7 +86,7 @@ export default {
         "myAds": "MY CARS IN STOCK",
 
         "editAd": "Edit ad",
-        "noCarsFilter": "No cars available with parameters you've chosen",
+        "noCarsFilter": "No cars available with parameters you've chosen (or maybe there are no cars currently in stock)",
 
 
 
