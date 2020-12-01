@@ -23,8 +23,8 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "node server/app.js",
-    "nodemonStart": "nodemon server/app.js",
+    "start": "node app.js",
+    "nodemonStart": "nodemon app.js",
     "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1",
     "insertAds": "node dbscripts/insertAds.js",
     "deleteAds": "node dbscripts/deleteAds.js"
