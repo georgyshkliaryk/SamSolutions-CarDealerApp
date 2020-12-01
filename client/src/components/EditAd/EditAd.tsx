@@ -133,13 +133,14 @@ class EditAd extends React.Component<any, {}> {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} data-testid="createAd">
+      <form onSubmit={this.onSubmit} data-testid="createAd" className="car__fragment">
         <div className="title">{translate("editInfo")}</div>
         <div className={"car__container"}>
           <div className="car__image">
             <img
               src="https://static.thenounproject.com/png/3927-200.png"
               alt="upload image icon"
+              title="car image link (1920x1280)"
               className="car__image-icon"
             />
             <input
@@ -186,7 +187,7 @@ class EditAd extends React.Component<any, {}> {
               </div>
               <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
               <input
-                className="car__info-input"
+                className="car__info-input brand"
                 type="text"
                 name="carModel"
                 value={this.state.carModel}
