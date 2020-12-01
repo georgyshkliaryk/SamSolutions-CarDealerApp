@@ -25,4 +25,4 @@ Admin page:
 3) As MongoDB CS is intalled, navigate to: '<path_to_mongodb>\Server\4.2\bin' and double-click on the mongod.exe file. MongoDB has been launched.
 4) Open MongoDB Compass, click on "Fill in connection fields individually" button in the top.
 5) "Hostname" field should be: localhost, "Port": 27017 (by default). Click "Connect". Now you are connected to your local database.
-6) Click "Create database", "Database Name" field should be: >carAppDB, "Collection Name": >ads.
+6) Click "Create database", "Database Name" field should be: > carAppDB, "Collection Name": > ads.
