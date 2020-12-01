@@ -52,7 +52,7 @@ class Slider extends React.Component<
           <div className="slider__slide">
             <img
               src={this.props.ads[this.state.currentImageIndex].carImage}
-              alt="lol"
+              alt={this.props.ads[this.state.currentImageIndex].carImage}
             />
             <div className="slide__title wow fadeInLeft">
               <Link
@@ -86,7 +86,7 @@ class Slider extends React.Component<
         </div>
       );
     } catch (e) {
-      return <>No images available...</>;
+      return <div className="slider__err">No images available...</div>;
     }
   }
 }
