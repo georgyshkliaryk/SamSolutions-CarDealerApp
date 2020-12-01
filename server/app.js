@@ -1,8 +1,8 @@
 const express = require("express");
 const routes = require("./routes/ads");
 const mongoose = require("mongoose");
-process.env.NODE_CONFIG_DIR =
-  "C:\\Users\\HP\\Documents\\GitHub\\sam-solutions-Car-Dealer-App\\server\\config";
+//process.env.NODE_CONFIG_DIR =
+//  "C:\\Users\\HP\\Documents\\GitHub\\sam-solutions-Car-Dealer-App\\server\\config";
 const config = require("config");
 //console.log('NODE_CONFIG_DIR: ' + config.util.getEnv('NODE_CONFIG_DIR'));
 const bodyParser = require("body-parser");
