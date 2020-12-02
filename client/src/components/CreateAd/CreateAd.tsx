@@ -133,6 +133,7 @@ class CreateAd extends React.Component<any, {}> {
   }
 
   render() {
+    
     return (
       <form onSubmit={this.onSubmit} data-testid="createAd" className="car__fragment">
         <div className="title">{translate("enterInfo")}</div>

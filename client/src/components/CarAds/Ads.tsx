@@ -11,6 +11,8 @@ import translate from "../../i18n/translate";
 import { IProps } from "../../models/IProps";
 
 function Ads(props: IProps) {
+  console.log(props.ads.length);
+  
   if (props.ads.length == 0) {
     return (
       <div className="ads">
@@ -76,7 +78,7 @@ function Ads(props: IProps) {
             );
           })}
         </div>
-        <div className="moreAds__btn"
+          <div className="moreAds__btn"
           style={props.moreAdsBtn}
         >
           <Link to="/ads">
@@ -87,6 +89,7 @@ function Ads(props: IProps) {
             />
           </Link>
         </div>
+        
       </div>
     );
   }

@@ -15,7 +15,7 @@ import CarsPage from "./pages/CarsPage";
 import NewCarPage from "./pages/NewCarPage";
 import CreateAdPage from "./pages/CreateAdPage";
 import AccountPage from "./pages/AccountPage";
-import EditAdPage from "./pages/EditAdPage";
+import EditAdPageWrapper from "./pages/EditAdPageWrapper";
   
 
 import { I18nProvider, LOCALES } from "./i18n";
@@ -100,7 +100,7 @@ class App extends React.Component<any, any> {
             <Route
               exact path="/ads/edit/:id"
               component={(props) => (
-                <EditAdPage
+                <EditAdPageWrapper
                   {...props}
                   handleClickEng={this.handleClickEng}
                   handleClickDe={this.handleClickDe}

@@ -5,6 +5,7 @@ import Footer from "../components/Footer/Footer";
 import CreateAd from "../components/CreateAd/CreateAd";
 
 import { useAuth0 } from "@auth0/auth0-react";
+import NotFoundPage from "./NotFoundPage";
 
 const CreateAdPage = (props: any) => {
   const { user, isAuthenticated } = useAuth0();
@@ -23,15 +24,7 @@ const CreateAdPage = (props: any) => {
     );
   } else {
     return (
-      <div>
-        <Header
-          lang={"visible"}
-          handleClickEng={props.handleClickEng}
-          handleClickDe={props.handleClickDe}
-        />
-        <CreateAd />
-        <Footer />
-      </div>
+      <NotFoundPage /> 
     );
   }
 };
