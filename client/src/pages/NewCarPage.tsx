@@ -81,7 +81,7 @@ class NewCarPage extends React.Component<any, any> {
             mode={this.props.pageMode}
           />
         ) : (
-          <Loading loading_title={translate("loading")} />
+          <Loading loading_title={translate("loading")} loadingStyle={{minHeight: "80vh"}}/>
         )}
 
         <Footer />

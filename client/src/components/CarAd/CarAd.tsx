@@ -47,7 +47,7 @@ const CarAd = (props: any) => {
     <div className="car__fragment">
       <div className={"car__container"}>
         <div className="car__image">
-          <img src={props.image} alt="car image" />
+          <img src={props.image} alt="car image" onError={(e: any)=>{e.target.onerror = null; e.target.title="Image not found"; e.target.src="https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg"}}/>
           <div>
             <b>{translate("postedBy")} &nbsp;&nbsp;&nbsp;&nbsp;</b>
             {props.createdBy}

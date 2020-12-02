@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SearchButton from "../buttons/SearchButton/SearchButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
+
 import translate from "../../i18n/translate";
 
 import "./AdCard.scss";
@@ -26,10 +27,10 @@ const AdCard = (props: any) => {
 
   return (
     <div className="ad" data-wow-delay={`0.5s`}>
-      <img src={props.img} alt="" />
+      <img src={props.img} alt="" onError={(e: any)=>{e.target.onerror = null; e.target.src="https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg"}}/>
       <div className="ad__title"> {props.title} </div>
       <div className="ad__price">{props.price} $</div>
-      <div className="ad__usage">{props.usage}</div>
+      <div className="ad__usage">{props.usage}</div> 
       <div className="ad__description"> {props.description} </div>
       <div className="ad__createdBy" style={backgroundColor}>
         {props.createdBy}
