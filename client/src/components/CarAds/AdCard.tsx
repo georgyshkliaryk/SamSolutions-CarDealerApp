@@ -12,6 +12,15 @@ import "./AdCard.scss";
 const AdCard = (props: any) => {
   const { user, isAuthenticated } = useAuth0();
 
+  const onError = (e: any) => {
+    {
+      e.target.onerror = null;
+      e.target.title = "Image not found";
+      e.target.src =
+        "https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg";
+    }
+  }
+
   let backgroundColor = {
     backgroundColor: "red",
   };
@@ -27,7 +36,7 @@ const AdCard = (props: any) => {
 
   return (
     <div className="ad" data-wow-delay={`0.5s`}>
-      <img src={props.img} alt="" onError={(e: any)=>{e.target.onerror = null; e.target.src="https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg"}}/>
+      <img src={props.img} alt="" onError={onError}/>
       <div className="ad__title"> {props.title} </div>
       <div className="ad__price">{props.price} $</div>
       <div className="ad__usage">{props.usage}</div> 

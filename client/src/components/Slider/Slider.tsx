@@ -23,6 +23,7 @@ class Slider extends React.Component<
     };
 
     this.nextSlideHandler = this.nextSlideHandler.bind(this);
+    this.onError = this.onError.bind(this);
   }
 
   componentDidMount() {
@@ -45,6 +46,15 @@ class Slider extends React.Component<
     this.setState({ currentImageIndex: newIndex });
   }
 
+  onError(e: any) {
+    {
+      e.target.onerror = null;
+      e.target.title = "Image not found";
+      e.target.src =
+        "https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg";
+    }
+  }
+
   render() {
     try {
       return (
@@ -53,7 +63,7 @@ class Slider extends React.Component<
             <img
               src={this.props.ads[this.state.currentImageIndex].carImage}
               alt={this.props.ads[this.state.currentImageIndex].carImage}
-              onError={(e: any)=>{e.target.onerror = null; e.target.title="Image not found"; e.target.src="https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg"}}
+              onError={this.onError}
             />
             <div className="slide__title wow fadeInLeft">
               <Link

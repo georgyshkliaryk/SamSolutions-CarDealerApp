@@ -29,6 +29,15 @@ const CarAd = (props: any) => {
     };
   }
 
+  const onError = (e: any) => {
+    {
+      e.target.onerror = null;
+      e.target.title = "Image not found";
+      e.target.src =
+        "https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg";
+    }
+  }
+
   function handleDelete(path) {
     try {
       deleteAd(path);
@@ -47,7 +56,7 @@ const CarAd = (props: any) => {
     <div className="car__fragment">
       <div className={"car__container"}>
         <div className="car__image">
-          <img src={props.image} alt="car image" onError={(e: any)=>{e.target.onerror = null; e.target.title="Image not found"; e.target.src="https://images.wallpaperscraft.com/image/lights_car_dark_128635_1920x1080.jpg"}}/>
+          <img src={props.image} alt="car image" onError={onError}/>
           <div>
             <b>{translate("postedBy")} &nbsp;&nbsp;&nbsp;&nbsp;</b>
             {props.createdBy}
