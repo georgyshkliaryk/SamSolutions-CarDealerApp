@@ -1,11 +1,12 @@
 import React from "react";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 import Loading from "../components/Loading/Loading";
 import EditAd from "../components/EditAd/EditAd";
+import withAuthentication from '../hoc/withAuthentication';
+import withBasicLayout from "../hoc/withBasicLayout";
+
 
 import { IAd } from "../models/IAd";
 
@@ -53,11 +54,6 @@ class EditAdPage extends React.Component<any, any> {
   render() {
     return (
       <>
-        <Header
-          lang={"visible"}
-          handleClickEng={this.props.handleClickEng}
-          handleClickDe={this.props.handleClickDe}
-        />
         {this.state.isLoaded ? (
           <EditAd
             ad={this.state.ad}
@@ -66,11 +62,9 @@ class EditAdPage extends React.Component<any, any> {
         ) : (
           <Loading loadingTitle={translate("loading")} loadingStyle={{minHeight: "80vh"}}/>
         )}
-
-        <Footer />
       </>
     );
   }
 }
 
-export default EditAdPage;
+export default withAuthentication(withBasicLayout(EditAdPage));

@@ -1,23 +1,17 @@
 import React from "react";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import Contacts from "../components/Contacts/Contacts";
 import About from "../components/About/About";
+import withBasicLayout from '../hoc/withBasicLayout';
 
-const AboutPage = (props: any) => {
+
+const AboutPage = () => {
   return (
     <div>
-      <Header
-        lang={"visible"}
-        handleClickEng={props.handleClickEng}
-        handleClickDe={props.handleClickDe}
-      />
       <About />
       <Contacts />
-      <Footer />
     </div>
   );
 };
 
-export default AboutPage;
+export default withBasicLayout(AboutPage);

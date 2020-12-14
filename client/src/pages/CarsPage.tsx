@@ -5,15 +5,14 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 import Ads from "../components/CarAds/Ads";
 
-import { IAd } from "../models/IAd";
 import { IProps } from "../models/IProps";
 
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import CreateAdBtn from "../components/buttons/CreateAdBtn/CreateAdBtn";
 import FilterForm from "../components/FilterForm/FilterForm";
+import withBasicLayout from '../hoc/withBasicLayout';
+
 
 import translate from "../i18n/translate";
 
@@ -60,11 +59,6 @@ class NewCarsPage extends React.Component<any, {}> {
     if (this.state.ads.length > 0) {
       return (
         <>
-          <Header
-            lang={"visible"}
-            handleClickEng={this.props.handleClickEng}
-            handleClickDe={this.props.handleClickDe}
-          />
           <Link to="ads/create">
             <CreateAdBtn />
           </Link>
@@ -81,19 +75,11 @@ class NewCarsPage extends React.Component<any, {}> {
           ) : (
             <Loading loadingTitle={translate("availableCars")} />
           )}
-
-          <Footer />
         </>
       );
     } else {
       return (
         <>
-          <Header
-            lang={"hidden"}
-            handleClickEng={this.props.handleClickEng}
-            handleClickDe={this.props.handleClickDe}
-          />
-
           <Link to="ads/create">
             <CreateAdBtn />
           </Link>
@@ -112,11 +98,10 @@ class NewCarsPage extends React.Component<any, {}> {
               <Loading loadingTitle={translate("availableCars")} />
             )}
           </div>
-          <Footer />
         </>
       );
     }
   }
 }
 
-export default NewCarsPage;
+export default withBasicLayout(NewCarsPage);
