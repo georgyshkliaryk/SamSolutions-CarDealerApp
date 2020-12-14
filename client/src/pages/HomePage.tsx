@@ -73,11 +73,7 @@ class HomePage extends React.Component<any, {}> {
           });
         } else {
           let newArr: IAd[] = [];
-          if (this.state.ads.length < 3) {
-            newArr = this.state.ads.slice(0, this.state.ads.length);
-          } else {
               newArr = this.state.ads.slice(0, 3);
-          }
           this.setState({
             startAds: newArr,
           });
