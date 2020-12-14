@@ -11,7 +11,6 @@ import translate from "../../i18n/translate";
 import { IProps } from "../../models/IProps";
 
 function Ads(props: IProps) {
-  console.log(props.ads.length);
   
   if (props.ads.length == 0) {
     return (
@@ -45,7 +44,6 @@ function Ads(props: IProps) {
         </div>
         <div className="ads__container">
           {props.ads.map((ad: any, i: number = 0) => {
-            console.log(props.ads);
 
             let carUsage: string;
             let newCarAds: object[] = [];

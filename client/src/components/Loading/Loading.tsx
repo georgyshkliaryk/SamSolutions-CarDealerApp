@@ -8,7 +8,7 @@ import translate from "../../i18n/translate";
 function Loading(props: any) {
   return (
     <div className="loading" data-testid="loading" style={props.loadingStyle}>
-      <div className="ads__title">{props.loading_title}</div>
+      <div className="ads__title">{props.loadingTitle}</div>
       <img className="loading__img" src={loading} alt="loading..." />
       <div>{translate("loading")}</div>
     </div>

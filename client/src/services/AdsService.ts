@@ -11,7 +11,6 @@ export default class AdsService {
       url.searchParams.append(key, params[key])
     );
     let queryUrl = url.toString();
-    console.log("searchParams: " + queryUrl);
     return this.restService.get<IAd[]>(queryUrl);
   }
   getAddById(id: string) {

@@ -10,7 +10,7 @@ const Provider = ({ children, locale = LOCALES.ENGLISH }) => {
       textComponent={Fragment}
       messages={messages[locale]}
     >
-      {children}
+      {children}    
     </IntlProvider>
   );
 };

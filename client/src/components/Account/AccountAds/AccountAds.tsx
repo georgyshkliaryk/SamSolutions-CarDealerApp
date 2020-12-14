@@ -52,7 +52,6 @@ class AccountAds extends React.Component<any, {}> {
       .getAllAds(queryParams)
       .then((data) => {
         this.setState({ ads: data, isLoaded: true });
-        console.log(this.state.ads.length);
         for (let i = 0; i < this.state.ads.length; i++) {
           if (this.state.ads[i].createdBy == this.props.nickname) {
             let newArr = this.state.myAds.concat(this.state.ads[i]);
@@ -78,7 +77,7 @@ class AccountAds extends React.Component<any, {}> {
               usage="new"
             />
           ) : (
-            <Loading loading_title={translate("availableCars")} />
+            <Loading loadingTitle={translate("availableCars")} />
           )}
         </>
       );

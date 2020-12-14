@@ -79,7 +79,7 @@ class NewCarsPage extends React.Component<any, {}> {
               moreAdsBtn={{display: "none"}}
             />
           ) : (
-            <Loading loading_title={translate("availableCars")} />
+            <Loading loadingTitle={translate("availableCars")} />
           )}
 
           <Footer />
@@ -109,7 +109,7 @@ class NewCarsPage extends React.Component<any, {}> {
                 <div>{translate("noCarsFilter")}</div>
               </div>
             ) : (
-              <Loading loading_title={translate("availableCars")} />
+              <Loading loadingTitle={translate("availableCars")} />
             )}
           </div>
           <Footer />

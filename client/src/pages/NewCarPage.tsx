@@ -36,7 +36,6 @@ class NewCarPage extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
     this.fetchAd(this.props.match.params.id);
   }
 
@@ -45,7 +44,6 @@ class NewCarPage extends React.Component<any, any> {
       .getAddById(id)
       .then((data) => {
         this.setState({ ad: data, isLoaded: true });
-        console.log(this.state.ad);
       })
       .catch((data) => {
         alert(data);
@@ -81,7 +79,7 @@ class NewCarPage extends React.Component<any, any> {
             mode={this.props.pageMode}
           />
         ) : (
-          <Loading loading_title={translate("loading")} loadingStyle={{minHeight: "80vh"}}/>
+          <Loading loadingTitle={translate("loading")} loadingStyle={{minHeight: "80vh"}}/>
         )}
 
         <Footer />

@@ -40,7 +40,6 @@ class CreateAd extends React.Component<any, {}> {
       createdBy: this.props.userName,
       createdByEmail: this.props.userEmail,
     });
-    console.log([this.state]);
 
     try {
       const created = postAd([this.state]);

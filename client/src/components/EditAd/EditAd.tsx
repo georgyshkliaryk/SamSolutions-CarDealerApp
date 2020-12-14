@@ -147,7 +147,7 @@ class EditAd extends React.Component<any, {}> {
               className="car__info-input img"
               type="text"
               name="carImage"
-              value={this.state.carImage}
+              value={this.state.carImage || ""}
               placeholder="car image link (1920x1280)"
               onChange={this.handleChange}
               required
@@ -160,7 +160,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__title-input"
                 type="text"
                 name="carName"
-                value={this.state.carName}
+                value={this.state.carName || ""}
                 onChange={this.handleChange}
                 required
               />{" "}
@@ -169,7 +169,7 @@ class EditAd extends React.Component<any, {}> {
               <textarea
                 className="car__description-input"
                 name="carDescription"
-                value={this.state.carDescription}
+                value={this.state.carDescription || ""}
                 placeholder="short description (general info about car)"
                 onChange={this.handleChange}
                 required
@@ -190,7 +190,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__info-input brand"
                 type="text"
                 name="carModel"
-                value={this.state.carModel}
+                value={this.state.carModel || ""}
                 placeholder="car brand"
                 onChange={this.handleChange}
               />
@@ -210,7 +210,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carYear"
-                value={this.state.carYear}
+                value={this.state.carYear || ""}
                 placeholder="car year"
                 onChange={this.handleChangeNumber}
                 required
@@ -228,7 +228,7 @@ class EditAd extends React.Component<any, {}> {
               <select
                 className="car__info-input"
                 name="carUsed"
-                value={this.state.carUsed}
+                value={this.state.carUsed || ""}
                 onChange={this.handleChange}
               >
                 <option value="New car">New</option>
@@ -251,7 +251,7 @@ class EditAd extends React.Component<any, {}> {
               <select
                 className="car__info-input"
                 name="carType"
-                value={this.state.carType}
+                value={this.state.carType || ""}
                 onChange={this.handleChange}
               >
                 <option value="Sedan">Sedan</option>
@@ -281,7 +281,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carPrice"
-                value={this.state.carPrice}
+                value={this.state.carPrice || ""}
                 placeholder="car price"
                 onChange={this.handleChangeNumber}
                 required
@@ -301,7 +301,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="carMileage"
-                value={this.state.carMileage}
+                value={this.state.carMileage || ""}
                 placeholder="car mileage (if car is new, enter 0)"
                 onChange={this.handleChangeNumber}
               />
@@ -322,7 +322,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="fuelConsumption"
-                value={this.state.fuelConsumption}
+                value={this.state.fuelConsumption || ""}
                 placeholder="fuel consumption"
                 onChange={this.handleChangeDecimal}
               />
@@ -343,7 +343,7 @@ class EditAd extends React.Component<any, {}> {
                 className="car__info-input"
                 type="text"
                 name="maxSpeed"
-                value={this.state.maxSpeed}
+                value={this.state.maxSpeed || ""}
                 placeholder="max speed"
                 onChange={this.handleChangeNumber}
               />
@@ -355,7 +355,7 @@ class EditAd extends React.Component<any, {}> {
             <textarea
               className="car__description-input full2"
               name="carFullDescription"
-              value={this.state.carFullDescription}
+              value={this.state.carFullDescription || ""}
               placeholder="full description (driving experience, problems, advantages, etc.)"
               onChange={this.handleChange}
             />

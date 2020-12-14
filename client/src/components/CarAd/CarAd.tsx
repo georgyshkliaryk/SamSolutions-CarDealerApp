@@ -75,7 +75,7 @@ const CarAd = (props: any) => {
             <input
               className="car__title-input"
               type="text"
-              value={props.title}
+              value={props.title || ""}
               disabled={props.inputs}
               placeholder="car brand and model"
             />{" "}
@@ -83,7 +83,7 @@ const CarAd = (props: any) => {
           <div className="car__description">
             <textarea
               className="car__description-input"
-              value={props.description}
+              value={props.description || ""}
               disabled={props.inputs}
               placeholder="short description"
             />
@@ -102,7 +102,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.model}
+              value={props.model || ""}
               disabled={props.inputs}
               placeholder="car brand"
             />
@@ -121,7 +121,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.year}
+              value={props.year || ""}
               disabled={props.inputs}
               placeholder="car year"
             />
@@ -138,7 +138,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.used}
+              value={props.used || ""}
               disabled={props.inputs}
               placeholder="car used"
             />
@@ -155,7 +155,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.type} //sedan coupe etc
+              value={props.type || ""} //sedan coupe etc
               disabled={props.inputs}
               placeholder="car type"
             />
@@ -174,7 +174,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.price}
+              value={props.price || ""}
               disabled={props.inputs}
               placeholder="car price"
             />
@@ -192,7 +192,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.mileage}
+              value={props.mileage || ""}
               disabled={props.inputs}
               placeholder="car mileage"
             />
@@ -212,7 +212,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.fuel}
+              value={props.fuel || ""}
               disabled={props.inputs}
               placeholder="fuel consumption"
             />
@@ -232,7 +232,7 @@ const CarAd = (props: any) => {
             <input
               className="car__info-input"
               type="text"
-              value={props.maxspeed}
+              value={props.maxspeed || ""}
               disabled={props.inputs}
               placeholder="max speed"
             />
@@ -243,7 +243,7 @@ const CarAd = (props: any) => {
         <div className="car__description full">
           <textarea
             className="car__description-input full2"
-            value={props.fulldescription}
+            value={props.fulldescription || ""}
             disabled={props.inputs}
             placeholder="full description"
           />

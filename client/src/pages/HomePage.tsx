@@ -77,7 +77,6 @@ class HomePage extends React.Component<any, {}> {
             newArr = this.state.ads.slice(0, this.state.ads.length);
           } else {
               newArr = this.state.ads.slice(0, 3);
-              console.log(newArr);
           }
           this.setState({
             startAds: newArr,
@@ -102,13 +101,13 @@ class HomePage extends React.Component<any, {}> {
         {this.state.isLoaded ? (
           <Slider ads={this.state.startAds} />
         ) : (
-          <Loading loading_title={translate("popularCars")} />
+          <Loading loadingTitle={translate("popularCars")} />
         )}
 
         {this.state.isLoaded ? (
           <Ads ads={this.state.startAds} title={translate("availableCars")} />
         ) : (
-          <Loading loading_title="Available cars" />
+          <Loading loadingTitle="Available cars" />
         )}
 
         <Welcome ads={this.state.ads} />
