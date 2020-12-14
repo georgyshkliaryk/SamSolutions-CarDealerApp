@@ -19,7 +19,6 @@ import AdService from "../services/AdsService";
 import WOW from "wowjs";
 
 import translate from "../i18n/translate";
-import { threadId } from "worker_threads";
 
 interface IState {
   ads: IAd[];

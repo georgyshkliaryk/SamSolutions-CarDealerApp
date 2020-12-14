@@ -60,23 +60,8 @@ class EditAdPage extends React.Component<any, any> {
         />
         {this.state.isLoaded ? (
           <EditAd
-            title={this.state.ad.carName}
-            image={this.state.ad.carImage}
-            description={this.state.ad.carDescription}
-            fulldescription={this.state.ad.carFullDescription}
-            model={this.state.ad.carModel}
-            price={this.state.ad.carPrice}
-            year={this.state.ad.carYear}
-            used={this.state.ad.carUsed}
-            type={this.state.ad.carType}
-            mileage={this.state.ad.carMileage}
-            maxspeed={this.state.ad.maxSpeed}
-            fuel={this.state.ad.fuelConsumption}
-            createdBy={this.state.ad.createdBy}
-            createdByEmail={this.state.ad.createdByEmail}
+            ad={this.state.ad}
             id={this.props.match.params.id}
-            inputs={this.props.inputDisabled}
-            mode={this.props.pageMode}
           />
         ) : (
           <Loading loadingTitle={translate("loading")} loadingStyle={{minHeight: "80vh"}}/>

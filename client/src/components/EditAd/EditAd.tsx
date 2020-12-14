@@ -13,21 +13,21 @@ class EditAd extends React.Component<any, {}> {
     super(props);
 
     this.state = {
-      carImage: this.props.image,
-      carName: this.props.title,
-      carDescription: this.props.description,
-      carModel: this.props.model,
-      carYear: this.props.year,
-      carType: this.props.type,
+      carImage: this.props.ad.carImage,
+      carName: this.props.ad.carName,
+      carDescription: this.props.ad.carDescription,
+      carModel: this.props.ad.carModel,
+      carYear: this.props.ad.carYear,
+      carType: this.props.ad.carType,
       carTypeImage: "https://image.flaticon.com/icons/png/512/55/55283.png",
-      carUsed: this.props.used,
-      carPrice: this.props.price,
-      carMileage: this.props.mileage,
-      fuelConsumption: this.props.fuel,
-      maxSpeed: this.props.maxspeed,
-      carFullDescription: this.props.fulldescription,
-      createdBy: this.props.createdBy,
-      createdByEmail: this.props.createdByEmail,
+      carUsed: this.props.ad.carUsed,
+      carPrice: this.props.ad.carPrice,
+      carMileage: this.props.ad.carMileage,
+      fuelConsumption: this.props.ad.fuelConsumption,
+      maxSpeed: this.props.ad.maxSpeed,
+      carFullDescription: this.props.ad.carFullDescription,
+      createdBy: this.props.ad.createdBy,
+      createdByEmail: this.props.ad.createdByEmail,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
