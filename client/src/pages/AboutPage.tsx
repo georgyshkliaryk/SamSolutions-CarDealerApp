@@ -5,7 +5,7 @@ import About from "../components/About/About";
 import withBasicLayout from '../hoc/withBasicLayout';
 
 
-const AboutPage = (props: any) => {
+const AboutPage = () => {
   return (
     <div>
       <About />

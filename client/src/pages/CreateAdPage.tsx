@@ -1,14 +1,12 @@
 import React from "react";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import CreateAd from "../components/CreateAd/CreateAd";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import NotFoundPage from "./NotFoundPage";
 import withBasicLayout from "../hoc/withBasicLayout";
 
-const CreateAdPage = (props: any) => {
+const CreateAdPage = () => {
   const { user, isAuthenticated } = useAuth0();
 
   if (isAuthenticated) {

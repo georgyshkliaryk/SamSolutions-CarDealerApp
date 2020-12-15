@@ -9,8 +9,6 @@ import { IProps } from "../models/IProps";
 
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import CreateAdBtn from "../components/buttons/CreateAdBtn/CreateAdBtn";
 import FilterForm from "../components/FilterForm/FilterForm";
 import withBasicLayout from '../hoc/withBasicLayout';

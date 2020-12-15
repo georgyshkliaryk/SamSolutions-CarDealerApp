@@ -1,15 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import Header from "../components/Header/Header";
 import Slider, { IProps } from "../components/Slider/Slider";
 import Welcome from "../components/Welcome/Welcome";
 import MapComponent from "../components/MapComponent/MapComponent";
 import Contacts from "../components/Contacts/Contacts";
-import Footer from "../components/Footer/Footer";
 import Ads from "../components/CarAds/Ads";
 import Loading from "../components/Loading/Loading";
-import MoreButton from "../components/buttons/MoreButton/MoreButton";
 
 import { IAd } from "../models/IAd";
 

@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 import Loading from "../components/Loading/Loading";
