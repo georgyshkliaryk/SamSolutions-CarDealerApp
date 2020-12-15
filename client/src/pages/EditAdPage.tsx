@@ -6,6 +6,8 @@ import RestService from "../services/RestService";
 import AdService from "../services/AdsService";
 import Loading from "../components/Loading/Loading";
 import EditAd from "../components/EditAd/EditAd";
+import withAuthentication from '../hoc/withAuthentication';
+
 
 import { IAd } from "../models/IAd";
 
@@ -73,4 +75,4 @@ class EditAdPage extends React.Component<any, any> {
   }
 }
 
-export default EditAdPage;
+export default withAuthentication(EditAdPage);

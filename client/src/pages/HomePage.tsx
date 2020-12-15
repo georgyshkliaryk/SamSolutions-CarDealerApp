@@ -19,6 +19,7 @@ import AdService from "../services/AdsService";
 import WOW from "wowjs";
 
 import translate from "../i18n/translate";
+import withBasicLayout from "../hoc/withBasicLayout";
 
 interface IState {
   ads: IAd[];
@@ -87,12 +88,6 @@ class HomePage extends React.Component<any, {}> {
   render() {
     return (
       <>
-        <Header
-          lang={"visible"}
-          handleClickEng={this.props.handleClickEng}
-          handleClickDe={this.props.handleClickDe}
-        />
-
         {this.state.isLoaded ? (
           <Slider ads={this.state.startAds} />
         ) : (
@@ -106,15 +101,11 @@ class HomePage extends React.Component<any, {}> {
         )}
 
         <Welcome ads={this.state.ads} />
-
         <Contacts />
-
         <MapComponent />
-
-        <Footer />
       </>
     );
   }
 }
 
-export default HomePage;
+export default withBasicLayout(HomePage);

@@ -6,21 +6,14 @@ import CreateAd from "../components/CreateAd/CreateAd";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import NotFoundPage from "./NotFoundPage";
+import withBasicLayout from "../hoc/withBasicLayout";
 
 const CreateAdPage = (props: any) => {
   const { user, isAuthenticated } = useAuth0();
 
   if (isAuthenticated) {
     return (
-      <div>
-        <Header
-          lang={"visible"}
-          handleClickEng={props.handleClickEng}
-          handleClickDe={props.handleClickDe}
-        />
         <CreateAd userName={user.nickname} userEmail={user.email} />
-        <Footer />
-      </div>
     );
   } else {
     return (
@@ -29,4 +22,4 @@ const CreateAdPage = (props: any) => {
   }
 };
 
-export default CreateAdPage;
+export default withBasicLayout(CreateAdPage);
